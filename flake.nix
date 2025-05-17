@@ -7,10 +7,10 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      vm-nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/nixos/configuration.nix
+          ./hosts/vm-nixos/configuration.nix
         ];
       };
     };
