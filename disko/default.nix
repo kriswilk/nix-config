@@ -1,0 +1,69 @@
+{
+  disko.devices = {
+    disk.main = {
+      # disko-install will overwrite this value
+      device = "/dev/disk/by-id/some-disk-id";
+      type = "disk";
+      content = {
+        type = "gpt";
+        partitions = {
+          
+          MBR = {
+            type = "EF02";
+            size = "1M";
+            priority = 1;
+          };
+          
+          ESP = {
+            name = "ESP";
+            size = "512M";
+            type = "EF00";
+            content = {
+              type = "filesystem";
+              format = "vfat";
+              mountpoint = "/boot";
+              mountOptions = [ "umask=0077" ];
+            };
+          };
+          
+          luks = {
+            size = "100%";
+            content = {
+              type = "luks";
+              name = "crypted";
+              settings.allowDiscards = true;
+                
+              content = {
+                type = "btrfs";
+                extraArgs = [ "-f" ];
+                
+                subvolumes = {
+                  "/root" = {
+                    mountpoint = "/";
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                  };
+                  
+                  "/nix" = {
+                    mountpoint = "/nix";
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                  };
+                  
+                  "/persist" = {
+                    mountpoint = "/persist";
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                  };
+                  
+                  "/swap" = {
+                    mountpoint = "/.swapvol";
+                    swap.swapfile.size = "8G";
+                  };
+                };                  
+              };
+            };
+          };
+
+        };
+      };
+    };
+  };
+}
