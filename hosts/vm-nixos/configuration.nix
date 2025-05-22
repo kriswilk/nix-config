@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../disko/default.nix
+      ../../disko/default.nix
     ];
 
   # Enable flakes and new command-line tool
