@@ -2,8 +2,9 @@
 
 {
   disko.devices = {
-    disk.main = {
-      device = lib.mkDefault "/dev/sda";
+    disk.primary = {
+      # Specify the target disk in each host-specific `disko.nix`
+      # device = "/dev/XXX OR /dev/disk/by-uuid/<UUID>"
       type = "disk";
       content = {
         type = "gpt";
