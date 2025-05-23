@@ -7,15 +7,14 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, disko, ... }@inputs: {
-    nixosConfigurations = {
-      vm-nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/vm-nixos/configuration.nix
-          disko.nixosModules.disko
-        ];
-      };
+  outputs = { nixpkgs, disko, ... }: {
+    nixosConfigurations.generic = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        disko.nixosModules.disko
+        ./configuration.nix
+        ./hardware-configuration.nix
+      ];
     };
   };
 }

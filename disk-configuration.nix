@@ -1,19 +1,14 @@
+{ lib, ... }:
+
 {
   disko.devices = {
     disk.main = {
-      # disko-install will overwrite this value
-      device = "/dev/disk/by-id/some-disk-id";
+      device = lib.mkDefault "/dev/sda";
       type = "disk";
       content = {
         type = "gpt";
         partitions = {
-          
-          MBR = {
-            type = "EF02";
-            size = "1M";
-            priority = 1;
-          };
-          
+
           ESP = {
             name = "ESP";
             size = "512M";
