@@ -1,15 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./disko.nix
-      ../.
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../. # Common configuration
+  ];
     
-  # Host-specific system configuration
+  # Use `sudo lsblk` and `sudo blkid` to find the name / UUID of the target disk
+  disko.devices.disk.primary.device = "/dev/XXX OR /dev/disk/by-uuid/<UUID>";
   
   # Hostname
-  networking.hostName = "nixos";
+  networking.hostName = "hostname";
 }
