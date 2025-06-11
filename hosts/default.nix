@@ -85,6 +85,12 @@
   # Firefox
   programs.firefox.enable = true;
 
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+  };
+
   # System packages
   environment.systemPackages = with pkgs; [
     curl
