@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
     ../. # Common configuration
+    ./hardware-configuration.nix
   ];
     
   # Use `sudo lsblk` and `sudo blkid` to find the name / UUID of the target disk

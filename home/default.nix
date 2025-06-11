@@ -5,7 +5,80 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    neofetch # a command-line utility that displays system information
+    # fonts
+    # onedrive, gdrive
+    # okular? already installed?
+    # fineprint
+    # renamer
+
+    # suites
+    libreoffice
+
+    # file management
+    bcompare
+
+    # audio
+    audacity
+    mp3tag
+
+    # video
+    vlc
+    ffmpeg
+    handbrake
+    mkvtoolnix
+
+    # photo / illustration
+    gimp3
+    inkscape
+    #inkscap-with-extensions
+    krita
+
+    # 3d / cad
+    blender
+    freecad
+    kicad
+    prusa-slicer
+
+    # text
+    pandoc
+    calibre
+    #calibre-web
+
+    # print / scan
+    naps2
+
+    # programming
+    vscode-fhs
+    #vscode
+    imhex
+
+    # networking
+    tailscale
+    wireshark
+    angryipscanner
+
+    # storage
+    rclone
+    # rufus
+    # anyburn
+    # wiztree
+    # crystaldiskinfo
+    # crystaldiskmark
+
+    # gaming
+    prismlauncher
+    # OpenJDK for minecraft?
+
+    # cli
+    neofetch
+
+
+
+
+
+
+
+
     nnn # a fast and lightweight terminal file manager
 
     # archives
@@ -63,7 +136,10 @@
     usbutils # lsusb
   ];
 
-  # starship - an customizable prompt for any shell
+  programs.direnv = {
+    enable = true;
+  };
+
   programs.starship = {
     enable = true;
     # custom settings
@@ -75,7 +151,6 @@
     };
   };
 
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
   programs.alacritty = {
     enable = true;
     # custom settings

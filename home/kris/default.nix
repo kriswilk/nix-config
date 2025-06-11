@@ -2,7 +2,7 @@
 
 {
   imports = [
-      ../. # Common configuration
+    ../. # Common configuration
   ];
 
   home.username = "kris";
