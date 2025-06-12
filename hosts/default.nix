@@ -82,9 +82,6 @@
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
 
-  # Firefox
-  programs.firefox.enable = true;
-
   # Steam
   programs.steam = {
     enable = true;

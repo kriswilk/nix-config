@@ -7,30 +7,45 @@
   home.packages = with pkgs; [
     # fonts
     # onedrive, gdrive
-    # okular? already installed?
     # fineprint
     # renamer
+    # flatpak?
+    # segger j-link
+    # jdownloader2
+    # rufus
+    # crystaldiskinfo
+    # crystaldiskmark
+
+    # misc
+    kdePackages.krunner # already installed?
+    kdePackages.kalk # already installed?
+    kdePackages.kcalc # already installed?
 
     # suites
     libreoffice
 
-    # file management
+    # disk / file
+    kdePackages.ark # already installed?
+    kdePackages.filelight # already installed?
+    kdePackages.k3b # already installed?
+    krename # anything better?
     bcompare
+    ventoy
+    qbittorrent
 
     # audio
     audacity
-    mp3tag
 
     # video
     vlc
     ffmpeg
     handbrake
     mkvtoolnix
+    stremio
 
     # photo / illustration
     gimp3
     inkscape
-    #inkscap-with-extensions
     krita
 
     # 3d / cad
@@ -40,9 +55,10 @@
     prusa-slicer
 
     # text
-    pandoc
+    kdePackages.kate # already installed?
+    kdePackages.okular # already installed?
     calibre
-    #calibre-web
+    koreader
 
     # print / scan
     naps2
@@ -56,18 +72,14 @@
     tailscale
     wireshark
     angryipscanner
+    kdePackages.krdc # already installed?
 
     # storage
     rclone
-    # rufus
-    # anyburn
-    # wiztree
-    # crystaldiskinfo
-    # crystaldiskmark
 
     # gaming
+    jdk
     prismlauncher
-    # OpenJDK for minecraft?
 
     # cli
     neofetch
@@ -136,21 +148,6 @@
     usbutils # lsusb
   ];
 
-  programs.direnv = {
-    enable = true;
-  };
-
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
-      add_newline = false;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
-    };
-  };
-
   programs.alacritty = {
     enable = true;
     # custom settings
@@ -178,6 +175,29 @@
       k = "kubectl";
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+    };
+  };
+
+  programs.direnv = {
+    enable = true;
+  };
+
+  programs.firefox = {
+    enable = true;
+  };
+
+  programs.pandoc = {
+    enable = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    # custom settings
+    settings = {
+      add_newline = false;
+      aws.disabled = true;
+      gcloud.disabled = true;
+      line_break.disabled = true;
     };
   };
 }
