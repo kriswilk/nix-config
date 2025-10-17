@@ -19,7 +19,6 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # Networking
-  networking.wireless.enable = true;
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
   
