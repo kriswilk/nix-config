@@ -2,9 +2,9 @@
 
 {
   disko.devices = {
-    disk.primary = {
-      # Specify during deployment
-      # device = "/dev/XXX OR /dev/disk/by-uuid/<UUID>"
+    disk.main = {
+      # Must be specified unless supplied to disko-install during deployment
+      # device = "/dev/disk/by-uuid/<UUID>"
       type = "disk";
       content = {
         type = "gpt";
