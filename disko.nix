@@ -3,7 +3,7 @@
 {
   disko.devices = {
     disk.primary = {
-      # Specify the target disk in each host-specific `disko.nix`
+      # Specify during deployment
       # device = "/dev/XXX OR /dev/disk/by-uuid/<UUID>"
       type = "disk";
       content = {

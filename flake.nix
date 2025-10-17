@@ -21,16 +21,16 @@
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
-          ./hosts/vm
+          ./hosts/vm.nix
 
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.kris = import ./home/kris;
-            #home-manager.users.daniela = import ./home/daniela;
-            #home-manager.users.hugo = import ./home/hugo;
-            #home-manager.users.any = import ./home/any;
-            #home-manager.users.les = import ./home/les;
+            home-manager.users.kris = import ./home/kris.nix;
+            #home-manager.users.daniela = import ./home/daniela.nix;
+            #home-manager.users.hugo = import ./home/hugo.nix;
+            #home-manager.users.any = import ./home/any.nix;
+            #home-manager.users.les = import ./home/les.nix;
             #home-manager.extraSpecialArgs = {
             #  inherit inputs;
             #  self = inputs.self;

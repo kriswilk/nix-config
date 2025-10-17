@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./disko.nix
+    ../disko.nix
   ];
 
   # Nix / Nixpkgs
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05";
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
   nixpkgs.config.allowUnfree = true;
 
@@ -21,11 +21,12 @@
   # Networking
   networking.wireless.enable = true;
   networking.networkmanager.enable = true;
-
+  networking.networkmanager.wifi.backend = "iwd";
+  
   # Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-
+  
   # Desktop environment
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
