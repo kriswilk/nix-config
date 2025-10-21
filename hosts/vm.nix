@@ -5,7 +5,10 @@
     ./_common.nix
     ../hardware-configuration.nix
   ];
-  
+
+  # Disko target
+  disko.devices.disk.main.device = "/dev/sda";
+
   # Hostname
   networking.hostName = "vm";
 

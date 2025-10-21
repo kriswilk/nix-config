@@ -27,8 +27,8 @@
   hardware.bluetooth.powerOnBoot = true;
   
   # Desktop environment
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  #services.displayManager.sddm.enable = true;
+  #services.desktopManager.plasma6.enable = true;
 
   # Printing
   services.printing.enable = true;
@@ -67,10 +67,10 @@
   programs.ssh.startAgent = true;
 
   # Steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-  };
+  # programs.steam = {
+  #   enable = true;
+  #   remotePlay.openFirewall = true;
+  # };
 
   # System packages
   environment.systemPackages = with pkgs; [

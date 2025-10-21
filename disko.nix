@@ -3,8 +3,8 @@
 {
   disko.devices = {
     disk.main = {
-      # Must be specified here or via CLI
-      # device = "/dev/disk/by-uuid/<UUID>";
+      # Define this in the host configuration
+      # device = "/dev/XXX";
       type = "disk";
       content = {
         type = "gpt";
