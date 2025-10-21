@@ -21,13 +21,13 @@
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
-          ./hosts/vm.nix
+          ./hosts/vm
 
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.guest = import ./users/guest.nix;
-            home-manager.users.kris = import ./users/kris.nix;
+            home-manager.users.guest = import ./users/guest;
+            home-manager.users.kris = import ./users/kris;
           }
         ];
       };

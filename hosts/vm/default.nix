@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./_common.nix
-    ../hardware-configuration.nix
+    ../.
+    ./hardware-configuration.nix
   ];
 
   # Disko target

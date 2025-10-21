@@ -19,4 +19,6 @@ nix-shell -p disko
 sudo nixos-generate-config --no-filesystems --show-hardware-config > hardware-configuration.nix
 sudo disko --mode destroy,format,mount --flake .#<name>
 ```
+
+4. Copy the configuration to the new filesystem
 # WIP
