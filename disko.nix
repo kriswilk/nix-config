@@ -26,7 +26,7 @@
             size = "100%";
             content = {
               type = "luks";
-              name = "crypted";
+              name = "crypt";
               settings.allowDiscards = true;
                 
               content = {
@@ -50,7 +50,7 @@
                   };
                   
                   "/swap" = {
-                    mountpoint = "/.swapvol";
+                    mountpoint = "/swap";
                     swap.swapfile.size = "8G";
                   };
                 };                  

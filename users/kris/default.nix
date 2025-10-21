@@ -10,8 +10,8 @@
 
   programs.git = {
     enable = true;
-    userName = "Kris Wilk";
-    userEmail = "kris@reefnet.ca";
+    settings.user.name = "Kris Wilk";
+    settings.user.email = "kris@reefnet.ca";
   };
 
   home.packages = with pkgs; [
