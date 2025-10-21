@@ -31,6 +31,20 @@
           }
         ];
       };
+      desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          disko.nixosModules.disko
+          ./hosts/desktop
+
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.guest = import ./users/guest;
+            home-manager.users.kris = import ./users/kris;
+          }
+        ];
+      };
     };
   };
 }
