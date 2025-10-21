@@ -3,8 +3,8 @@
 {
   disko.devices = {
     disk.main = {
-      # Must be specified unless supplied to disko-install during deployment
-      # device = "/dev/disk/by-uuid/<UUID>"
+      # Must be specified here or via CLI
+      # device = "/dev/disk/by-uuid/<UUID>";
       type = "disk";
       content = {
         type = "gpt";

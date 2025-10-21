@@ -50,31 +50,15 @@
   users.users.kris = {
     isNormalUser = true;
     description = "Kris Wilk";
-    hashedPassword = "$6$gAiyBIv4.mq.cj7M$igjNOI.yUsGGR5LWISkq3Zo34dDfFwKRkBKqP0cxpkP6kvSSF8RyKGIwEztYLdkbinpDBcmKCp24.VhEv0zRK0";
+    password = "abc123";
+    #hashedPassword = "$6$gAiyBIv4.mq.cj7M$igjNOI.yUsGGR5LWISkq3Zo34dDfFwKRkBKqP0cxpkP6kvSSF8RyKGIwEztYLdkbinpDBcmKCp24.VhEv0zRK0";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-  users.users.daniela = {
+  users.users.guest = {
     isNormalUser = true;
-    description = "Daniela Wilk";
-    hashedPassword = "$6$gAiyBIv4.mq.cj7M$igjNOI.yUsGGR5LWISkq3Zo34dDfFwKRkBKqP0cxpkP6kvSSF8RyKGIwEztYLdkbinpDBcmKCp24.VhEv0zRK0";
-    extraGroups = [ "networkmanager" ];
-  };
-  users.users.hugo = {
-    isNormalUser = true;
-    description = "Hugo Wilk";
-    hashedPassword = "$6$gAiyBIv4.mq.cj7M$igjNOI.yUsGGR5LWISkq3Zo34dDfFwKRkBKqP0cxpkP6kvSSF8RyKGIwEztYLdkbinpDBcmKCp24.VhEv0zRK0";
-    extraGroups = [ "networkmanager" ];
-  };
-  users.users.any = {
-    isNormalUser = true;
-    description = "Any Wilk";
-    hashedPassword = "$6$gAiyBIv4.mq.cj7M$igjNOI.yUsGGR5LWISkq3Zo34dDfFwKRkBKqP0cxpkP6kvSSF8RyKGIwEztYLdkbinpDBcmKCp24.VhEv0zRK0";
-    extraGroups = [ "networkmanager" ];
-  };
-  users.users.les = {
-    isNormalUser = true;
-    description = "Les Wilk";
-    hashedPassword = "$6$gAiyBIv4.mq.cj7M$igjNOI.yUsGGR5LWISkq3Zo34dDfFwKRkBKqP0cxpkP6kvSSF8RyKGIwEztYLdkbinpDBcmKCp24.VhEv0zRK0";
+    description = "Guest User";
+    password = "guest";
+    #hashedPassword = "$6$gAiyBIv4.mq.cj7M$igjNOI.yUsGGR5LWISkq3Zo34dDfFwKRkBKqP0cxpkP6kvSSF8RyKGIwEztYLdkbinpDBcmKCp24.VhEv0zRK0";
     extraGroups = [ "networkmanager" ];
   };
 

@@ -13,4 +13,8 @@
     userName = "Kris Wilk";
     userEmail = "kris@reefnet.ca";
   };
+
+  home.packages = with pkgs; [
+    btop
+  ];
 }
