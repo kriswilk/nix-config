@@ -21,7 +21,7 @@
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
-          ./hosts/vm
+          ./hosts/vm.nix
 
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
@@ -35,7 +35,7 @@
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
-          ./hosts/desktop
+          ./hosts/desktop.nix
 
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;

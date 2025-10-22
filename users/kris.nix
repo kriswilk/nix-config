@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 
 {
   imports = [
-    ../.
+    ./_common.nix
   ];
 
   home.username = "kris";
