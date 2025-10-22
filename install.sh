@@ -20,7 +20,7 @@ sudo nixos-generate-config --no-filesystems --show-hardware-config
 echo && read -p "Press Enter to continue..."
 
 notify "RUN DISKO..."
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode destroy,format,mount --flake nix-config#${host}
+sudo disko --mode destroy,format,mount --flake nix-config#${host}
 
 notify "INSTALL NIXOS..."
 sudo nixos-install --no-channel-copy --no-root-password --flake nix-config#${host}

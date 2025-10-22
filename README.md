@@ -7,5 +7,6 @@ NixOS system & user configuration based on flakes and home-manager.
 After booting from a NixOS live CD/USB, run:
 
 ```
+nix-shell -p disko
 bash <(curl -Ls https://github.com/kriswilk/nix-config/raw/refs/heads/main/install.sh)
 ```
