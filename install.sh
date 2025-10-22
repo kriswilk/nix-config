@@ -9,19 +9,21 @@ C_RED='\e[0;31m'
 function notify() { echo -e "\n${C_YEL}${1}${C_OFF}"; sleep 1; }
 function fail() { echo -e "${C_RED}ERROR: ${1}${C_OFF}"; exit 1; }
 
+notify "CLONE REPO TO LIVE ENVIRONMENT..."
+git clone https://github.com/kriswilk/nix-config
+
 notify "HOSTNAME..."
 read -p "Enter the hostname: " host
 
 notify "GENERATE HARDWARE CONFIG..."
 sudo nixos-generate-config --no-filesystems --show-hardware-config
-echo
-read -p "Press Enter to continue..."
+echo && read -p "Press Enter to continue..."
 
 notify "RUN DISKO..."
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode destroy,format,mount --flake github:kriswilk/nix-config#${host}
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode destroy,format,mount --flake nix-config#${host}
 
 notify "INSTALL NIXOS..."
-sudo nixos-install --no-channel-copy --no-root-password --flake github:kriswilk/nix-config#${host}
+sudo nixos-install --no-channel-copy --no-root-password --flake nix-config#${host}
 
-notify "CLONE REPO..."
+notify "CLONE REPO TO NEW FILESYSTEM..."
 sudo git clone https://github.com/kriswilk/nix-config /mnt/etc/nixos
