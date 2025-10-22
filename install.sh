@@ -1,5 +1,4 @@
-#!/usr/bin/env nix-shell
-#!nix-shell -i bash --packages bash disko
+#!/bin/bash
 
 ## COLOURS ##
 C_OFF='\e[0m'
@@ -12,15 +11,14 @@ function fail() { echo -e "${C_RED}ERROR: ${1}${C_OFF}"; exit 1; }
 
 notify "HOSTNAME..."
 read -p "Enter the hostname: " host
-[[ -z "${host}" ]] && fail "Hostname cannot be empty"
 
 notify "GENERATE HARDWARE CONFIG..."
 sudo nixos-generate-config --no-filesystems --show-hardware-config
 echo
-read -s -p "Press Enter to continue..."
+read -p "Press Enter to continue..."
 
 notify "RUN DISKO..."
-sudo disko --mode destroy,format,mount --flake github:kriswilk/nix-config#${host}
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode destroy,format,mount --flake github:kriswilk/nix-config#${host}
 
 notify "INSTALL NIXOS..."
 sudo nixos-install --no-channel-copy --no-root-password --flake github:kriswilk/nix-config#${host}

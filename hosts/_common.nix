@@ -77,25 +77,4 @@
     curl
     git
   ];
-
-  environment.persistence."/persist" = {
-    enable = true;  # NB: Defaults to true, not needed
-    hideMounts = true;
-    directories = [
-      "/var/log"
-      "/etc/nixos"
-    ];
-    files = [
-      "/etc/machine-id"
-    ];
-    users.kris = {
-      directories = [
-        "pdir"
-      ];
-      files = [
-        "pfile"
-      ];
-    };
-  };
-
 }

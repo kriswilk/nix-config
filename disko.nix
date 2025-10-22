@@ -2,12 +2,6 @@
 
 {
   disko.devices = {
-    nodev = {
-      "/" = {
-        fsType = "tmpfs";
-        mountOptions = [ "size=1G" "mode=0755" ];
-      };
-    };
     disk.main = {
       # Define this in the host configuration
       # device = "/dev/XXX";
@@ -34,29 +28,23 @@
               type = "luks";
               name = "crypt";
               settings.allowDiscards = true;
-                
               content = {
-                type = "btrfs";
-                extraArgs = [ "-f" ];
-                
+                type = "btrfs";                
                 subvolumes = {
-                  # "/root" = {
-                  #   mountpoint = "/";
-                  #   mountOptions = [ "compress=zstd" "noatime" ];
-                  # };
+                  "/root" = {
+                    mountpoint = "/";
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                  };
                   
+                  "/home" = {
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                  };
+
                   "/nix" = {
-                    mountpoint = "/nix";
                     mountOptions = [ "compress=zstd" "noatime" ];
                   };
-                  
-                  "/persist" = {
-                    mountpoint = "/persist";
-                    mountOptions = [ "compress=zstd" "noatime" ];
-                  };
-                  
+
                   "/swap" = {
-                    mountpoint = "/swap";
                     swap.swapfile.size = "8G";
                   };
                 };                  
@@ -67,7 +55,5 @@
         };
       };
     };
-  };
-
-  fileSystems."/persist".neededForBoot = true;
+  }; 
 }

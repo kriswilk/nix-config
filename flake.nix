@@ -6,25 +6,21 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
     disko = {
-      url = "github:nix-community/disko/latest";
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    impermanence = {
-      url = "github:nix-community/impermanence";
-    };
   };
 
-  outputs = inputs@{ nixpkgs, disko, home-manager, impermanence, ... }: {
+  outputs = inputs@{ nixpkgs, disko, home-manager, ... }: {
     nixosConfigurations = {
       vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
-          impermanence.nixosModules.impermanence
           ./hosts/vm
 
           home-manager.nixosModules.home-manager {
@@ -39,7 +35,6 @@
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
-          impermanence.nixosModules.impermanence
           ./hosts/desktop
 
           home-manager.nixosModules.home-manager {

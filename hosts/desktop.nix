@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 
 {
   imports = [
-    ../.
-    ./hardware-configuration.nix
+    ./_common.nix
   ];
 
   # Disko target
@@ -16,4 +15,10 @@
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
+
+  ##################################
+  ##### HARDWARE CONFIGURATION #####
+  ##################################
+
+  throw "System-specific hardware configuration not provided.";
 }
