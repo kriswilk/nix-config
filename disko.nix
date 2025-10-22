@@ -2,6 +2,12 @@
 
 {
   disko.devices = {
+    nodev = {
+      "/" = {
+        fsType = "tmpfs";
+        mountOptions = [ "size=1G" "mode=0755" ];
+      };
+    };
     disk.main = {
       # Define this in the host configuration
       # device = "/dev/XXX";
@@ -34,10 +40,10 @@
                 extraArgs = [ "-f" ];
                 
                 subvolumes = {
-                  "/root" = {
-                    mountpoint = "/";
-                    mountOptions = [ "compress=zstd" "noatime" ];
-                  };
+                  # "/root" = {
+                  #   mountpoint = "/";
+                  #   mountOptions = [ "compress=zstd" "noatime" ];
+                  # };
                   
                   "/nix" = {
                     mountpoint = "/nix";
