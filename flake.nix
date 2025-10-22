@@ -26,8 +26,8 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.guest = import ./users/guest;
-            home-manager.users.kris = import ./users/kris;
+            home-manager.users.guest = import ./users/guest.nix;
+            home-manager.users.kris = import ./users/kris.nix;
           }
         ];
       };
@@ -40,8 +40,8 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.guest = import ./users/guest;
-            home-manager.users.kris = import ./users/kris;
+            home-manager.users.guest = import ./users/guest.nix;
+            home-manager.users.kris = import ./users/kris.nix;
           }
         ];
       };

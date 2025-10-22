@@ -1,4 +1,5 @@
-#!/bin/bash
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash --packages bash disko
 
 ## COLOURS ##
 C_OFF='\e[0m'
@@ -11,6 +12,7 @@ function fail() { echo -e "${C_RED}ERROR: ${1}${C_OFF}"; exit 1; }
 
 notify "CLONE REPO TO LIVE ENVIRONMENT..."
 git clone https://github.com/kriswilk/nix-config
+cd nix-config
 
 notify "HOSTNAME..."
 read -p "Enter the hostname: " host
@@ -20,10 +22,10 @@ sudo nixos-generate-config --no-filesystems --show-hardware-config
 echo && read -p "Press Enter to continue..."
 
 notify "RUN DISKO..."
-sudo disko --mode destroy,format,mount --flake nix-config#${host}
+sudo disko --mode destroy,format,mount --flake .#${host}
 
 notify "INSTALL NIXOS..."
-sudo nixos-install --no-channel-copy --no-root-password --flake nix-config#${host}
+sudo nixos-install --no-channel-copy --no-root-password --flake .#${host}
 
 notify "CLONE REPO TO NEW FILESYSTEM..."
 sudo git clone https://github.com/kriswilk/nix-config /mnt/etc/nixos
