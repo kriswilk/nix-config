@@ -72,6 +72,14 @@
   #   remotePlay.openFirewall = true;
   # };
 
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    shellAliases = {
+      k = "ls -al";
+    };
+  };
+
   # System packages
   environment.systemPackages = with pkgs; [
     curl
