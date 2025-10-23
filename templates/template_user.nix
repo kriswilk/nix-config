@@ -6,8 +6,8 @@
   ];
 
   home = {
-    username = "kris";
-    homeDirectory = "/home/kris";
+    username = "<USERNAME>";
+    homeDirectory = "/home/<USERNAME>";
 
     packages = with pkgs; [
       # user-specific packages
@@ -15,10 +15,6 @@
   };
 
   programs = {
-    git = {
-      enable = true;
-      settings.user.name = "Kris Wilk";
-      settings.user.email = "kris@reefnet.ca";
-    };
+    # user-specific programs/options
   };
 }

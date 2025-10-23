@@ -2,13 +2,19 @@
 
 {
   imports = [
-    ./_common.nix
+    ../.
   ];
 
-  home.username = "guest";
-  home.homeDirectory = "/home/guest";
+  home = {
+    username = "guest";
+    homeDirectory = "/home/guest";
 
-  home.packages = with pkgs; [
-    htop
-  ];
+    packages = with pkgs; [
+      # user-specific packages
+    ];
+  };
+
+  programs = {
+    # user-specific programs/options
+  };
 }

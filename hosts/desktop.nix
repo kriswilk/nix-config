@@ -2,23 +2,27 @@
 
 {
   imports = [
-    ./_common.nix
+    ../.
   ];
 
-  # Disko target
+  # target disk
   disko.devices.disk.main.device = "/dev/nvme0n1";
 
-  # Hostname
+  # hostname
   networking.hostName = "desktop";
-
-  # GPU - NVIDIA GTX 1070
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
 
   ##################################
   ##### HARDWARE CONFIGURATION #####
   ##################################
 
   throw "System-specific hardware configuration not provided.";
+
+  ##################################
+  ##### CUSTOM CONFIGURATION #####
+  ##################################
+
+  # GPU - NVIDIA GTX 1070
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = true;
 }

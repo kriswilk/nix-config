@@ -2,13 +2,13 @@
 
 {
   imports = [
-    ./_common.nix
+    ../.
   ];
 
-  # Disko target
+  # target disk
   disko.devices.disk.main.device = "/dev/<DEVICE>";
 
-  # Hostname
+  # hostname
   networking.hostName = "<HOSTNAME>";
 
   ##################################
@@ -16,4 +16,10 @@
   ##################################
 
   throw "System-specific hardware configuration not provided.";
+
+  ##################################
+  ##### CUSTOM CONFIGURATION #####
+  ##################################
+
+  # add host-specific configuration here
 }

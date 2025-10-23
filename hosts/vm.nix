@@ -2,13 +2,13 @@
 
 {
   imports = [
-    ./_common.nix
+    ../.
   ];
 
-  # Disko target
+  # target disk
   disko.devices.disk.main.device = "/dev/sda";
 
-  # Hostname
+  # hostname
   networking.hostName = "vm";
 
   ##################################

@@ -4,6 +4,49 @@
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 
+  home.shellAliases = {
+    # cd
+    ".." = "cd ..";
+    "..." = "cd ../..";
+    "...." = "cd ../../..";
+    # ls
+    ls = "ls --color=tty";
+    ll = "ls -l";
+    l = "ls -alh";
+    # other
+    urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
+    urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+  };
+
+  programs = {
+    bash.enable = true;
+    direnv.enable = true;
+    starship.enable = true;
+
+    htop.enable = true;
+    btop.enable = true;
+    fastfetch.enable = true;
+
+    yazi.enable = true;
+    # dependencies / helpers...
+    #nerd-fonts (recommended)
+    #ffmpeg # video thumbnails
+    #7-Zip # archive extraction and preview, requires non-standalone version
+    jq.enable = true; # JSON preview
+    #poppler # PDF preview
+    fd.enable = true; # file search
+    ripgrep.enable = true; # file content searching
+    fzf.enable = true; # quick file subtree navigation, >= 0.53.0
+    zoxide.enable = true; # historical directories navigation
+    #resvg # SVG preview
+    #ImageMagick # Font, HEIC, and JPEG XL preview, >= 7.1.1
+    #xclip / wl-clipboard / xsel # Linux clipboard support
+
+    # OTHER UNSORTED TOOLS
+    # yq-go # yaml processor https://github.com/mikefarah/yq
+    # eza # A modern replacement for ‘ls’
+  };
+
   # programs.alacritty = {
   #   enable = true;
   #   # custom settings
@@ -18,21 +61,6 @@
   #   };
   # };
 
-  home.shellAliases = {
-      l = "ls -al";
-      urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
-      urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
-  };
-
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-  };
-
-  programs.direnv = {
-    enable = true;
-  };
-
   # programs.firefox = {
   #   enable = true;
   # };
@@ -41,13 +69,7 @@
   #   enable = true;
   # };
 
-  programs.yazi.enable = true;
-
-  programs.starship = {
-    enable = true;
-  };
-
-home.packages = with pkgs; [
+  home.packages = with pkgs; [
     # fonts
     # onedrive, gdrive
     # fineprint
@@ -124,11 +146,6 @@ home.packages = with pkgs; [
     #jdk
     #prismlauncher
 
-    # cli
-    fastfetch
-
-
-
 
     # UNSORTED ITEMS FROM OTHER FLAKES
 
@@ -138,12 +155,7 @@ home.packages = with pkgs; [
     # unzip
     # p7zip
 
-    # # utils
-    # ripgrep # recursively searches directories for a regex pattern
-    # jq # A lightweight and flexible command-line JSON processor
-    # yq-go # yaml processor https://github.com/mikefarah/yq
-    # eza # A modern replacement for ‘ls’
-    # fzf # A command-line fuzzy finder
+    
 
     # # networking tools
     # mtr # A network diagnostic tool
@@ -165,10 +177,6 @@ home.packages = with pkgs; [
     # gawk
     # zstd
     # gnupg
-
-    # btop  # replacement of htop/nmon
-    # iotop # io monitoring
-    # iftop # network monitoring
 
     # # system call monitoring
     # strace # system call monitoring
