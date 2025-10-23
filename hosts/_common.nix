@@ -72,12 +72,11 @@
   #   remotePlay.openFirewall = true;
   # };
 
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-    shellAliases = {
-      k = "ls -al";
-    };
+  # Delete default shell aliases
+  environment.shellAliases = {
+    l = null;
+    ls = null;
+    ll = null;
   };
 
   # System packages
