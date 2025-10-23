@@ -5,46 +5,49 @@
     ../disko.nix
   ];
 
-  # Nix / Nixpkgs
+  # nix / nixpkgs
   system.stateVersion = "25.05";
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
   nixpkgs.config.allowUnfree = true;
 
-  # Bootloader
+  # bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Regional settings
+  # regional settings
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  # Networking
+  # networking
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
   
-  # Bluetooth
+  # bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   
-  # Desktop environment
-  #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma6.enable = true;
+  # printing
+  services.printing = {
+    enable = true;
+    # WIP needs testing/config
+  };
+  
+  # scanning
+  hardware.sane.enable = true;
+  # WIP needs testing/config
 
-  # Printing
-  services.printing.enable = true;
-
-  # Sound
+  # sound
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # To use JACK applications, uncomment this
+    # to use JACK applications, uncomment this
     # jack.enable = true;
   };
 
-  # Users
+  # users
   users.mutableUsers = false;
 
   users.users.kris = {
@@ -62,11 +65,11 @@
     extraGroups = [ "networkmanager" ];
   };
 
-  # SSH
+  # ssh
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
 
-  # Steam
+  # steam
   # programs.steam = {
   #   enable = true;
   #   remotePlay.openFirewall = true;
@@ -78,6 +81,10 @@
     ls = null;
     ll = null;
   };
+
+  # Desktop environment
+  #services.displayManager.sddm.enable = true;
+  #services.desktopManager.plasma6.enable = true;
 
   # System packages
   environment.systemPackages = with pkgs; [
