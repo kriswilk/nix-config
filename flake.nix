@@ -21,7 +21,7 @@
 
     # scan for host configurations
     hostsDir = ./hosts;
-    hostEntries = lib.filterAttrs (name: type: type == "directory") (lib.readDir hostsDir);
+    hostEntries = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
 
     # function that creates a nixosSystem for a given host name
     mkNixosSystem = host: type:
