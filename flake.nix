@@ -45,9 +45,9 @@
 
           # users
           home-manager.nixosModules.home-manager {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users = lib.mapAttrs mkUserHomeManager { kris ={}; guest = {}; };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users = lib.mapAttrs mkUserHomeManager { kris ={}; guest = {}; };
           }
         ];
         
