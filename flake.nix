@@ -41,8 +41,8 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.guest = { imports = [ ./users/home.nix ./users/guest/home.nix ]; };
-            home-manager.users.kris = { imports = [ ./users/home.nix ./users/guest/home.nix ]; };
+            home-manager.users.guest = { imports = [ ./users/home.nix ]; };
+            home-manager.users.kris = { imports = [ ./users/home.nix ]; };
           }
         ];
         
