@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfgHost, cfgUsers... }:
+{ config, lib, pkgs, cfgHost, cfgUsers, ... }:
 
 {
   # nix / nixpkgs
