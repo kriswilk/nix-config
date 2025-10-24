@@ -62,12 +62,12 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users = lib.mapAttrs mkUserHomeManager cfgUsers;
+            home-manager.users = lib.mapAttrs mkUserHomeManager users;
           }
         ];
         
         # inject variables as special arguments
-        specialArgs = { inherit self lib; cfgUsers = users; };
+        specialArgs = { inherit self lib; cfgHost = host; cfgUsers = users; };
       };
   in
   {
