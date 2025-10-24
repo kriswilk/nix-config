@@ -15,9 +15,9 @@
     };
   };
 
-  outputs = { self, lib, nixpkgs, disko, home-manager, ... }:
+  outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    #lib = nixpkgs.lib;
+    lib = nixpkgs.lib;
 
     # define users
     users = {
@@ -39,12 +39,15 @@
     hostsDir = ./hosts;
     hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
 
+    usersDir = ./hosts;
+
+    # helper - create a home-manager config for a given user
     mkUserHomeManager = user: userConfig:
     {
-      imports = [ ./users/home.nix ./users/${user}/home.nix ];
+      imports = [ (usersDir + "/home.nix") (usersDir + "/${user}/home.nix") ];
     };
 
-    # function that creates a nixosSystem for a given host
+    # helper - create a nixosSystem for a given host
     mkNixosSystem = host: type:
       lib.nixosSystem {
         system = "x86_64-linux";
