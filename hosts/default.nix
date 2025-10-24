@@ -11,21 +11,37 @@
   nixpkgs.config.allowUnfree = true;
 
   # bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
   # regional settings
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # networking
-  networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.backend = "iwd";
+  networking.networkmanager = {
+    enable = true;
+    wifi.backend = "iwd";
+  };
   
   # bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  # audio
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
   # printing
   services.printing = {
     enable = true;
@@ -36,20 +52,8 @@
   hardware.sane.enable = true;
   # WIP needs testing/config
 
-  # sound
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # to use JACK applications, uncomment this
-    # jack.enable = true;
-  };
-
   # users
   users.mutableUsers = false;
-
   users.users.kris = {
     isNormalUser = true;
     description = "Kris Wilk";
@@ -61,7 +65,6 @@
     isNormalUser = true;
     description = "Guest User";
     password = "guest";
-    #hashedPassword = "$6$gAiyBIv4.mq.cj7M$igjNOI.yUsGGR5LWISkq3Zo34dDfFwKRkBKqP0cxpkP6kvSSF8RyKGIwEztYLdkbinpDBcmKCp24.VhEv0zRK0";
     extraGroups = [ "networkmanager" ];
   };
 
@@ -69,24 +72,17 @@
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
 
+  # desktop environment
+  #services.displayManager.sddm.enable = true;
+  #services.desktopManager.plasma6.enable = true;
+
   # steam
   # programs.steam = {
   #   enable = true;
   #   remotePlay.openFirewall = true;
   # };
 
-  # Delete default shell aliases
-  environment.shellAliases = {
-    l = null;
-    ls = null;
-    ll = null;
-  };
-
-  # Desktop environment
-  #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma6.enable = true;
-
-  # System packages
+  # system packages
   environment.systemPackages = with pkgs; [
     curl
     git

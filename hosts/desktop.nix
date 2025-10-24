@@ -11,17 +11,13 @@
   # hostname
   networking.hostName = "desktop";
 
-  ##################################
   ##### HARDWARE CONFIGURATION #####
-  ##################################
 
-  throw "System-specific hardware configuration not provided.";
+  throw "System-specific hardware configuration missing.";
 
-  ##################################
   ##### CUSTOM CONFIGURATION #####
-  ##################################
 
-  # GPU - NVIDIA GTX 1070
+  # gpu - nvidia gtx 1070
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
