@@ -17,8 +17,9 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    lib = nixpkgs.lib;
+    #lib = nixpkgs.lib;
 
+    # define users
     users = {
       "kris" = {
         isNormalUser = true;
@@ -34,7 +35,7 @@
       };
     };
 
-    # find host configurations
+    # identify host configurations
     hostsDir = ./hosts;
     hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
 
