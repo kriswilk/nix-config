@@ -19,7 +19,8 @@
   let
     lib = nixpkgs.lib;
 
-    # define users
+    # users
+    usersDir = ./users;
     users = {
       "kris" = {
         isNormalUser = true;
@@ -34,19 +35,15 @@
         extraGroups = [ "networkmanager" ];
       };
     };
-
-    # identify host configurations
-    hostsDir = ./hosts;
-    hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
-
-    usersDir = ./users;
-
     # helper - create a home-manager config for a given user
     mkUserHomeManager = user: userConfig:
     {
       imports = [ (usersDir + "/home.nix") (usersDir + "/${user}/home.nix") ];
     };
 
+    # hosts
+    hostsDir = ./hosts;
+    hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
     # helper - create a nixosSystem for a given host
     mkNixosSystem = host: type:
       lib.nixosSystem {
