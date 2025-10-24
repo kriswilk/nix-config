@@ -42,7 +42,6 @@ in
   # 4. Use mapAttrs to apply the function to every user in the system
   # The result is an attribute set: { kriswilk = { imports = [...]; }; otheruser = { imports = [...]; }; }
   # This matches the structure expected by 'home-manager.users'.
-  home-manager.users = lib.mapAttrs mkUserHomeManager systemUsers;
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
