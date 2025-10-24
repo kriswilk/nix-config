@@ -19,7 +19,7 @@
   let
     lib = nixpkgs.lib;
 
-    cfgUsers = {
+    users = {
       "kris" = {
         isNormalUser = true;
         description = "Kris Wilk";
@@ -67,7 +67,7 @@
         ];
         
         # inject variables as special arguments
-        specialArgs = { inherit self lib; cfgHost = host; };
+        specialArgs = { inherit self lib; cfgUsers = users; };
       };
   in
   {
