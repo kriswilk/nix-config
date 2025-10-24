@@ -47,7 +47,7 @@
         ];
         
         # inject the host name and target disk as special arguments
-        specialArgs = { inherit self lib; cfgHost = host; cfgDisk = "/dev/sdXXX"; };
+        specialArgs = { inherit self lib; cfgHost = host; };
       };
   in
   {

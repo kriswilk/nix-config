@@ -1,9 +1,9 @@
-{ lib, cfgDisk, ... }:
+{ lib, ... }:
 
 {
   disko.devices = {
     disk.main = {
-      device = cfgDisk;
+      # specify 'disko.devices.disk.main.device = "/dev/<disk>"' in ./<host>/disko-configuration.nix
       type = "disk";
       content = {
         type = "gpt";
