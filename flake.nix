@@ -36,7 +36,7 @@
       };
     };
     # helper - create a home-manager config for a given user
-    mkUserHomeManager = user: userConfig:
+    mkHomeManagerUser = user: userConfig:
     {
       imports = [ (usersDir + "/home.nix") (usersDir + "/${user}/home.nix") ];
     };
@@ -63,7 +63,7 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users = lib.mapAttrs mkUserHomeManager users;
+            home-manager.users = lib.mapAttrs mkHomeManagerUser users;
           }
         ];
         
