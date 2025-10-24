@@ -19,12 +19,9 @@
   let
     lib = nixpkgs.lib;
 
-    # scan for host configurations
+    # find host configurations
     hostsDir = ./hosts;
     hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
-
-    systemUsers = config.users.users;
-    usersDir = ./users;
 
     # function that creates a nixosSystem for a given host
     mkNixosSystem = host: type:
