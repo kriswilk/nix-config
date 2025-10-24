@@ -57,7 +57,6 @@
     isNormalUser = true;
     description = "Kris Wilk";
     password = "abc123";
-    #hashedPassword = "$6$gAiyBIv4.mq.cj7M$igjNOI.yUsGGR5LWISkq3Zo34dDfFwKRkBKqP0cxpkP6kvSSF8RyKGIwEztYLdkbinpDBcmKCp24.VhEv0zRK0";
     extraGroups = [ "networkmanager" "wheel" ];
   };
   users.users.guest = {
