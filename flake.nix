@@ -31,38 +31,24 @@
       lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          # default configuration
+          # system
           (hostsDir + "/configuration.nix")
-          (hostsDir + "/disko-configuration.nix")
-          # host-specific configuration
           (hostsDir + "/${host}/configuration.nix")
           (hostsDir + "/${host}/hardware-configuration.nix")
+
+          # disko
+          disko.nixosModules.disko
+          (hostsDir + "/disko-configuration.nix")
           (hostsDir + "/${host}/disko-configuration.nix")
 
-          disko.nixosModules.disko
-
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users = lib.mapAttrs mkUserHomeManager systemUsers;
-          }
+          # home-manager
+          home-manager.nixosModules.home-manager
+          ./home-manager.nix
         ];
         
         # inject the host name and target disk as special arguments
         specialArgs = { inherit self lib; cfgHost = host; };
       };
-    
-    # generate a home-manager configuration for a given user
-    mkUserHomeManager = user: userConfig:
-    {
-      imports = [
-        # default configuration
-        (usersDir + "/home.nix")
-        # user-specific configuration
-        (usersDir + "/${user}/home.nix")
-      ];
-    };
-
   in
   {
     # 5. Dynamically create all nixosConfigurations
