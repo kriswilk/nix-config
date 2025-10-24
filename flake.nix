@@ -39,7 +39,7 @@
     hostsDir = ./hosts;
     hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
 
-    usersDir = ./hosts;
+    usersDir = ./users;
 
     # helper - create a home-manager config for a given user
     mkUserHomeManager = user: userConfig:
