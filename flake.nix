@@ -23,24 +23,32 @@
     hostsDir = ./hosts;
     hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
 
+  mkUserHomeManager = user: userConfig:
+  {
+    imports = [ "./users/home.nix" ".users/${user}/home.nix" ];
+  };
+
     # function that creates a nixosSystem for a given host
     mkNixosSystem = host: type:
       lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          # disk
+          disko.nixosModules.disko
+          (hostsDir + "/disko-configuration.nix")
+          (hostsDir + "/${host}/disko-configuration.nix")
+
           # system
           (hostsDir + "/configuration.nix")
           (hostsDir + "/${host}/configuration.nix")
           (hostsDir + "/${host}/hardware-configuration.nix")
 
-          # disko
-          disko.nixosModules.disko
-          (hostsDir + "/disko-configuration.nix")
-          (hostsDir + "/${host}/disko-configuration.nix")
-
-          # home-manager
-          home-manager.nixosModules.home-manager
-          ./home-manager.nix
+          # users
+          home-manager.nixosModules.home-manager {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users = lib.mapAttrs mkUserHomeManager { kris ={}; guest = {}; };
+          }
         ];
         
         # inject the host name and target disk as special arguments
