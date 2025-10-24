@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, ... }:
+  outputs = { self, lib, nixpkgs, disko, home-manager, ... }:
   let
     #lib = nixpkgs.lib;
 
