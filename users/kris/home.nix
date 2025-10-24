@@ -1,17 +1,9 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  imports = [
-    ../.
-  ];
-
   home = {
     username = "kris";
     homeDirectory = "/home/kris";
-
-    packages = with pkgs; [
-      # user-specific packages
-    ];
   };
 
   programs = {
@@ -21,4 +13,8 @@
       settings.user.email = "kris@reefnet.ca";
     };
   };
+
+  home.packages = with pkgs; [
+    # ...
+  ];
 }

@@ -1,10 +1,9 @@
-{ lib, ... }:
+{ lib, cfgDisk, ... }:
 
 {
   disko.devices = {
     disk.main = {
-      # Define this in the host configuration
-      # device = "/dev/XXX";
+      device = cfgDisk;
       type = "disk";
       content = {
         type = "gpt";

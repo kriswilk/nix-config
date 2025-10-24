@@ -1,14 +1,13 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, cfgHost, ... }:
 
 {
-  imports = [
-    ../disko.nix
-  ];
-
   # nix / nixpkgs
   system.stateVersion = "25.05";
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
   nixpkgs.config.allowUnfree = true;
+
+  # hostname
+  networking.hostName = cfgHost;
 
   # bootloader
   boot.loader = {

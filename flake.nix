@@ -1,6 +1,6 @@
 {
   description = "NixOS System & User Configuration";
-
+  
   inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -15,36 +15,43 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, disko, home-manager, ... }: {
-    nixosConfigurations = {
-      vm = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, disko, home-manager, ... }:
+  let
+    lib = nixpkgs.lib;
+
+    # scan for host configurations
+    hostsDir = ./hosts;
+    hostEntries = lib.filterAttrs (name: type: type == "directory") (lib.readDir hostsDir);
+
+    # function that creates a nixosSystem for a given host name
+    mkNixosSystem = host: type:
+      lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          # default configuration
+          (hostsDir + "/configuration.nix")
+          (hostsDir + "/disko-configuration.nix")
+          # custom configuration
+          (hostsDir + "/${host}/configuration.nix")
+          (hostsDir + "/${host}/hardware-configuration.nix")
+          (hostsDir + "/${host}/disko-configuration.nix")
+
           disko.nixosModules.disko
-          ./hosts/vm.nix
 
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.guest = import ./users/guest.nix;
-            home-manager.users.kris = import ./users/kris.nix;
+            home-manager.users.guest = { imports = [ ./users/default_home.nix ./users/guest/home.nix ]; };
+            home-manager.users.kris = { imports = [ ./users/default_home.nix ./users/guest/home.nix ]; };
           }
         ];
+        
+        # inject the host name and target disk as special arguments
+        specialArgs = { inherit self lib; cfgHost = host; cfgDisk = "/dev/sdXXX"; };
       };
-      desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          disko.nixosModules.disko
-          ./hosts/desktop.nix
-
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.guest = import ./users/guest.nix;
-            home-manager.users.kris = import ./users/kris.nix;
-          }
-        ];
-      };
-    };
+  in
+  {
+    # 5. Dynamically create all nixosConfigurations
+    nixosConfigurations = lib.mapAttrs mkNixosSystem hostEntries;
   };
 }

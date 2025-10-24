@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   home.stateVersion = "25.05";
@@ -9,13 +9,11 @@
     ".." = "cd ..";
     "..." = "cd ../..";
     "...." = "cd ../../..";
+
     # ls
     ls = "ls --color=tty";
     ll = "ls -l";
     l = "ls -alh";
-    # other
-    urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
-    urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
   };
 
   programs = {
@@ -42,31 +40,28 @@
     #xclip / wl-clipboard / xsel # Linux clipboard support
 
     # OTHER UNSORTED TOOLS
+    pandoc.enable = true;
     # yq-go # yaml processor https://github.com/mikefarah/yq
     # eza # A modern replacement for ‘ls’
+
+    # alacritty = {
+    #   enable = true;
+    #   # custom settings
+    #   settings = {
+    #     env.TERM = "xterm-256color";
+    #     font = {
+    #       size = 12;
+    #       draw_bold_text_with_bright_colors = true;
+    #     };
+    #     scrolling.multiplier = 5;
+    #     selection.save_to_clipboard = true;
+    #   };
+    # };
+
+    # firefox = {
+    #   enable = true;      
+    # };
   };
-
-  # programs.alacritty = {
-  #   enable = true;
-  #   # custom settings
-  #   settings = {
-  #     env.TERM = "xterm-256color";
-  #     font = {
-  #       size = 12;
-  #       draw_bold_text_with_bright_colors = true;
-  #     };
-  #     scrolling.multiplier = 5;
-  #     selection.save_to_clipboard = true;
-  #   };
-  # };
-
-  # programs.firefox = {
-  #   enable = true;
-  # };
-
-  # programs.pandoc = {
-  #   enable = true;
-  # };
 
   home.packages = with pkgs; [
     # fonts
