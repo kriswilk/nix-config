@@ -16,7 +16,7 @@ let
       # List of modules to import for this user.
       userModules = [
         # Always import the default shared configuration
-         usersDir + "/home.nix")
+        (usersDir + "/home.nix")
       ] 
       # Conditionally add the user-specific configuration if it exists
       ++ lib.optionals userFileExists (
