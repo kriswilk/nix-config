@@ -32,7 +32,7 @@
         password = "guest";
         extraGroups = [ "networkmanager" ];
       };
-    }
+    };
 
     # find host configurations
     hostsDir = ./hosts;
