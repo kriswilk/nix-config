@@ -38,27 +38,27 @@
     hostsDir = ./hosts;
     hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
 
-  mkUserHomeManager = user: userConfig:
-  {
-    imports = [ ./users/home.nix ./users/${user}/home.nix ];
-  };
+    mkUserHomeManager = user: userConfig:
+    {
+      imports = [ ./users/home.nix ./users/${user}/home.nix ];
+    };
 
     # function that creates a nixosSystem for a given host
     mkNixosSystem = host: type:
       lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          # disk
-          disko.nixosModules.disko
-          (hostsDir + "/disko-configuration.nix")
-          (hostsDir + "/${host}/disko-configuration.nix")
-
-          # system
+          # system configuration
           (hostsDir + "/configuration.nix")
           (hostsDir + "/${host}/configuration.nix")
           (hostsDir + "/${host}/hardware-configuration.nix")
 
-          # users
+          # disko
+          disko.nixosModules.disko
+          (hostsDir + "/disko-configuration.nix")
+          (hostsDir + "/${host}/disko-configuration.nix")
+
+          # home-manager
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -66,12 +66,12 @@
           }
         ];
         
-        # inject the host name and target disk as special arguments
+        # inject variables as special arguments
         specialArgs = { inherit self lib; cfgHost = host; };
       };
   in
   {
-    # 5. Dynamically create all nixosConfigurations
+    # dynamically create nixosConfigurations
     nixosConfigurations = lib.mapAttrs mkNixosSystem hosts;
   };
 }
