@@ -3,7 +3,7 @@
 let
   systemUsers = { kris={}; guest={};};
 
-  usersDir = "./users";
+  usersDir = ./users;
   
   mkUserHomeManager = user: userConfig:
     {
