@@ -1,11 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  home = {
-    username = "kris";
-    homeDirectory = "/home/kris";
-  };
-
   programs = {
     git = {
       enable = true;
