@@ -25,7 +25,7 @@
 
   mkUserHomeManager = user: userConfig:
   {
-    imports = [ "./users/home.nix" ".users/${user}/home.nix" ];
+    imports = [ "./users/home.nix" "./users/${user}/home.nix" ];
   };
 
     # function that creates a nixosSystem for a given host
