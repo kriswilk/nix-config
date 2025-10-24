@@ -19,6 +19,21 @@
   let
     lib = nixpkgs.lib;
 
+    cfgUsers = {
+      "kris" = {
+        isNormalUser = true;
+        description = "Kris Wilk";
+        password = "abc123";
+        extraGroups = [ "networkmanager" "wheel" ];
+      };
+      "guest" = {
+        isNormalUser = true;
+        description = "Guest User";
+        password = "guest";
+        extraGroups = [ "networkmanager" ];
+      };
+    }
+
     # find host configurations
     hostsDir = ./hosts;
     hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
@@ -47,7 +62,7 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users = lib.mapAttrs mkUserHomeManager { kris ={}; guest = {}; };
+            home-manager.users = lib.mapAttrs mkUserHomeManager cfgUsers;
           }
         ];
         
