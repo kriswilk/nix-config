@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  systemUsers = { kris={}; guest={};};
+  systemUsers = config.users.users;
 
   usersDir = ./users;
   
