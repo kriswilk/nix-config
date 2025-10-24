@@ -21,9 +21,12 @@
 
     # scan for host configurations
     hostsDir = ./hosts;
-    hostEntries = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
+    hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostsDir);
 
-    # function that creates a nixosSystem for a given host name
+    systemUsers = config.users.users;
+    usersDir = ./users;
+
+    # function that creates a nixosSystem for a given host
     mkNixosSystem = host: type:
       lib.nixosSystem {
         system = "x86_64-linux";
@@ -31,7 +34,7 @@
           # default configuration
           (hostsDir + "/configuration.nix")
           (hostsDir + "/disko-configuration.nix")
-          # custom configuration
+          # host-specific configuration
           (hostsDir + "/${host}/configuration.nix")
           (hostsDir + "/${host}/hardware-configuration.nix")
           (hostsDir + "/${host}/disko-configuration.nix")
@@ -41,17 +44,28 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.guest = { imports = [ ./users/home.nix ./users/guest/home.nix]; };
-            home-manager.users.kris = { imports = [ ./users/home.nix ./users/kris/home.nix]; };
+            home-manager.users = lib.mapAttrs mkUserHomeManager systemUsers;
           }
         ];
         
         # inject the host name and target disk as special arguments
         specialArgs = { inherit self lib; cfgHost = host; };
       };
+    
+    # generate a home-manager configuration for a given user
+    mkUserHomeManager = user: userConfig:
+    {
+      imports = [
+        # default configuration
+        (usersDir + "/home.nix")
+        # user-specific configuration
+        (usersDir + "/${user}/home.nix")
+      ];
+    };
+
   in
   {
     # 5. Dynamically create all nixosConfigurations
-    nixosConfigurations = lib.mapAttrs mkNixosSystem hostEntries;
+    nixosConfigurations = lib.mapAttrs mkNixosSystem hosts;
   };
 }
