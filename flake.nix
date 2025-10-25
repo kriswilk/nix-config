@@ -38,7 +38,7 @@
           (hostDir + "/configuration.nix")
           (hostDir + "/${host}/configuration.nix")
           (hostDir + "/${host}/hardware-configuration.nix")
-          (userDir + "/user-configuration.nix")
+          (hostDir + "/user-configuration.nix")
 
           # disko
           disko.nixosModules.disko
