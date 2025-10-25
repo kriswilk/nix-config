@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   "kris" = {
     isNormalUser = true;
