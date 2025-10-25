@@ -21,21 +21,7 @@
 
     # users
     userDir = ./user;
-    userList = {
-      "kris" = {
-        isNormalUser = true;
-        description = "Kris Wilk";
-        password = "abc123";
-        extraGroups = [ "networkmanager" "wheel" ];
-      };
-      "guest" = {
-        isNormalUser = true;
-        description = "Guest User";
-        password = "guest";
-        extraGroups = [ "networkmanager" ];
-      };
-    };
-    # helper - create a home-manager config for a given user
+    users = import (userDir + "/list.nix");
     mkHomeManagerUser = user: userConfig:
     {
       imports = [ (userDir + "/home.nix") (userDir + "/${user}/home.nix") ];
@@ -43,8 +29,7 @@
 
     # hosts
     hostDir = ./host;
-    hostList = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostDir);
-    # helper - create a nixosSystem for a given host
+    hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostDir);
     mkNixosSystem = host: type:
       lib.nixosSystem {
         system = "x86_64-linux";
@@ -63,16 +48,16 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users = lib.mapAttrs mkHomeManagerUser userList;
+            home-manager.users = lib.mapAttrs mkHomeManagerUser users;
           }
         ];
         
         # inject variables as special arguments
-        specialArgs = { inherit self lib; cfgHost = host; cfgUsers = userList; };
+        specialArgs = { inherit self lib; cfgHost = host; cfgUsers = users; };
       };
   in
   {
     # dynamically create nixosConfigurations
-    nixosConfigurations = lib.mapAttrs mkNixosSystem hostList;
+    nixosConfigurations = lib.mapAttrs mkNixosSystem hosts;
   };
 }
