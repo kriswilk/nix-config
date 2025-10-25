@@ -50,7 +50,7 @@
             home-manager.useUserPackages = true;
             home-manager.users = lib.mapAttrs mkHomeManagerUser users;
           }
-        ];
+        ] ++ lib.attrValues (lib.mapAttrs (user: type: (userDir + "/${user}/user.nix")) users);;
         
         # inject variables as special arguments
         specialArgs = { inherit self lib; cfgHost = host; cfgUsers = users; };
