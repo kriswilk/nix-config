@@ -23,7 +23,9 @@
     userDir = ./user;
     users = lib.filterAttrs (name: type: type == "directory") (builtins.readDir userDir);
     mkHomeManagerUser = user: type:
+    {
       imports = [ (userDir + "/home.nix") (userDir + "/${user}/home.nix") ];
+    };
 
     # hosts
     hostDir = ./host;
