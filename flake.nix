@@ -29,8 +29,8 @@
 
     # hosts
     hostDir = ./host;
-    hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostDir);
-    mkNixosSystem = host: type:
+    hosts = builtins.attrNames (lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostDir));
+    mkNixosSystem = host:
       lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
