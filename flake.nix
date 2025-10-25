@@ -38,6 +38,7 @@
           (hostDir + "/configuration.nix")
           (hostDir + "/${host}/configuration.nix")
           (hostDir + "/${host}/hardware-configuration.nix")
+          (userDir + "/user-configuration.nix")
 
           # disko
           disko.nixosModules.disko
@@ -50,10 +51,10 @@
             home-manager.useUserPackages = true;
             home-manager.users = lib.mapAttrs mkHomeManagerUser users;
           }
-        ] ++ lib.attrValues (lib.mapAttrs (user: type: (userDir + "/${user}/user.nix")) users);
+        ];
         
         # inject variables as special arguments
-        specialArgs = { inherit self lib; cfgHost = host; cfgUsers = users; };
+        specialArgs = { inherit self lib; cfgHost = host; };
       };
   in
   {

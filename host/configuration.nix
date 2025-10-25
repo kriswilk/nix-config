@@ -51,12 +51,6 @@
   hardware.sane.enable = true;
   # WIP needs testing/config
 
-  # users
-  users.mutableUsers = false;
-  #imports = lib.attrValues (lib.mapAttrs (user: type: (../user/${user}/user.nix)) cfgUsers);
-  
-  #users.users = cfgUsers;
-
   # ssh
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
