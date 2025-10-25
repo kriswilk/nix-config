@@ -53,6 +53,8 @@
 
   # users
   users.mutableUsers = false;
+  imports = lib.attrValues lib.mapAttrs (user: type: ("./user/${user}/user.nix")) cfgUsers
+  
   #users.users = cfgUsers;
 
   # ssh
