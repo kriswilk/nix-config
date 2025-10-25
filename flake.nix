@@ -21,8 +21,8 @@
 
     # users
     userDir = ./user;
-    users = import (userDir + "/list.nix");
-    mkHomeManagerUser = user: userConfig:
+    users = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostDir);
+    mkHomeManagerUser = user: type:
     {
       imports = [ (userDir + "/home.nix") (userDir + "/${user}/home.nix") ];
     };
@@ -38,6 +38,7 @@
           (hostDir + "/configuration.nix")
           (hostDir + "/${host}/configuration.nix")
           (hostDir + "/${host}/hardware-configuration.nix")
+          lib.mapAttrs (user: type: (userDir + "/${user}/user.nix")) users
 
           # disko
           disko.nixosModules.disko
@@ -53,7 +54,7 @@
         ];
         
         # inject variables as special arguments
-        specialArgs = { inherit self lib; cfgHost = host; cfgUsers = users; };
+        specialArgs = { inherit self lib; cfgHost = host; };
       };
   in
   {

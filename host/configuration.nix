@@ -53,7 +53,7 @@
 
   # users
   users.mutableUsers = false;
-  users.users = cfgUsers;
+  #users.users = cfgUsers;
 
   # ssh
   services.openssh.enable = true;
