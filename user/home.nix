@@ -14,6 +14,8 @@
     l = "ls -alh";
   };
 
+  fonts.fontconfig.enable = true;
+
   programs = {
     # shell
     bash.enable = true;
@@ -67,21 +69,9 @@
     # eza # A modern replacement for ‘ls’
   };
 
-  fonts.fontconfig.enable = true;
-  
   home.packages = with pkgs; [
-    jetbrains-mono
-    #fira-code
-    nerd-fonts.jetbrains-mono
-    #nerd-fonts.fira-code
     # fonts
-    # onedrive, gdrive
-    # fineprint
-    # renamer
-    # flatpak?
-    # segger j-link
-    # jdownloader2
-    # rufus
+    nerd-fonts.jetbrains-mono
 
     # basic
     file
@@ -165,7 +155,7 @@
 
     # benchmarking / testing
     fio # disk performance
-    iperf3 # network performance
+    iperf33 # network performance
     
     # monitoring
     smartmontools # disk health
@@ -185,9 +175,15 @@
 
     # # networking tools
     # mtr # A network diagnostic tool
-    # iperf3
     # aria2 # A lightweight multi-protocol & multi-source command-line download utility
     # socat # replacement of openbsd-netcat
     # nmap # A utility for network discovery and security auditing
+
+
+    # onedrive, gdrive
+    # fineprint
+    # renamer
+    # segger j-link
+    # jdownloader2
   ];
 }

@@ -67,6 +67,7 @@
 
   # flatpak
   #services.flatpak.enable = true;
+  # WIP: need to add flathub repo?
 
   # system packages
   environment.systemPackages = with pkgs; [
