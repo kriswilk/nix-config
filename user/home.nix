@@ -55,7 +55,6 @@
 
   # file manager (w/ deps)
   programs.yazi.enable = true;
-  home.packages = with pkgs; [ ffmpeg p7zip poppler jq fd ripgrep fzf zoxide resvg imagemagick file ];
   #nerd-fonts (recommended)
   programs.jq.enable = true; # JSON preview
   programs.fd.enable = true; # file search
@@ -65,6 +64,8 @@
   #xclip / wl-clipboard / xsel # Linux clipboard support
 
   home.packages = with pkgs; [
+    ffmpeg p7zip poppler jq fd ripgrep fzf zoxide resvg imagemagick file
+
     # fonts
     nerd-fonts.jetbrains-mono
 
