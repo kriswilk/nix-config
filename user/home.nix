@@ -27,8 +27,23 @@
     fastfetch.enable = true;
 
     # text
-    neovim.enable = true;
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+    };
     pandoc.enable = true;
+
+    # file management
+    yazi.enable = true; # terminal file manager
+    fd.enable = true; # 'find' alternative
+    ripgrep.enable = true; # recursive content searching
+    fzf.enable = true; # fuzzy finder
+    zoxide.enable = true; # 'cd' alternative
+    #xclip / wl-clipboard / xsel # Linux clipboard support
+
+    # text / pdf / document
+    jq.enable = true; # json processor
 
     # terminal
     # alacritty = {
@@ -48,59 +63,51 @@
     # browser
     # firefox.enable = true;
 
+    # development
+    git.enable = true;
+
     # OTHER UNSORTED TOOLS
     # yq-go # yaml processor https://github.com/mikefarah/yq
     # eza # A modern replacement for ‘ls’
   };
 
-  # file manager (w/ deps)
-  programs.yazi.enable = true;
-  #nerd-fonts (recommended)
-  programs.jq.enable = true; # JSON preview
-  programs.fd.enable = true; # file search
-  programs.ripgrep.enable = true; # file content searching
-  programs.fzf.enable = true; # quick file subtree navigation, >= 0.53.0
-  programs.zoxide.enable = true; # historical directories navigation
-  #xclip / wl-clipboard / xsel # Linux clipboard support
-
   home.packages = with pkgs; [
-    ffmpeg p7zip poppler jq fd ripgrep fzf zoxide resvg imagemagick file
-
-    # fonts
+    # font
     nerd-fonts.jetbrains-mono
 
-    # basic
-    file
-    tree
+    # file management
+    file # display file type
+    tree # visualize directory structure
+    #
+    #kdePackages.ark # already installed?
+    #kdePackages.filelight # already installed?
+    #kdePackages.k3b # already installed?
+    #krename # anything better?
+    #bcompare
 
     # misc
     #kdePackages.krunner # already installed?
     #kdePackages.kalk # already installed?
     #kdePackages.kcalc # already installed?
 
-    # suites
+    # suite
     #libreoffice
-
-    # disk / file
-    #kdePackages.ark # already installed?
-    #kdePackages.filelight # already installed?
-    #kdePackages.k3b # already installed?
-    #krename # anything better?
-    #bcompare
-    #ventoy #insecure warning?
-    #qbittorrent
 
     # audio
     #audacity
 
     # video
-    #vlc
-    #ffmpeg
-    #handbrake
+    ffmpeg # video processing
     #mkvtoolnix
+    #handbrake
+    #
     #stremio
+    #vlc
 
     # photo / illustration
+    imagemagick # image processing
+    resvg # svg rendering
+    #
     #gimp3
     #inkscape
     #krita
@@ -111,8 +118,13 @@
     #kicad
     #prusa-slicer
 
-    # text
-    nano
+    # text / pdf / document
+    nano # editor
+    gnugrep # grep
+    gnused # sed
+    gawk # awk
+    poppler # pdf tools
+    #
     #kdePackages.kate # already installed?
     #kdePackages.okular # already installed?
     #calibre
@@ -121,12 +133,7 @@
     # print / scan
     #naps2
 
-    # programming
-    #vscode-fhs
-    #vscode
-    #imhex
-
-    # networking
+    # network
     dnsutils # dig, nslookup, ...
     #tailscale
     #wireshark
@@ -143,6 +150,10 @@
     # development
     gnumake
     gcc
+    #
+    #vscode-fhs
+    #vscode
+    #imhex
 
     # archives
     zip
@@ -165,7 +176,12 @@
     lsof # open files
 
     # security
-    gnupg
+    gnupg # gpg
+
+    # misc
+    #ventoy #insecure warning?
+    #qbittorrent
+
 
     # UNSORTED ITEMS FROM OTHER FLAKES
 
