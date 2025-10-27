@@ -28,19 +28,15 @@
 
     # file management
     yazi.enable = true;
-      # dependencies / helpers...
-      #nerd-fonts (recommended)
-      #ffmpeg # video thumbnails
-      #7-Zip # archive extraction and preview, requires non-standalone version
-      jq.enable = true; # JSON preview
-      #poppler # PDF preview
-      fd.enable = true; # file search
-      ripgrep.enable = true; # file content searching
-      fzf.enable = true; # quick file subtree navigation, >= 0.53.0
-      zoxide.enable = true; # historical directories navigation
-      #resvg # SVG preview
-      #ImageMagick # Font, HEIC, and JPEG XL preview, >= 7.1.1
-      #xclip / wl-clipboard / xsel # Linux clipboard support
+    # dependencies
+    home.packages = with pkgs; [ ffmpeg p7zip poppler jq fd ripgrep fzf zoxide resvg imagemagick ];
+    #nerd-fonts (recommended)
+    jq.enable = true; # JSON preview
+    fd.enable = true; # file search
+    ripgrep.enable = true; # file content searching
+    fzf.enable = true; # quick file subtree navigation, >= 0.53.0
+    zoxide.enable = true; # historical directories navigation
+    #xclip / wl-clipboard / xsel # Linux clipboard support
 
     # text
     neovim.enable = true;
