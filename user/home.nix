@@ -39,10 +39,9 @@
     #ImageMagick # Font, HEIC, and JPEG XL preview, >= 7.1.1
     #xclip / wl-clipboard / xsel # Linux clipboard support
 
-    # OTHER UNSORTED TOOLS
-    pandoc.enable = true;
-    # yq-go # yaml processor https://github.com/mikefarah/yq
-    # eza # A modern replacement for ‘ls’
+    neovim = {
+      enable = true;
+    };
 
     # alacritty = {
     #   enable = true;
@@ -61,6 +60,15 @@
     # firefox = {
     #   enable = true;      
     # };
+
+
+
+    # OTHER UNSORTED TOOLS
+    pandoc.enable = true;
+    # yq-go # yaml processor https://github.com/mikefarah/yq
+    # eza # A modern replacement for ‘ls’
+
+
   };
 
   home.packages = with pkgs; [
