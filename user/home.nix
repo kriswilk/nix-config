@@ -151,7 +151,7 @@
 
     # benchmarking / testing
     fio # disk performance
-    iperf33 # network performance
+    iperf3 # network performance
     
     # monitoring
     smartmontools # disk health
