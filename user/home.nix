@@ -150,6 +150,9 @@
 
 
     # UNSORTED ITEMS FROM OTHER FLAKES
+    gnumake
+    gcc
+    unzip
 
     # # archives
     # zip
