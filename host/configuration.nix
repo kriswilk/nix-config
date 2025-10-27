@@ -66,7 +66,7 @@
   # };
 
   # flatpak
-  services.flatpak.enable = true;
+  #services.flatpak.enable = true;
 
   # system packages
   environment.systemPackages = with pkgs; [
