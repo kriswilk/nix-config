@@ -15,12 +15,12 @@
   };
 
   programs = {
-    #shell
+    # shell
     bash.enable = true;
     direnv.enable = true;
     starship.enable = true;
 
-    # monitoring / info
+    # monitoring
     btop.enable = true;
     fastfetch.enable = true;
 
@@ -43,8 +43,6 @@
     # text
     neovim.enable = true;
     pandoc.enable = true;
-
-    flatpak.enable = true;
 
     # terminal
     # alacritty = {
@@ -69,7 +67,13 @@
     # eza # A modern replacement for ‘ls’
   };
 
+  fonts.fontconfig.enable = true;
+  
   home.packages = with pkgs; [
+    jetbrains-mono
+    fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
     # fonts
     # onedrive, gdrive
     # fineprint
@@ -78,8 +82,6 @@
     # segger j-link
     # jdownloader2
     # rufus
-    # crystaldiskinfo
-    # crystaldiskmark
 
     # basic
     file
@@ -146,7 +148,7 @@
     #kdePackages.krdc # already installed?
 
     # storage
-    #rclone
+    rclone
 
     # gaming
     #jdk
@@ -161,8 +163,13 @@
     unzip
     p7zip
 
-    # system / monitoring
-    sysstat # performance
+    # benchmarking / testing
+    fio # disk performance
+    iperf3 # network performance
+    
+    # monitoring
+    smartmontools # disk health
+    sysstat # system performance
     lm_sensors # sensors
     ethtool # ethernet
     pciutils # pci
@@ -171,7 +178,7 @@
     ltrace # library calls
     lsof # open files
 
-    # misc
+    # security
     gnupg
 
     # UNSORTED ITEMS FROM OTHER FLAKES

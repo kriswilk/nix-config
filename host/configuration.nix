@@ -65,6 +65,9 @@
   #   remotePlay.openFirewall = true;
   # };
 
+  # flatpak
+  services.flatpak.enable = true;
+
   # system packages
   environment.systemPackages = with pkgs; [
     curl
