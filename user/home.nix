@@ -7,8 +7,6 @@
   home.shellAliases = {
     # cd
     ".." = "cd ..";
-    "..." = "cd ../..";
-    "...." = "cd ../../..";
 
     # ls
     ls = "ls --color=tty";
@@ -17,32 +15,38 @@
   };
 
   programs = {
+    #shell
     bash.enable = true;
     direnv.enable = true;
     starship.enable = true;
 
+    # monitoring / info
     btop.enable = true;
     fastfetch.enable = true;
 
+    # file management
     yazi.enable = true;
-    # dependencies / helpers...
-    #nerd-fonts (recommended)
-    #ffmpeg # video thumbnails
-    #7-Zip # archive extraction and preview, requires non-standalone version
-    jq.enable = true; # JSON preview
-    #poppler # PDF preview
-    fd.enable = true; # file search
-    ripgrep.enable = true; # file content searching
-    fzf.enable = true; # quick file subtree navigation, >= 0.53.0
-    zoxide.enable = true; # historical directories navigation
-    #resvg # SVG preview
-    #ImageMagick # Font, HEIC, and JPEG XL preview, >= 7.1.1
-    #xclip / wl-clipboard / xsel # Linux clipboard support
+      # dependencies / helpers...
+      #nerd-fonts (recommended)
+      #ffmpeg # video thumbnails
+      #7-Zip # archive extraction and preview, requires non-standalone version
+      jq.enable = true; # JSON preview
+      #poppler # PDF preview
+      fd.enable = true; # file search
+      ripgrep.enable = true; # file content searching
+      fzf.enable = true; # quick file subtree navigation, >= 0.53.0
+      zoxide.enable = true; # historical directories navigation
+      #resvg # SVG preview
+      #ImageMagick # Font, HEIC, and JPEG XL preview, >= 7.1.1
+      #xclip / wl-clipboard / xsel # Linux clipboard support
 
-    neovim = {
-      enable = true;
-    };
+    # text
+    neovim.enable = true;
+    pandoc.enable = true;
 
+    flatpak.enable = true;
+
+    # terminal
     # alacritty = {
     #   enable = true;
     #   # custom settings
@@ -57,18 +61,12 @@
     #   };
     # };
 
-    # firefox = {
-    #   enable = true;      
-    # };
-
-
+    # browser
+    # firefox.enable = true;
 
     # OTHER UNSORTED TOOLS
-    pandoc.enable = true;
     # yq-go # yaml processor https://github.com/mikefarah/yq
     # eza # A modern replacement for ‘ls’
-
-
   };
 
   home.packages = with pkgs; [
@@ -82,6 +80,10 @@
     # rufus
     # crystaldiskinfo
     # crystaldiskmark
+
+    # basic
+    file
+    tree
 
     # misc
     #kdePackages.krunner # already installed?
@@ -122,6 +124,7 @@
     #prusa-slicer
 
     # text
+    nano
     #kdePackages.kate # already installed?
     #kdePackages.okular # already installed?
     #calibre
@@ -136,6 +139,7 @@
     #imhex
 
     # networking
+    dnsutils # dig, nslookup, ...
     #tailscale
     #wireshark
     #angryipscanner
@@ -148,41 +152,35 @@
     #jdk
     #prismlauncher
 
-
-    # UNSORTED ITEMS FROM OTHER FLAKES
+    # development
     gnumake
     gcc
+
+    # archives
+    zip
     unzip
+    p7zip
 
-    # # archives
-    # zip
-    # xz
-    # unzip
-    # p7zip
-
-    # # networking tools
-    # mtr # A network diagnostic tool
-    # iperf3
-    # dnsutils  # `dig` + `nslookup`
-    # aria2 # A lightweight multi-protocol & multi-source command-line download utility
-    # socat # replacement of openbsd-netcat
-    # nmap # A utility for network discovery and security auditing
-
-    # # misc
-    # file
-    # tree
-    # gnupg
-
-    # # system call monitoring
-    # strace # system call monitoring
-    # ltrace # library call monitoring
-    # lsof # list open files
-
-    # system
+    # system / monitoring
     sysstat # performance
     lm_sensors # sensors
     ethtool # ethernet
     pciutils # pci
     usbutils # usb
+    strace # system calls
+    ltrace # library calls
+    lsof # open files
+
+    # misc
+    gnupg
+
+    # UNSORTED ITEMS FROM OTHER FLAKES
+
+    # # networking tools
+    # mtr # A network diagnostic tool
+    # iperf3
+    # aria2 # A lightweight multi-protocol & multi-source command-line download utility
+    # socat # replacement of openbsd-netcat
+    # nmap # A utility for network discovery and security auditing
   ];
 }
