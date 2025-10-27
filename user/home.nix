@@ -72,8 +72,8 @@
   home.packages = with pkgs; [
     jetbrains-mono
     fira-code
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
+    #nerd-fonts.jetbrains-mono
+    #nerd-fonts.fira-code
     # fonts
     # onedrive, gdrive
     # fineprint
