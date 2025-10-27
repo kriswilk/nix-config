@@ -26,18 +26,6 @@
     btop.enable = true;
     fastfetch.enable = true;
 
-    # file management
-    yazi.enable = true;
-    # dependencies
-    home.packages = with pkgs; [ ffmpeg p7zip poppler jq fd ripgrep fzf zoxide resvg imagemagick ];
-    #nerd-fonts (recommended)
-    jq.enable = true; # JSON preview
-    fd.enable = true; # file search
-    ripgrep.enable = true; # file content searching
-    fzf.enable = true; # quick file subtree navigation, >= 0.53.0
-    zoxide.enable = true; # historical directories navigation
-    #xclip / wl-clipboard / xsel # Linux clipboard support
-
     # text
     neovim.enable = true;
     pandoc.enable = true;
@@ -64,6 +52,17 @@
     # yq-go # yaml processor https://github.com/mikefarah/yq
     # eza # A modern replacement for ‘ls’
   };
+
+  # file manager (w/ deps)
+  programs.yazi.enable = true;
+  home.packages = with pkgs; [ ffmpeg p7zip poppler jq fd ripgrep fzf zoxide resvg imagemagick file ];
+  #nerd-fonts (recommended)
+  programs.jq.enable = true; # JSON preview
+  programs.fd.enable = true; # file search
+  programs.ripgrep.enable = true; # file content searching
+  programs.fzf.enable = true; # quick file subtree navigation, >= 0.53.0
+  programs.zoxide.enable = true; # historical directories navigation
+  #xclip / wl-clipboard / xsel # Linux clipboard support
 
   home.packages = with pkgs; [
     # fonts
