@@ -25,7 +25,7 @@
         modules = [
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          (hostDir + "/${host}")
+          (./host + "/${host}")
         ];
         
         # inject variables as special arguments
