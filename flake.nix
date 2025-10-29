@@ -18,17 +18,17 @@
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
     nixosConfigs = {
-      vm = { modules = [ ./host/vm ]; };
-      desktop = { modules = [ ./host/desktop ]; };
+      vm = { system = "x86_64-linux"; };
+      desktop = { system = "x86_64-linux"; };
     };
   in {
     nixosConfigurations = nixpkgs.lib.mapAttrs (configName: configData:
       nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = configData.system;
         modules = [
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          (./host + "/" + configName)
+          (./host + "/${configName}")
         ];
         specialArgs = { inherit configName; };
       }
