@@ -30,7 +30,7 @@
           home-manager.nixosModules.home-manager
           (./host + "/${configName}")
         ];
-        specialArgs = { inherit inputs configName; };
+        specialArgs = { inherit inputs self configName; };
       }
     ) nixosConfigs;
   };
