@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
     nixosConfigs = {
       vm = { modules = [ ./host/vm ]; };
@@ -25,10 +25,10 @@
     nixosConfigurations = nixpkgs.lib.mapAttrs (configName: configData:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = configData.modules ++ [
+        modules = [
           disko.nixosModule.diskoModule
           home-manager.nixosModule.home-manager
-          #(./hosts + "/" + configName)
+          (./hosts + "/" + configName)
         ];
         specialArgs = { inherit configName; };
       }
