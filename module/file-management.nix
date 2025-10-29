@@ -1,0 +1,24 @@
+{ config, lib, pkgs, ... }:
+
+{
+  programs = {
+    yazi.enable = true;
+    fd.enable = true;
+    fzf.enable = true;
+    zoxide.enable = true;
+    #xclip / wl-clipboard / xsel # Linux clipboard support, needed by yazi?
+  };
+
+  home.packages = with pkgs; [
+    file
+    rclone
+    rsync
+    tree
+
+    #bcompare
+    #kdePackages.ark # already installed?
+    #kdePackages.filelight # already installed?
+    #kdePackages.k3b # already installed?
+    #krename # anything better?
+  ];
+}

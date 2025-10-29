@@ -38,12 +38,12 @@
           (hostDir + "/configuration.nix")
           (hostDir + "/${host}/configuration.nix")
           (hostDir + "/${host}/hardware-configuration.nix")
-          (hostDir + "/user-configuration.nix")
+          (hostDir + "/users.nix")
 
           # disko
           disko.nixosModules.disko
-          (hostDir + "/disko-configuration.nix")
-          (hostDir + "/${host}/disko-configuration.nix")
+          (hostDir + "/disko.nix")
+          (hostDir + "/${host}/disko.nix")
 
           # home-manager
           home-manager.nixosModules.home-manager {

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfgHost, cfgUsers, ... }:
+{ config, lib, pkgs, cfgHost, ... }:
 
 {
   # nix / nixpkgs
@@ -63,14 +63,17 @@
   # programs.steam = {
   #   enable = true;
   #   remotePlay.openFirewall = true;
+  #   dedicatedServer.openFirewall = true;
+  #   localNetworkGameTransfers.openFirewall = true;
   # };
+  # WIP: proton version(s), alternatives?
 
   # flatpak
-  #services.flatpak.enable = true;
+  services.flatpak.enable = true;
   # WIP: need to add flathub repo?
   # WIP: need to use nix-flatpak??
 
-  # WIP: auto garbage caollection? updates?
+  # WIP: auto garbage collection? updates?
 
   # system packages
   environment.systemPackages = with pkgs; [
