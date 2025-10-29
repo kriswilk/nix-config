@@ -74,7 +74,7 @@
   # WIP: proton version(s), alternatives?
 
   # flatpak
-  services.flatpak.enable = true;
+  #services.flatpak.enable = true;
   # WIP: need to add flathub repo?
   # WIP: need to use nix-flatpak??
 
