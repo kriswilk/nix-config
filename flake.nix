@@ -17,6 +17,7 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
+    homeDir = ./home;
     nixosConfigs = {
       vm = {};
       desktop = {};
@@ -30,7 +31,7 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
         ];
-        specialArgs = { inherit configName; };
+        specialArgs = { inherit configName homeDir; };
       }
     ) nixosConfigs;
   };
