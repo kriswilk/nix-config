@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, ... }:
+  outputs = { self, nixpkgs, disko, home-manager, ... }@inputs:
   let
     nixosConfigs = {
       vm = { modules = [ ./host/vm ]; };
