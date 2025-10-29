@@ -15,26 +15,22 @@
     };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, ... }:
-  let
-    lib = nixpkgs.lib;
+  outputs = { self, nixpkgs, disko, home-manager, ... }: {
+    nixosConfigs = {
+      vm = { modules = [ ./host/vm ]; };
+      desktop = { modules = [ ./host/desktop ]; };
+    };
 
-    mkNixosSystem = host:
-      lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          disko.nixosModules.disko
-          home-manager.nixosModules.home-manager
-          (./host + "/${host}")
+    nixosConfigurations = nixpkgs.lib.mapAttrs (configName: configData:
+      nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux"; # Or whatever your system is
+        specialArgs = { inherit inputs configName; };
+        modules = configData.modules ++ [
+          disko.nixosModule.diskoModule
+          home-manager.nixosModule.home-manager
+          #(./hosts + "/" + configName)
         ];
-        
-        # inject variables as special arguments
-        specialArgs = { inherit self lib; cfgHost = host; };
-      };
-  in
-  {
-    # dynamically create nixosConfigurations
-    nixosConfigurations.vm = mkNixosSystem "vm";
-    nixosConfigurations.vdesktop = mkNixosSystem "desktop";
+      }
+    ) nixosConfigs;
   };
 }

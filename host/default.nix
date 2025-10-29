@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfgHost, ... }:
+{ config, lib, pkgs, configName, ... }:
 
 {
   imports = [
@@ -12,7 +12,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # hostname
-  networking.hostName = cfgHost;
+  networking.hostName = configName;
 
   # bootloader
   boot.loader = {
