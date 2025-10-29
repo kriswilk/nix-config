@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
     hostDir = ./host;
     homeDir = ./home;
