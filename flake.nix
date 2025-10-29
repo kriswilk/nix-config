@@ -35,7 +35,7 @@
   # };
 
   # ... inputs definition ...
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, disko, home-manager, ... }@inputs: {
     # Define a set of hosts/configs
     nixosConfigs = {
       vm = { modules = [ ./host/vm ]; };
