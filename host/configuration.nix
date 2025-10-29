@@ -68,6 +68,9 @@
   # flatpak
   #services.flatpak.enable = true;
   # WIP: need to add flathub repo?
+  # WIP: need to use nix-flatpak??
+
+  # WIP: auto garbage caollection? updates?
 
   # system packages
   environment.systemPackages = with pkgs; [
