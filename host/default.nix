@@ -1,6 +1,11 @@
 { config, lib, pkgs, cfgHost, ... }:
 
 {
+  imports = [
+    ./_module/disko.nix
+    ./_module/users.nix
+  ];
+
   # nix / nixpkgs
   system.stateVersion = "25.05";
   nix.settings.experimental-features = [ "flakes" "nix-command" ];

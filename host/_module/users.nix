@@ -16,4 +16,9 @@
     password = "guest";
     extraGroups = [ "networkmanager" "scanner" "lp" ];
   };
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.kris = import ../../home/kris;
+  home-manager.users.guest = import ../../home/guest;
 }

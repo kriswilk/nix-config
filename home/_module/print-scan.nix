@@ -6,7 +6,7 @@
   };
 
   home.packages = with pkgs; [
-    fio
-    smartmontools
+    #naps2
+    # WIP: fineprint?
   ];
 }

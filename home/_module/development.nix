@@ -10,5 +10,6 @@
   home.packages = with pkgs; [
     gcc
     gnumake
+    # WIP: j-link
   ];
 }

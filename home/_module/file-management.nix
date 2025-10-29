@@ -19,6 +19,9 @@
     #kdePackages.ark # already installed?
     #kdePackages.filelight # already installed?
     #kdePackages.k3b # already installed?
-    #krename # anything better?
+    # WIP: krename # anything better?
+    # WIP: onedrive, gdrive ?
+    # WIP: qbittorrent
+    # WIP: jdownloader2
   ];
 }

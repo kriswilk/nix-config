@@ -6,6 +6,8 @@
   };
 
   home.packages = with pkgs; [
-    #naps2
+    fio
+    smartmontools
+    # WIP: ventoy
   ];
 }
