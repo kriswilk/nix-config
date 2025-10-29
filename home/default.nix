@@ -3,7 +3,7 @@
 let
   moduleDir = ./_module;
 
-  dirContents = builtins.readDir modulesPath;
+  dirContents = builtins.readDir moduleDir;
 
   nixFiles = lib.attrNames (
     lib.filterAttrs
