@@ -28,7 +28,7 @@
         modules = [
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          (./host + "/${configName}")
+          (./host + "/" + configName)
         ];
         specialArgs = { inherit configName; };
       }
