@@ -13,4 +13,13 @@ in {
 
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
+  
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = {
+      kris = import ./kris;
+      guest = import ./guest;
+    };
+  };
 }

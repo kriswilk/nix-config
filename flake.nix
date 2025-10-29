@@ -17,8 +17,6 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    hostDir = ./host;
-    homeDir = ./home;
     nixosConfigs = {
       vm = {};
       desktop = {};
@@ -30,9 +28,9 @@
         modules = [
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          (hostDir + "/${configName}")
+          (./host + "/${configName}")
         ];
-        specialArgs = { inherit configName hostDir homeDir; };
+        specialArgs = { inherit configName; };
       }
     ) nixosConfigs;
   };
