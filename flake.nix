@@ -15,41 +15,22 @@
     };
   };
 
-  # outputs = { self, nixpkgs, disko, home-manager, ... }@inputs: {
-  #   nixosConfigs = {
-  #     vm = { modules = [ ./host/vm ]; };
-  #     desktop = { modules = [ ./host/desktop ]; };
-  #   };
-
-  #   nixosConfigurations = nixpkgs.lib.mapAttrs (configName: configData:
-  #     nixpkgs.lib.nixosSystem {
-  #       system = "x86_64-linux";
-  #       specialArgs = { inherit inputs configName; };
-  #       modules = configData.modules ++ [
-  #         disko.nixosModule.diskoModule
-  #         home-manager.nixosModule.home-manager
-  #         #(./hosts + "/" + configName)
-  #       ];
-  #     }
-  #   ) nixosConfigs;
-  # };
-
-  # ... inputs definition ...
-  outputs = { self, nixpkgs, disko, home-manager, ... }@inputs: {
-    # Define a set of hosts/configs
+  outputs = { self, nixpkgs, disko, home-manager, ... }:
+  let
     nixosConfigs = {
       vm = { modules = [ ./host/vm ]; };
       desktop = { modules = [ ./host/desktop ]; };
     };
-
+  in {
     nixosConfigurations = nixpkgs.lib.mapAttrs (configName: configData:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs configName; };
         modules = configData.modules ++ [
           disko.nixosModule.diskoModule
           home-manager.nixosModule.home-manager
+          #(./hosts + "/" + configName)
         ];
+        specialArgs = { inherit configName; };
       }
     ) nixosConfigs;
   };
