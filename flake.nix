@@ -24,7 +24,7 @@
     nixosConfigurations = nixpkgs.lib.mapAttrs (configName: configData:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux"; # Or whatever your system is
-        specialArgs = { inherit inputs configName; };
+        specialArgs = { inherit inputs; inherit configName; };
         modules = configData.modules ++ [
           disko.nixosModule.diskoModule
           home-manager.nixosModule.home-manager
