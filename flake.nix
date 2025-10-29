@@ -26,9 +26,9 @@
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          (./host + "/${configName}")
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          (./host + "/${configName}")
         ];
         specialArgs = { inherit configName; };
       }

@@ -19,4 +19,13 @@
       };
     };
   };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = {
+      kris = import (../../home/kris);
+      guest = import (homeDir + /guest);
+    };
+  };
 }
