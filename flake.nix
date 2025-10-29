@@ -19,10 +19,7 @@
   let
     lib = nixpkgs.lib;
 
-    # hosts
-    hostDir = ./host;
-    hosts = lib.filterAttrs (name: type: type == "directory") (builtins.readDir hostDir);
-    mkNixosSystem = host: type:
+    mkNixosSystem = host:
       lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -37,6 +34,7 @@
   in
   {
     # dynamically create nixosConfigurations
-    nixosConfigurations = lib.mapAttrs mkNixosSystem hosts;
+    nixosConfigurations.vm = mkNixosSystem "vm";
+    nixosConfigurations.vdesktop = mkNixosSystem "desktop";
   };
 }
