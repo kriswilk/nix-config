@@ -12,12 +12,7 @@ in {
   imports = modulePaths;
 
   system.stateVersion = "25.05";
-  nix.settings.experimental-features = [ "flakes" "nix-command" ];
-  nixpkgs.config.allowUnfree = true;
 
-  # WIP: auto garbage collection? updates?
-
-  # system packages
   environment.systemPackages = with pkgs; [
     curl
     git
