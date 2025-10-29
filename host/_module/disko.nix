@@ -3,7 +3,7 @@
 {
   disko.devices = {
     disk.main = {
-      # specify 'disko.devices.disk.main.device = "/dev/<disk>"' in ./<host>/disko-configuration.nix
+      # specify 'disko.devices.disk.main.device = "/dev/<disk>"' in each host configuration
       type = "disk";
       content = {
         type = "gpt";

@@ -17,20 +17,22 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }@inputs:
   let
+    hostDir = ./host;
+    homeDir = ./home;
     nixosConfigs = {
-      vm = { system = "x86_64-linux"; };
-      desktop = { system = "x86_64-linux"; };
+      vm = {};
+      desktop = {};
     };
   in {
     nixosConfigurations = nixpkgs.lib.mapAttrs (configName: configData:
       nixpkgs.lib.nixosSystem {
-        system = configData.system;
+        system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          (./host + "/${configName}")
+          (hostDir + "/${configName}")
         ];
-        specialArgs = { inherit inputs self configName; };
+        specialArgs = { inherit configName hostDir homeDir; };
       }
     ) nixosConfigs;
   };

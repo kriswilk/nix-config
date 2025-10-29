@@ -1,4 +1,4 @@
-{ config, lib, pkgs, self, ... }:
+{ config, lib, pkgs, homeDir, ... }:
 
 {
   users = {
@@ -25,8 +25,8 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      kris = import (self + /home/kris);
-      guest = import (self + /home/guest);
+      kris = import (homeDir + /kris);
+      guest = import (homeDir + /guest);
     };
   };
 }
