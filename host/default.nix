@@ -4,7 +4,9 @@ let
   moduleDir = ./_module;
   dirContents = builtins.readDir moduleDir;
   nixFiles = lib.attrNames (
-    lib.filterAttrs (name: type: type == "regular" && ! (lib.strings.hasPrefix "_" name)) dirContents
+    lib.filterAttrs (name: type: type == "regular" &&
+                                 lib.strings.hasSuffix ".nix" name &&
+                                 ! (lib.strings.hasPrefix "." name)) dirContents
   );
   modulePaths = builtins.map (name: moduleDir + "/${name}") nixFiles;
 in {
