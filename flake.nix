@@ -25,10 +25,10 @@
     nixosConfigurations = nixpkgs.lib.mapAttrs (configName: configData:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          disko.nixosModules.diskoModule
+        modules = configData.modules ++ [
+          disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          (./hosts + "/" + configName)
+          #(./hosts + "/" + configName)
         ];
         specialArgs = { inherit configName; };
       }
