@@ -34,6 +34,7 @@
           home-manager.nixosModules.home-manager
         ];
         extraSpecialArgs = {
+          inherit inputs;
           inherit configName;
           inherit (customLib) importDirModules;
         };
