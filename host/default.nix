@@ -1,8 +1,5 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, moduleLib, ... }:
 
-let
-  moduleLib = import ../lib/importers.nix { inherit lib; };
-in
 {
   imports = moduleLib.importAllNixFiles ./_module;
 
