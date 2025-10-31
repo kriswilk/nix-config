@@ -17,9 +17,6 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    listNixFilesRecursive = dir: nixpkgs.lib.fileset.toList (
-      nixpkgs.lib.fileset.fileFilter (file: file.hasExt "nix" && ! nixpkgs.lib.hasPrefix "_" file.name) dir
-    );
     nixosConfigs = {
       vm = {};
       desktop = {};
@@ -35,7 +32,6 @@
         ];
         specialArgs = {
           inherit configName;
-          inherit listNixFilesRecursive;
         };
       }
     ) nixosConfigs;
