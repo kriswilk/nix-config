@@ -17,7 +17,7 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    moduleLib = import ./lib/importers.nix { inherit (nixpkgs) lib; };
+    moduleLib = import ./lib/importers.nix { inherit inputs; };
     nixosConfigs = {
       vm = {};
       desktop = {};
