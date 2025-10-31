@@ -1,4 +1,4 @@
-{ config, lib, pkgs, homeDir, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   users = {
@@ -25,7 +25,7 @@
     useUserPackages = true;
     users = {
       kris = import (../../home/kris);
-      guest = import (homeDir + /guest);
+      guest = import (../../home/guest);
     };
   };
 }

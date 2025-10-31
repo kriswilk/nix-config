@@ -17,7 +17,8 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    homeDir = ./home;
+    customLib = import ./lib/importers.nix { inherit (pkgs) lib; };
+
     nixosConfigs = {
       vm = {};
       desktop = {};
@@ -31,7 +32,7 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
         ];
-        specialArgs = { inherit configName homeDir; };
+        specialArgs = { inherit configName; inherit (customLib) importDirModules;};
       }
     ) nixosConfigs;
   };
