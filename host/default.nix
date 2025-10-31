@@ -2,7 +2,7 @@
 
 {
   imports = lib.fileset.toList (
-    lib.fileset.fileFilter (file: file.hasExt "nix") ./_module
+    lib.fileset.fileFilter (file: file.hasExt "nix" && ! file.hasPrefix "_") ../module/host
   );
 
   system.stateVersion = "25.05";

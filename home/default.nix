@@ -1,8 +1,8 @@
-{ config, lib, pkgs, importDirModules, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = lib.fileset.toList (
-    lib.fileset.fileFilter (file: file.hasExt "nix") ./_module
+    lib.fileset.fileFilter (file: file.hasExt "nix" && ! file.hasPrefix "_") ../module/home
   );
 
   home.stateVersion = "25.05";
