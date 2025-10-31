@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  moduleLib = import ./lib/importers.nix { inherit lib; };
+  moduleLib = import ../lib/importers.nix { inherit lib; };
 in
 {
   imports = moduleLib.importAllNixFiles ./_module;
