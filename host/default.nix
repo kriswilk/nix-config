@@ -1,9 +1,10 @@
 { config, lib, pkgs, ... }:
 
+let
+  moduleLib = import ./lib/importers.nix { inherit lib; };
+in
 {
-  imports = lib.fileset.toList (
-    lib.fileset.fileFilter (file: file.hasExt "nix" && ! lib.hasPrefix "_" file.name) ./_module
-  );
+  imports = moduleLib.importAllNixFiles ./_module;
 
   system.stateVersion = "25.05";
 
