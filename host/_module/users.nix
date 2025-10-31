@@ -24,8 +24,8 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      kris = import (${self} + "/home/kris");
-      guest = import (${self} + "/home/guest");
+      kris = import (self + "/home/kris");
+      guest = import (self + "/home/guest");
     };
   };
 }
