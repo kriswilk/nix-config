@@ -17,9 +17,6 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    lib = nixpkgs.lib;
-    customLib = import ./lib/importers.nix { inherit lib; };
-
     nixosConfigs = {
       vm = {};
       desktop = {};
@@ -34,9 +31,7 @@
           home-manager.nixosModules.home-manager
         ];
         extraSpecialArgs = {
-          inherit inputs;
           inherit configName;
-          inherit (customLib) importDirModules;
         };
       }
     ) nixosConfigs;

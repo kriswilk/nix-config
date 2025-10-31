@@ -1,7 +1,9 @@
-{ config, lib, pkgs, importDirModules, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  imports = importDirModules ./_module;
+  imports = lib.fileset.toList (
+    lib.fileset.fileFilter (file: lib.hasSuffix ".nix" file.name) ./_module
+  );
 
   system.stateVersion = "25.05";
 
