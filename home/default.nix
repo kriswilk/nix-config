@@ -2,7 +2,7 @@
 
 {
   imports = lib.fileset.toList (
-    lib.fileset.fileFilter (file: lib.hasSuffix ".nix" file.name) ./_module
+    lib.fileset.fileFilter (file: file.hasExt "nix") ./_module
   );
 
   home.stateVersion = "25.05";
