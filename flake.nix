@@ -30,7 +30,7 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
         ];
-        extraSpecialArgs = {
+        specialArgs = {
           inherit configName;
         };
       }
