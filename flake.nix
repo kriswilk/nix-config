@@ -17,6 +17,7 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
+    lib = nixpkgs.lib;
     listNixFilesRecursive = dir: lib.fileset.toList (
       lib.fileset.fileFilter (file: file.hasExt "nix" && ! lib.hasPrefix "_" file.name) dir
     );
