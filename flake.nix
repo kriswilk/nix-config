@@ -31,7 +31,6 @@
           home-manager.nixosModules.home-manager
         ];
         specialArgs = {
-          inherit inputs;
           inherit configName;
         };
       }
