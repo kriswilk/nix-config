@@ -33,7 +33,10 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
         ];
-        specialArgs = { inherit self configName; inherit (customLib) importDirModules;};
+        extraSpecialArgs = {
+          inherit configName;
+          inherit (customLib) importDirModules
+        };
       }
     ) nixosConfigs;
   };
