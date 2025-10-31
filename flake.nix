@@ -17,7 +17,7 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    moduleLib = import ./lib/importers.nix { inherit inputs; };
+    listNixFilesRecursive = import ./lib/listNixFilesRecursive.nix;
     nixosConfigs = {
       vm = {};
       desktop = {};
@@ -33,7 +33,7 @@
         ];
         specialArgs = {
           inherit configName;
-          inherit moduleLib;
+          inherit listNixFilesRecursive;
         };
       }
     ) nixosConfigs;

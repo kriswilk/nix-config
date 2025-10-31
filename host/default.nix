@@ -1,7 +1,7 @@
-{ config, lib, pkgs, moduleLib, ... }:
+{ config, lib, pkgs, listNixFilesRecursive, ... }:
 
 {
-  imports = moduleLib.importAllNixFiles ./_module;
+  imports = listNixFilesRecursive ./_module;
 
   system.stateVersion = "25.05";
 
