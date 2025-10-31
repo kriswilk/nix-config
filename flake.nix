@@ -35,7 +35,7 @@
         ];
         extraSpecialArgs = {
           inherit configName;
-          inherit (customLib) importDirModules
+          inherit (customLib) importDirModules;
         };
       }
     ) nixosConfigs;
