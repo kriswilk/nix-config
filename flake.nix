@@ -17,8 +17,8 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    pkgs = nixpkgs.legacyPackages.${system};
-    customLib = import ./lib/importers.nix { inherit (pkgs) lib; };
+ #   pkgs = nixpkgs.legacyPackages.${system};
+    customLib = import ./lib/importers.nix { inherit (nixpkgs) lib; };
 
     nixosConfigs = {
       vm = {};
