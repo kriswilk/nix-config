@@ -1,9 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
-  
+  system.stateVersion = "25.05";
+
   nix.settings.experimental-features = [ "flakes" "nix-command" ];  
+
+  nixpkgs.config.allowUnfree = true;
 
   nix.optimise = {
     automatic = true;

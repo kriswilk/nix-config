@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./modules/_common.nix
+    ./modules/_all.nix
     ./modules/_gpu_nvidia_open.nix
   ];
 

@@ -1,7 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ../. ];
+  imports = [
+    ./modules/_all.nix
+  ];
 
   programs = {
     git = {

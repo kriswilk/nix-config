@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./modules/_common.nix
+    ./modules/_all.nix
   ];
 
   disko.devices.disk.main.device = "/dev/sda";
