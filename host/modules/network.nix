@@ -7,4 +7,6 @@
     enable = true;
     wifi.backend = "iwd";
   };
+
+  services.openssh.enable = true;
 }
