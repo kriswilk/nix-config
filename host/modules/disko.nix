@@ -8,10 +8,9 @@
       content = {
         type = "gpt";
         partitions = {
-
           ESP = {
             name = "ESP";
-            size = "512M";
+            size = "1G";
             type = "EF00";
             content = {
               type = "filesystem";
@@ -20,37 +19,21 @@
               mountOptions = [ "umask=0077" ];
             };
           };
-          
           luks = {
             size = "100%";
             content = {
               type = "luks";
               name = "crypt";
-              settings.allowDiscards = true;
+              settings = {
+                allowDiscards = true;
+              };
               content = {
-                type = "btrfs";                
-                subvolumes = {
-                  "/root" = {
-                    mountpoint = "/";
-                    mountOptions = [ "compress=zstd" "noatime" ];
-                  };                  
-                  "/home" = {
-                    mountpoint = "/home";
-                    mountOptions = [ "compress=zstd" "noatime" ];
-                  };
-                  "/nix" = {
-                    mountpoint = "/nix";
-                    mountOptions = [ "compress=zstd" "noatime" ];
-                  };
-                  "/swap" = {
-                    mountpoint = "/swap";
-                    swap.swapfile.size = "8G";
-                  };
-                };                  
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/";
               };
             };
           };
-
         };
       };
     };
