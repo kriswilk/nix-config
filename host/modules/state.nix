@@ -1,6 +1,5 @@
 { config, lib, pkgs, ... }:
 
 {
-  services.openssh.enable = true;
-  programs.ssh.startAgent = true;
+  system.stateVersion = "25.05";
 }

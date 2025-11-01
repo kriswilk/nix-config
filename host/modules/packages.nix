@@ -1,6 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  services.openssh.enable = true;
-  programs.ssh.startAgent = true;
+  environment.systemPackages = with pkgs; [
+    curl
+    git
+    nano
+    vim
+    wget
+  ];
 }

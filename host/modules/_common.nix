@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma6.enable = true;
+  imports = lib.fileset.toList (
+    lib.fileset.fileFilter (file: file.hasExt "nix" && ! lib.hasPrefix "_" file.name) ./.
+  );
 }

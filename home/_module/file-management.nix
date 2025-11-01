@@ -10,10 +10,12 @@
   };
 
   home.packages = with pkgs; [
+    curl
     file
     rclone
     rsync
     tree
+    wget
 
     #bcompare
     #kdePackages.ark # already installed?

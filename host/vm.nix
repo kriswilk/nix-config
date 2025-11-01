@@ -2,9 +2,20 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
-    ../.
+    ./modules/_common.nix
   ];
 
   disko.devices.disk.main.device = "/dev/sda";
+
+  ### hardware-configuration.nix #############################################
+  
+  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ ];
+  boot.extraModulePackages = [ ];
+
+  networking.useDHCP = lib.mkDefault true;
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  virtualisation.virtualbox.guest.enable = true;
 }
