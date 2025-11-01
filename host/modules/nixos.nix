@@ -9,7 +9,7 @@
 
   nix.optimise = {
     automatic = true;
-    dates = [ "03:45" ]; # Optional; allows customizing optimisation schedule
+    dates = [ "03:45" ];
   };
 
   nix.gc = {

@@ -7,10 +7,6 @@
     starship.enable = true;
   };
 
-  home.packages = with pkgs; [
-    # ...
-  ];
-
   home.shellAliases = {
     # cd
     ".." = "cd ..";
