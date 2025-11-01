@@ -24,8 +24,8 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      kris = import ../../home/kris;
-      guest = import ../../home/guest;
+      kris = import ../../home/kris.nix;
+      guest = import ../../home/guest.nix;
     };
   };
 }
