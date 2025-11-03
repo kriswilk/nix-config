@@ -17,29 +17,31 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    configNames = [ "vm" "desktop" ];
+    hostDir = ./host;
+    homeDir = ./home;
+    nixosConfigs = {
+      vm = { system = "x86_64-linux"; };
+      desktop = { system = "x86_64-linux"; };
+    };
   in {
-    nixosConfigurations = builtins.listToAttrs (builtins.map (configName:
-      {
-        name = configName;
-        value = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./host/${configName}.nix
-            disko.nixosModules.disko
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.kris = ./home/kris.nix;
-              home-manager.users.guest = ./home/guest.nix;
-            }
-          ];
-          specialArgs = {
-            inherit configName;
-          };
+    nixosConfigurations = nixpkgs.lib.mapAttrs (configName: configData:
+      nixpkgs.lib.nixosSystem {
+        system = configData.system;
+        modules = [
+          ${hostDir}/${configName}.nix
+          disko.nixosModules.disko
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.kris = ${homeDir}/kris.nix;
+            home-manager.users.guest = ${homeDir}/guest.nix;
+          }
+        ];
+        specialArgs = {
+          inherit configName;
         };
       }
-    ) configNames);
+    ) nixosConfigs;
   };
 }
