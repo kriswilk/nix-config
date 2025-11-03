@@ -10,5 +10,5 @@
 
   ### hardware-configuration.nix ###
 
-  throw "Paste the contents of 'hardware-configuration.nix' into the host configuration!"
+  throw "Paste the contents of 'hardware-configuration.nix' into the host configuration!";
 }
