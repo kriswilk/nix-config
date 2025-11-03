@@ -28,14 +28,14 @@
       nixpkgs.lib.nixosSystem {
         system = configData.system;
         modules = [
-          ${hostDir}/${configName}.nix
+          hostDir/${configName}.nix
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.kris = ${homeDir}/kris.nix;
-            home-manager.users.guest = ${homeDir}/guest.nix;
+            home-manager.users.kris = homeDir + "/kris.nix";
+            home-manager.users.guest = homeDir + "/guest.nix";
           }
         ];
         specialArgs = {
