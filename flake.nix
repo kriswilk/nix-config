@@ -19,7 +19,7 @@
   let
     configNames = [ "vm" "desktop" ];
   in {
-    nixosConfigurations = builtins.listToAttrs builtins.map (configName:
+    nixosConfigurations = builtins.listToAttrs (builtins.map configName:
       {
         name = configName;
         value = nixpkgs.lib.nixosSystem {
@@ -40,6 +40,6 @@
           };
         };
       }
-    ) configNames;
+     configNames);
   };
 }
