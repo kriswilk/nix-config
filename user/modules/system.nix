@@ -3,7 +3,6 @@
 {
   programs = {
     btop.enable = true;
-    htop.enable = true;
     fastfetch.enable = true;
   };
 
