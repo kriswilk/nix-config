@@ -31,18 +31,19 @@
 
     # Users
     userDir = ./user;
+    userGroups = [ "lp" "networkmanager" "scanner" ];
     userList = {
       kris = {
         isNormalUser = true;
         description = "Kris Wilk";
         password = "12345";
-        extraGroups = [ "lp" "networkmanager" "scanner" "wheel" ];
+        extraGroups = userGroups ++ [ "wheel" ];
       };
       guest = {
         isNormalUser = true;
         description = "Guest User";
         password = "guest";
-        extraGroups = [ "lp" "networkmanager" "scanner" "wheel" ];
+        extraGroups = userGroups;
       };
     };
 
