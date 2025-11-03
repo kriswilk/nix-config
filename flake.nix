@@ -23,7 +23,7 @@
       vm = { system = "x86_64-linux"; };
       desktop = { system = "x86_64-linux"; };
     };
-    homeNames = {
+    userNames = {
       kris = {};
       guest = {};
     };
@@ -33,14 +33,15 @@
         system = hostData.system;
         modules = [
           (hostDir + "/${hostName}.nix")
+          { networking.hostName = hostName; }
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users = nixpkgs.lib.mapAttrs (homeName: homeData:
-              (homeDir + "/${homeName}.nix")
-            ) homeNames;
+            home-manager.users = nixpkgs.lib.mapAttrs (userName: userData:
+              (homeDir + "/${userName}.nix")
+            ) userNames;
           }
         ];
         specialArgs = { inherit hostName; };
