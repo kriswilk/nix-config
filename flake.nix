@@ -28,7 +28,7 @@
         modules = [
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          (./hosts + "/${configName}")
+          (./host + "/${configName}")
           ./home
         ];
         specialArgs = {
