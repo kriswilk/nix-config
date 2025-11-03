@@ -1,5 +1,5 @@
 {
-  description = "NixOS System & User Configuration";
+  description = "NixOS Host & User Configuration";
   
   inputs = {
     nixpkgs = {
@@ -17,12 +17,19 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
+  
+    # Hosts
     hostDir = ./host;
     hostList = {
-      vm = { system = "x86_64-linux"; };
-      desktop = { system = "x86_64-linux"; };
+      vm = {
+        system = "x86_64-linux";
+      };
+      desktop = {
+        system = "x86_64-linux";
+      };
     };
 
+    # Users
     userDir = ./user;
     userList = {
       kris = {
@@ -36,6 +43,7 @@
         extraGroups = [ ];
       };
     };
+
   in {
     nixosConfigurations = nixpkgs.lib.mapAttrs (hostName: hostData:
       nixpkgs.lib.nixosSystem {
