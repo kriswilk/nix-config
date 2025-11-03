@@ -17,11 +17,14 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    configHosts = {
+    hostDir = ./host;
+    hostList = {
       vm = { system = "x86_64-linux"; };
       desktop = { system = "x86_64-linux"; };
     };
-    configUsers = {
+
+    userDir = ./user;
+    userList = {
       kris = {
         fullName = "Kris Wilk";
         password = "abc123";
@@ -38,12 +41,12 @@
       nixpkgs.lib.nixosSystem {
         system = hostData.system;
         modules = [
-          ./host/${hostName}.nix
+          "${hostDir}/${hostName}.nix"
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
         ];
-        specialArgs = { inherit hostName configUsers; };
+        specialArgs = { inherit hostDir hostName userDir userList; };
       }
-    ) configHosts;
+    ) hostList;
   };
 }

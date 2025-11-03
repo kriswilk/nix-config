@@ -1,4 +1,4 @@
-{ config, lib, pkgs, configUsers, ... }:
+{ config, lib, pkgs, userDir, userList, ... }:
 
 {
   users = {
@@ -11,14 +11,14 @@
         password = userData.password;
         extraGroups = [ "networkmanager" "scanner" "lp" ] ++ userData.extraGroups;
       }    
-    ) configUsers;
+    ) userList;
   };
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     users = lib.mapAttrs (userName: userData:
-      ../../home/${userName}.nix
-    ) configUsers;
+      "${userDir}/${userName}.nix"
+    ) userList;
   };
 }
