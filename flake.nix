@@ -19,29 +19,32 @@
   let
     hostDir = ./host;
     homeDir = ./home;
-    nixosConfigs = {
+    hostNames = {
       vm = { system = "x86_64-linux"; };
       desktop = { system = "x86_64-linux"; };
     };
+    homeNames = {
+      kris = {};
+      guest = {};
+    };
   in {
-    nixosConfigurations = nixpkgs.lib.mapAttrs (configName: configData:
+    nixosConfigurations = nixpkgs.lib.mapAttrs (hostName: hostData:
       nixpkgs.lib.nixosSystem {
-        system = configData.system;
+        system = hostData.system;
         modules = [
-          (hostDir + "/${configName}.nix")
+          (hostDir + "/${hostName}.nix")
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.kris = (homeDir + "/kris.nix");
-            home-manager.users.guest = (homeDir + "/guest.nix");
+            home-manager.users = nixpkgs.lib.mapAttrs (homeName: homeData:
+              (homeDir + "/${homeName}.nix")
+            ) homeNames;
           }
         ];
-        specialArgs = {
-          inherit configName;
-        };
+        specialArgs = { inherit hostName; };
       }
-    ) nixosConfigs;
+    ) hostNames;
   };
 }
