@@ -4,7 +4,7 @@
   users = {
     mutableUsers = false;
 
-    users = nixpkgs.lib.mapAttrs (userName: userData:
+    users = lib.mapAttrs (userName: userData:
       {
         isNormalUser = true;
         description = userData.fullName;
@@ -17,7 +17,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users = nixpkgs.lib.mapAttrs (userName: userData:
+    users = lib.mapAttrs (userName: userData:
       (homeDir + "/${userName}.nix")
     ) configUsers;
   };
