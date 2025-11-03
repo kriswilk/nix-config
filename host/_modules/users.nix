@@ -19,13 +19,4 @@
       };
     };
   };
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users = {
-      kris = import ../../users/kris.nix;
-      guest = import ../../users/guest.nix;
-    };
-  };
 }

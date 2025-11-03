@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ../modules/home
+    ../_modules
   ];
 }
