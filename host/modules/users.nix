@@ -3,15 +3,7 @@
 {
   users = {
     mutableUsers = false;
-
-    users = lib.mapAttrs (userName: userData:
-      {
-        isNormalUser = true;
-        description = userData.fullName;
-        password = userData.password;
-        extraGroups = [ "networkmanager" "scanner" "lp" ] ++ userData.extraGroups;
-      }    
-    ) userList;
+    users = userList;
   };
 
   home-manager = {

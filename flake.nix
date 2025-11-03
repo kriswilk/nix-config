@@ -33,14 +33,16 @@
     userDir = ./user;
     userList = {
       kris = {
-        fullName = "Kris Wilk";
-        password = "abc123";
-        extraGroups = [ "wheel" ];
+        isNormalUser = true;
+        description = "Kris Wilk";
+        password = "12345";
+        extraGroups = [ "lp" "networkmanager" "scanner" "wheel" ];
       };
       guest = {
-        fullName = "Guest User";
+        isNormalUser = true;
+        description = "Guest User";
         password = "guest";
-        extraGroups = [];
+        extraGroups = [ "lp" "networkmanager" "scanner" "wheel" ];
       };
     };
 
