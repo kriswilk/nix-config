@@ -36,7 +36,7 @@
             home-manager.users.guest = ./home/guest.nix;
           }
         ];
-        extraSpecialArgs = {
+        specialArgs = {
           inherit configName;
         };
       }
