@@ -1,0 +1,14 @@
+{ config, lib, pkgs, ... }:
+
+{
+  imports = [
+    ../modules/home
+  ];
+
+  programs = {
+    git = {
+      settings.user.name = "Kris Wilk";
+      settings.user.email = "kris@reefnet.ca";
+    };
+  };
+}
