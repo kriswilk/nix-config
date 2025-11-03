@@ -18,7 +18,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = lib.mapAttrs (userName: userData:
-      "${userDir}/${userName}.nix"
+      "./user/${userName}.nix"
     ) userList;
   };
 }
