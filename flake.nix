@@ -40,7 +40,7 @@
       guest = {
         fullName = "Guest User";
         password = "guest";
-        extraGroups = [ ];
+        extraGroups = [];
       };
     };
 
