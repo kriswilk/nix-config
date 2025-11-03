@@ -34,8 +34,8 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.kris = homeDir + "/kris.nix";
-            home-manager.users.guest = homeDir + "/guest.nix";
+            home-manager.users.kris = (homeDir + "/kris.nix");
+            home-manager.users.guest = (homeDir + "/guest.nix");
           }
         ];
         specialArgs = {
