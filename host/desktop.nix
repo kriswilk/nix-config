@@ -10,5 +10,5 @@
 
   ### hardware-configuration.nix ###
 
-  x = builtins.throw "Paste the contents of 'hardware-configuration.nix' into the host configuration!";
+  # ... paste here ...
 }
