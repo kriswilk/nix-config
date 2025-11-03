@@ -18,7 +18,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = lib.mapAttrs (userName: userData:
-      (homeDir + "/${userName}.nix")
+      ../../home/${userName}.nix
     ) configUsers;
   };
 }
