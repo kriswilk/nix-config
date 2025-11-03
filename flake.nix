@@ -28,7 +28,7 @@
       nixpkgs.lib.nixosSystem {
         system = configData.system;
         modules = [
-          (hostDir + configName + ".nix")
+          (hostDir + "/" + configName + ".nix")
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
