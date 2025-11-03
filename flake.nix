@@ -44,6 +44,6 @@
         ];
         specialArgs = { inherit hostName configUsers; };
       }
-    ) hostNames;
+    ) configHosts;
   };
 }
