@@ -17,34 +17,32 @@
 
   outputs = { self, nixpkgs, disko, home-manager, ... }:
   let
-    hostDir = ./host;
-    homeDir = ./home;
-    hostNames = {
+    configHosts = {
       vm = { system = "x86_64-linux"; };
       desktop = { system = "x86_64-linux"; };
     };
-    userNames = {
-      kris = {};
-      guest = {};
+    configUsers = {
+      kris = {
+        fullName = "Kris Wilk";
+        password = "abc123";
+        extraGroups = [ "wheel" ];
+      };
+      guest = {
+        fullName = "Guest User";
+        password = "guest";
+        extraGroups = [ ];
+      };
     };
   in {
     nixosConfigurations = nixpkgs.lib.mapAttrs (hostName: hostData:
       nixpkgs.lib.nixosSystem {
         system = hostData.system;
         modules = [
-          (hostDir + "/${hostName}.nix")
-          { networking.hostName = hostName; }
+          ./host/${hostName}.nix
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users = nixpkgs.lib.mapAttrs (userName: userData:
-              (homeDir + "/${userName}.nix")
-            ) userNames;
-          }
         ];
-        specialArgs = { inherit hostName; };
+        specialArgs = { inherit hostName users; };
       }
     ) hostNames;
   };

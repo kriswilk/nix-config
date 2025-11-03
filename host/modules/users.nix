@@ -1,22 +1,24 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, configUsers, ... }:
 
 {
   users = {
     mutableUsers = false;
 
-    users = {
-      kris = {
+    users = nixpkgs.lib.mapAttrs (userName: userData:
+      {
         isNormalUser = true;
-        description = "Kris Wilk";
-        password = "abc123";
-        extraGroups = [ "networkmanager" "scanner" "lp" "wheel" ];
-      };
-      guest = {
-        isNormalUser = true;
-        description = "Guest User";
-        password = "guest";
-        extraGroups = [ "networkmanager" "scanner" "lp" ];
-      };
-    };
+        description = userData.fullName;
+        password = userData.password;
+        extraGroups = [ "networkmanager" "scanner" "lp" ] ++ userData.extraGroups;
+      }    
+    ) configUsers;
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = nixpkgs.lib.mapAttrs (userName: userData:
+      (homeDir + "/${userName}.nix")
+    ) configUsers;
   };
 }
