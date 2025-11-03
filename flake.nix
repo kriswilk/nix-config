@@ -26,12 +26,17 @@
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          (./host + "/${configName}")
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          (./host + "/${configName}")
-          ./home
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.kris = ./home/kris.nix;
+            home-manager.users.guest = ./home/guest.nix;
+          }
         ];
-        specialArgs = {
+        extraSpecialArgs = {
           inherit configName;
         };
       }

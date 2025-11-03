@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../_modules
+    ./modules
   ];
 
   programs = {
