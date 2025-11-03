@@ -2,6 +2,6 @@
 
 {
   imports = lib.fileset.toList (
-    lib.fileset.fileFilter (file: file.hasExt "nix" && ! lib.hasPrefix "_" file.name) ./.
+    lib.fileset.fileFilter (file: file.hasExt "nix" && file.name != "default.nix") ./.
   );
 }
