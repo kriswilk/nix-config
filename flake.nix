@@ -42,7 +42,7 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
         ];
-        specialArgs = { inherit hostName users; };
+        specialArgs = { inherit hostName configUsers; };
       }
     ) hostNames;
   };
