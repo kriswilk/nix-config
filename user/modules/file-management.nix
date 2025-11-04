@@ -1,12 +1,24 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs = {
-    yazi.enable = true;
-    fd.enable = true;
-    fzf.enable = true;
-    zoxide.enable = true;
-    #xclip / wl-clipboard / xsel # Linux clipboard support, needed by yazi?
+  # WIP: yazi needs xclip / wl-clipboard / xsel ?
+
+  programs.fd = {
+    enable = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+
+  programs.yazi = {
+    enable = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
   };
 
   home.packages = with pkgs; [
@@ -17,10 +29,10 @@
     tree
     wget
 
-    #bcompare
-    #kdePackages.ark # already installed?
-    #kdePackages.filelight # already installed?
-    #kdePackages.k3b # already installed?
+    # WIP: bcompare
+    # WIP: kdePackages.ark # already installed?
+    # WIP: kdePackages.filelight # already installed?
+    # WIP: kdePackages.k3b # already installed?
     # WIP: krename # anything better?
     # WIP: onedrive, gdrive ?
     # WIP: qbittorrent
