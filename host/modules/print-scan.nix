@@ -5,7 +5,7 @@ services.printing.enable = true;
 
 services.printing.drivers = lib.singleton (pkgs.linkFarm "drivers" [
   { name = "share/cups/model/printer-kris.ppd";
-    path = ../../printer-kris.ppd;
+    path = ./printer-kris.ppd;
   }
 ]);
 
