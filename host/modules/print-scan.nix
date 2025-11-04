@@ -8,9 +8,9 @@
 
   services.printing = {
     enable = true;
-    # drivers = with pkgs; [
-    #   cups-filters
-    #   cups-browsed
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
     #   # common driver packages as per wiki.nixos.org
     #   gutenprint # Drivers for many different printers from many different vendors.
     #   gutenprintBin # Additional, binary-only drivers for some printers.
@@ -24,7 +24,7 @@
     #   cnijfilter2 # Drivers for some Canon Pixma devices (Proprietary driver)
     #   epson-escpr2 # Drivers for newer Epson devices.
     #   epson-escpr # Drivers for some other Epson devices.
-    # ];
+    ];
   };
 
   # hardware.printers = {
