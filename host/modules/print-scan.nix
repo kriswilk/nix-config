@@ -19,7 +19,7 @@
     #   samsung-unified-linux-driver # Proprietary Samsung Drivers
     #   splix # Drivers for printers supporting SPL (Samsung Printer Language).
       brlaser # Drivers for some Brother printers
-      brgenml1lpr # Generic drivers for more Brother printers (Proprietary drivers)
+    #  brgenml1lpr # Generic drivers for more Brother printers (Proprietary drivers)
     #   brgenml1cupswrapper # Generic drivers for more Brother printers (Proprietary drivers)
     #   cnijfilter2 # Drivers for some Canon Pixma devices (Proprietary driver)
     #   epson-escpr2 # Drivers for newer Epson devices.
@@ -44,7 +44,7 @@
       description = "Brother DCP-7065DN";
       location    = "fathoms";
       deviceUri   = "socket://10.0.0.203";
-      model       = "drv:///sample.drv/generic.ppd";
+      model       = "drv:///brlaser.drv/br7065d.ppd";
     }
     { name        = "printer-thermal";
       description = "Zebra ZT230";
