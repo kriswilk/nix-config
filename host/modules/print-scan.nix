@@ -21,12 +21,12 @@
         description = "Canon MF455dw";
         model = "everywhere";
       }
-      # {
-      #   deviceUri = "ipp://10.0.0.203";
-      #   name = "printer-daniela";
-      #   description = "Brother DCP-7065DN";
-      #   model = "everywhere";
-      # }
+      {
+        deviceUri = "ipp://10.0.0.203/ipp";
+        name = "printer-daniela";
+        description = "Brother DCP-7065DN";
+        model = "everywhere";
+      }
     ];
   };
 
