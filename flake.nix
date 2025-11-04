@@ -19,7 +19,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, ... }:
+  outputs = { self, nixpkgs, disko, home-manager, nix-index-database, ... }:
   let
   
     # Hosts
