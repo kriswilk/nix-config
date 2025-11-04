@@ -1,17 +1,18 @@
 { config, lib, pkgs, ... }:
 
 {
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   services.printing = {
     enable = true;
     drivers = with pkgs; [
-      gutenprint
-      hplip
-      brlaser
-      brgenml1lpr
-      brgenml1cupswrapper
-      cnijfilter2
+      cups-filters
+      cups-browsed
     ];
-    # WIP needs testing/config
   };
 
   hardware.printers = {
@@ -30,7 +31,7 @@
         model = "everywhere";
       }
       {
-        deviceUri = "ipp://10.0.0.203/ipp";
+        deviceUri = "http://10.0.0.203:631/ipp";
         name = "printer-daniela";
         description = "Brother DCP-7065DN";
         model = "everywhere";
