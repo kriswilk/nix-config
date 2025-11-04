@@ -3,6 +3,14 @@
 {
   services.printing = {
     enable = true;
+    drivers = with pkgs; [
+      gutenprint
+      hplip
+      brlaser
+      brgenml1lpr
+      brgenml1cupswrapper
+      cnijfilter2
+    ];
     # WIP needs testing/config
   };
 
