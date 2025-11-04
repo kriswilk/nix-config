@@ -31,7 +31,7 @@
         model = "everywhere";
       }
       {
-        deviceUri = "http://10.0.0.203:631/ipp";
+        deviceUri = "ipp://10.0.0.203:631/ipp";
         name = "printer-daniela";
         description = "Brother DCP-7065DN";
         model = "everywhere";
