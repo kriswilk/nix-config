@@ -7,12 +7,24 @@
   };
 
   hardware.printers = {
-    ensureDefaultPrinter = "printer-kris";
+    ensureDefaultPrinter = "printer-office";
     ensurePrinters = [
       {
-        deviceUri = "ipp://10.0.0.216/ipp";
-        location = "home";
+        deviceUri = "ipp://10.0.0.215";
+        name = "printer-office";
+        description = "Canon MF455dw";
+        model = "everywhere";
+      }
+      {
+        deviceUri = "ipp://10.0.0.216";
         name = "printer-kris";
+        description = "Canon MF455dw";
+        model = "everywhere";
+      }
+      {
+        deviceUri = "ipp://10.0.0.203";
+        name = "printer-daniela";
+        description = "Brother DCP-7065DN";
         model = "everywhere";
       }
     ];
