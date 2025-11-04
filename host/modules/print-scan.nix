@@ -18,6 +18,7 @@ hardware.printers.ensurePrinters = [
   }
 ];
 
+>>>>>>> b2b5c46a95bdc1a8b669967f888c9517bc24eef7
   # services.avahi = {
   #   enable = true;
   #   nssmdns4 = true;
