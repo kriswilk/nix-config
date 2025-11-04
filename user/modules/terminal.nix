@@ -1,8 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs = {
-    #kitty.enable = true;
-    tmux.enable = true;
+  programs.kitty = {
+    #enable = true;
+  };
+
+  programs.tmux = {
+    enable = true;
   };
 }

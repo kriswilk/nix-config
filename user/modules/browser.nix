@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs = {
-    #firefox.enable = true;
+  programs.firefox = {
+    # WIP: enable = true;
   };
 
   home.packages = with pkgs; [

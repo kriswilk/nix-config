@@ -1,10 +1,16 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs = {
-    bash.enable = true;
-    direnv.enable = true;
-    starship.enable = true;
+  programs.bash = {
+    enable = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+  };
+
+  programs.starship = {
+    enable = true;
   };
 
   home.shellAliases = {

@@ -1,9 +1,12 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs = {
-    btop.enable = true;
-    fastfetch.enable = true;
+  programs.btop = {
+    enable = true;
+  };
+
+  programs.fastfetch = {
+    enable = true;
   };
 
   home.packages = with pkgs; [

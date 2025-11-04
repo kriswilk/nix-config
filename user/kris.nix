@@ -5,10 +5,8 @@
     ./modules
   ];
 
-  programs = {
-    git = {
-      settings.user.name = "Kris Wilk";
-      settings.user.email = "kris@reefnet.ca";
-    };
+  programs.git = {
+    settings.user.name = "Kris Wilk";
+    settings.user.email = "kris@reefnet.ca";
   };
 }

@@ -6,6 +6,8 @@
     # WIP needs testing/config
   };
 
-  hardware.sane.enable = true;
+  hardware.sane = {
+    enable = true;
+  };
   # WIP needs testing/config
 }

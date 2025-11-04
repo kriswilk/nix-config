@@ -8,5 +8,8 @@
     wifi.backend = "iwd";
   };
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    permitRootLogin = "no";
+  }
 }
