@@ -12,7 +12,7 @@
       cups-filters
       cups-browsed
     #   # common driver packages as per wiki.nixos.org
-      gutenprint # Drivers for many different printers from many different vendors.
+    #   gutenprint # Drivers for many different printers from many different vendors.
     #   gutenprintBin # Additional, binary-only drivers for some printers.
     #   hplip # Drivers for HP printers.
     #   postscript-lexmark # Postscript drivers for Lexmark
@@ -45,6 +45,12 @@
       location    = "fathoms";
       deviceUri   = "socket://10.0.0.203";
       model       = "drv:///sample.drv/generic.ppd";
+    }
+    { name        = "printer-thermal";
+      description = "Zebra ZT230";
+      location    = "fathoms";
+      deviceUri   = "socket://10.0.0.214";
+      model       = "drv:///sample.drv/zebra.ppd";
     }
   ];
 
