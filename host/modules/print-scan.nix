@@ -18,9 +18,9 @@
     #   postscript-lexmark # Postscript drivers for Lexmark
     #   samsung-unified-linux-driver # Proprietary Samsung Drivers
     #   splix # Drivers for printers supporting SPL (Samsung Printer Language).
-      brlaser # Drivers for some Brother printers
-    #  brgenml1lpr # Generic drivers for more Brother printers (Proprietary drivers)
-    #   brgenml1cupswrapper # Generic drivers for more Brother printers (Proprietary drivers)
+    #  brlaser # Drivers for some Brother printers
+      brgenml1lpr # Generic drivers for more Brother printers (Proprietary drivers)
+      brgenml1cupswrapper # Generic drivers for more Brother printers (Proprietary drivers)
     #   cnijfilter2 # Drivers for some Canon Pixma devices (Proprietary driver)
     #   epson-escpr2 # Drivers for newer Epson devices.
     #   epson-escpr # Drivers for some other Epson devices.
