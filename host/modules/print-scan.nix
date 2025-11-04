@@ -8,19 +8,19 @@ hardware.printers.ensurePrinters = [
     description = "Canon MF455dw";
     location    = "fathoms";
     deviceUri   = "socket://10.0.0.215:9100";
-    model       = "drv:///sample.drv/generic.ppd";
+    model       = "drv:///sample.drv/generpcl.ppd";
   }
   { name        = "printer-kris";
     description = "Canon MF455dw";
     location    = "fathoms";
     deviceUri   = "socket://10.0.0.216:9100";
-    model       = "drv:///sample.drv/generic.ppd";
+    model       = "drv:///sample.drv/generpcl.ppd";
   }
   { name        = "printer-daniela";
     description = "Brother DCP-7065DN";
     location    = "fathoms";
     deviceUri   = "socket://10.0.0.203:9100";
-    model       = "drv:///sample.drv/generic.ppd";
+    model       = "drv:///sample.drv/generpcl.ppd";
   }
 ];
 
