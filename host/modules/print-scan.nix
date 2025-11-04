@@ -20,7 +20,7 @@ hardware.printers.ensurePrinters = [
     description = "Brother DCP-7065DN";
     location    = "fathoms";
     deviceUri   = "socket://10.0.0.203:9100";
-    model       = "drv:///sample.drv/generpcl.ppd";
+    model       = "drv:///cupsfilters.drv/pwgrast.ppd";
   }
 ];
 
