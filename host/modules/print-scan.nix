@@ -7,12 +7,12 @@
   };
 
   hardware.printers = {
-    ensureDefaultPrinter = "Canon Laser";
+    ensureDefaultPrinter = "printer-kris";
     ensurePrinters = [
       {
         deviceUri = "ipp://10.0.0.216/ipp";
         location = "home";
-        name = "Canon Laser";
+        name = "printer-kris";
         model = "everywhere";
       }
     ];
