@@ -61,7 +61,6 @@
           home-manager.nixosModules.home-manager
           nix-index-database.nixosModules.nix-index
           { programs.nix-index-database.comma.enable = true; }
-          <nixpkgs/nixos/modules/services/hardware/sane_extra_backends/brscan4.nix>
         ];
         specialArgs = { inherit hostDir hostName userDir userList; };
       }

@@ -1,10 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [
-    
-  ];
-
   hardware.sane = {
     enable = true;
     brscan4 = {
