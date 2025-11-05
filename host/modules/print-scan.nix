@@ -1,16 +1,18 @@
 { config, lib, pkgs, ... }:
 
 {
-  # services.avahi = {
-  #   enable = true;
-  #   nssmdns4 = true;
-  # };
+  services.printing.browsed.enable = false;
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
 
   services.printing = {
     enable = true;
     drivers = with pkgs; [
-      cups-filters
-      cups-browsed
+    #  cups-filters
+    #  cups-browsed
     #   # common driver packages as per wiki.nixos.org
     #   gutenprint # Drivers for many different printers from many different vendors.
     #   gutenprintBin # Additional, binary-only drivers for some printers.
