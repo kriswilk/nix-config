@@ -8,11 +8,11 @@
 
   services.printing = {
     enable = true;
-    browsed.enable = false; # don't auto-configure printers
+    #browsed.enable = false; # don't auto-configure printers
     drivers = with pkgs; [
-      cups-filters
-      cups-browsed
-      
+      #cups-filters
+      #cups-browsed
+
       brgenml1lpr
       brgenml1cupswrapper
     ];
