@@ -59,35 +59,36 @@
         PageSize = "w288h432"; # 4in x 6in
       };
     }
-    # {
-    #   name        = "printer-reefnet-office";
-    #   description = "Brother MFC-7460DN";
-    #   location    = "reefnet";
-    #   deviceUri   = "socket://192.168.1.201";
-    #   model       = "brother-BrGenML1-cups-en.ppd";
-    #   ppdOptions  = {
-    #     PageSize = "Letter";
-    #   };
-    # }
-    # {
-    #   name        = "printer-reefnet-colour";
-    #   description = "Lexmark C3224dw";
-    #   location    = "reefnet";
-    #   deviceUri   = "socket://192.168.1.202";
-    #   model       = "drv:///sample.drv/generic.ppd";
-    #   ppdOptions  = {
-    #     PageSize = "Letter";
-    #   };
-    # }
-    # {
-    #   name        = "printer-reefnet-thermal";
-    #   description = "Zebra ZT230";
-    #   location    = "reefnet";
-    #   deviceUri   = "socket://192.168.1.212";
-    #   model       = "drv:///sample.drv/zebra.ppd";
-    #   ppdOptions  = {
-    #     PageSize = "w288h432"; # 4in x 6in
-    #   };
-    # }
+    # -----------------------------------------------------
+    {
+      name        = "reefnet-office";
+      description = "Brother MFC-7460DN";
+      location    = "reefnet";
+      deviceUri   = "socket://192.168.1.201";
+      model       = "brother-BrGenML1-cups-en.ppd";
+      ppdOptions  = {
+        PageSize = "Letter";
+      };
+    }
+    {
+      name        = "reefnet-colour";
+      description = "Lexmark C3224dw";
+      location    = "reefnet";
+      deviceUri   = "socket://192.168.1.202";
+      model       = "drv:///sample.drv/generpcl.ppd";
+      ppdOptions  = {
+        PageSize = "Letter";
+      };
+    }
+    {
+      name        = "reefnet-thermal";
+      description = "Zebra ZT230";
+      location    = "reefnet";
+      deviceUri   = "socket://192.168.1.212";
+      model       = "drv:///sample.drv/zebra.ppd";
+      ppdOptions  = {
+        PageSize = "w288h432"; # 4in x 6in
+      };
+    }
   ];
 }
