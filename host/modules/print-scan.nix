@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  services.printing.browsed.enable = false;
-
   services.avahi = {
     enable = true;
     nssmdns4 = true;
@@ -10,27 +8,26 @@
 
   services.printing = {
     enable = true;
+    browsed.enable = false;
     drivers = with pkgs; [
-    #  cups-filters
-    #  cups-browsed
-    #   # common driver packages as per wiki.nixos.org
-    #   gutenprint # Drivers for many different printers from many different vendors.
-    #   gutenprintBin # Additional, binary-only drivers for some printers.
-    #   hplip # Drivers for HP printers.
-    #   postscript-lexmark # Postscript drivers for Lexmark
-    #   samsung-unified-linux-driver # Proprietary Samsung Drivers
-    #   splix # Drivers for printers supporting SPL (Samsung Printer Language).
-      brlaser # Drivers for some Brother printers
-    #   brgenml1lpr # Generic drivers for more Brother printers (Proprietary drivers)
-    #   brgenml1cupswrapper # Generic drivers for more Brother printers (Proprietary drivers)
-    #   cnijfilter2 # Drivers for some Canon Pixma devices (Proprietary driver)
-    #   epson-escpr2 # Drivers for newer Epson devices.
-    #   epson-escpr # Drivers for some other Epson devices.
+      # common driver packages as per wiki.nixos.org
+      #gutenprint # Drivers for many different printers from many different vendors.
+      #gutenprintBin # Additional, binary-only drivers for some printers.
+      #hplip # Drivers for HP printers.
+      #postscript-lexmark # Postscript drivers for Lexmark
+      #samsung-unified-linux-driver # Proprietary Samsung Drivers
+      #splix # Drivers for printers supporting SPL (Samsung Printer Language).
+      #brlaser # Drivers for some Brother printers
+      brgenml1lpr # Generic drivers for more Brother printers (Proprietary drivers)
+      #brgenml1cupswrapper # Generic drivers for more Brother printers (Proprietary drivers)
+      #cnijfilter2 # Drivers for some Canon Pixma devices (Proprietary driver)
+      #epson-escpr2 # Drivers for newer Epson devices.
+      #epson-escpr # Drivers for some other Epson devices.
     ];
   };
 
   hardware.printers.ensurePrinters = [
-    { name        = "printer-office";
+    { name        = "fathoms-office";
       description = "Canon MF455dw";
       location    = "fathoms";
       deviceUri   = "socket://10.0.0.215";
@@ -47,12 +44,18 @@
       location    = "fathoms";
       deviceUri   = "socket://10.0.0.203";
       model       = "drv:///brlaser.drv/br7065d.ppd";
+      ppdOptions  = {
+                      PageSize = "Letter";
+                    };
     }
     { name        = "printer-thermal";
       description = "Zebra ZT230";
       location    = "fathoms";
       deviceUri   = "socket://10.0.0.214";
       model       = "drv:///sample.drv/zebra.ppd";
+      ppdOptions  = {
+                      PageSize = "w288h432"; # 4in x 6in
+                    };
     }
   ];
 
