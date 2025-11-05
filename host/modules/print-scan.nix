@@ -28,7 +28,7 @@
     }
     { name        = "fathoms-daniela";
       description = "Brother DCP-7065DN";
-      deviceUri   = "10.0.0.203";
+      deviceUri   = "socket://10.0.0.203";
       model       = "brother-BrGenML1-cups-en.ppd";
     }
     { name        = "fathoms-thermal";
