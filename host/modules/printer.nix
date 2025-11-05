@@ -18,25 +18,21 @@
   hardware.printers.ensurePrinters = [
     { name        = "fathoms-office";
       description = "Canon MF455dw";
-      location    = "fathoms";
       deviceUri   = "socket://10.0.0.215";
       model       = "drv:///sample.drv/generic.ppd";
     }
     { name        = "fathoms-kris";
       description = "Canon MF455dw";
-      location    = "fathoms";
       deviceUri   = "socket://10.0.0.216";
       model       = "drv:///sample.drv/generic.ppd";
     }
     { name        = "fathoms-daniela";
       description = "Brother DCP-7065DN";
-      location    = "fathoms";
       deviceUri   = "socket://10.0.0.203";
       model       = "brother-BrGenML1-cups-en.ppd";
     }
     { name        = "fathoms-thermal";
       description = "Zebra ZT230";
-      location    = "fathoms";
       deviceUri   = "socket://10.0.0.214";
       model       = "drv:///sample.drv/zebra.ppd";
       ppdOptions  = {
