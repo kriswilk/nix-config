@@ -43,7 +43,7 @@
       description = "Brother DCP-7065DN";
       location    = "fathoms";
       deviceUri   = "socket://10.0.0.203";
-      model       = "drv:///brlaser.drv/br7065d.ppd";
+      model       = "brother-BrGenML1-cups-en.ppd";
       ppdOptions  = {
                       PageSize = "Letter";
                     };
