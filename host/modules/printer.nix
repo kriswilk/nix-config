@@ -32,12 +32,12 @@
       name = "fathoms-kris";
       description = "Canon MF455dw";
       location = "fathoms";
-      deviceUri = "socket://10.0.0.216";
+      deviceUri = "ipp://10.0.0.216/ipp/print";
       model = "CNRCUPSMF450ZS.ppd";
-      ppdOptions = {
-        PageSize = "Letter";
-        Option1 = "True";
-      };
+      #ppdOptions = {
+      #  PageSize = "Letter";
+      #  Option1 = "True";
+      #};
     }
     {
       name = "fathoms-office";
