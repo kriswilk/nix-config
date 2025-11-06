@@ -12,7 +12,6 @@
     drivers = with pkgs; [
       brgenml1lpr
       brgenml1cupswrapper
-      canon-cups-ufr2
     ];
   };
 
@@ -32,12 +31,12 @@
       name = "fathoms-kris";
       description = "Canon MF455dw";
       location = "fathoms";
-      deviceUri = "ipp://10.0.0.216/ipp/print";
-      model = "CNRCUPSMF450ZS.ppd";
-      #ppdOptions = {
-      #  PageSize = "Letter";
-      #  Option1 = "True";
-      #};
+      deviceUri = "socket://10.0.0.216";
+      model = "drv:///sample.drv/generpcl.ppd";
+      ppdOptions = {
+        PageSize = "Letter";
+        Option1 = "True"; # duplexer
+      };
     }
     {
       name = "fathoms-office";
@@ -47,7 +46,7 @@
       model = "drv:///sample.drv/generpcl.ppd";
       ppdOptions = {
         PageSize = "Letter";
-        Option1 = "True";
+        Option1 = "True"; # duplexer
       };
     }
     {
