@@ -12,6 +12,7 @@
     drivers = with pkgs; [
       brgenml1lpr
       brgenml1cupswrapper
+      cnijfilter2
     ];
   };
 
