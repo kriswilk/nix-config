@@ -12,7 +12,7 @@
     drivers = with pkgs; [
       brgenml1lpr
       brgenml1cupswrapper
-      cups-canon-ufr2
+      canon-cups-ufr2
     ];
   };
 
