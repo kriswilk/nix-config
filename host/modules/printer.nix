@@ -32,8 +32,8 @@
       name = "fathoms-kris";
       description = "Canon MF455dw";
       location = "fathoms";
-      deviceUri = "socket://10.0.0.216:9100";
-      model = "CNRCUPSMF450ZK.ppd";
+      deviceUri = "socket://10.0.0.216";
+      model = "CNRCUPSMF450ZS.ppd";
       ppdOptions = {
         PageSize = "Letter";
         Option1 = "True";
