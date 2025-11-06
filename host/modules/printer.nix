@@ -10,9 +10,6 @@
     enable = true;
     browsed.enable = false; # DO NOT auto-configure printers!
     drivers = with pkgs; [
-      cups-filters
-      cups-browsed
-      
       brgenml1lpr
       brgenml1cupswrapper
       canon-cups-ufr2
