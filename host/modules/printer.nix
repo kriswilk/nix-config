@@ -33,11 +33,11 @@
       description = "Canon MF455dw";
       location = "fathoms";
       deviceUri = "socket://10.0.0.216";
-      model = "drv:///sample.drv/generpcl.ppd";
-      ppdOptions = {
-        PageSize = "Letter";
-        Option1 = "True"; # duplexer
-      };
+      model = "CNRCUPSMF450ZS.ppd";
+      #ppdOptions = {
+      #  PageSize = "Letter";
+      #  Option1 = "True"; # duplexer
+      #};
     }
     {
       name = "fathoms-office";
