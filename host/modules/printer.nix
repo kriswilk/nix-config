@@ -10,9 +10,9 @@
     enable = true;
     browsed.enable = false; # DO NOT auto-configure printers!
     drivers = with pkgs; [
+      gutenprint
       brgenml1lpr
       brgenml1cupswrapper
-      cnijfilter2
     ];
   };
 
