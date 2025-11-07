@@ -1,17 +1,21 @@
 { config, lib, pkgs, ... }:
 
 {
-  services = {
-    ssh-agent.enable = true;
+  services.ssh-agent = {
+    enable = true;
+  };
+
+  services.tailscale = {
+    enable = true;
   };
 
   home.packages = with pkgs; [
     dnsutils
     iperf3
+    tailscale
 
     #angryipscanner
     #kdePackages.krdc # already installed?
-    #tailscale
     #wireshark
 
     # WIP: need these?

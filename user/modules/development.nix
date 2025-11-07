@@ -24,6 +24,7 @@
   home.packages = with pkgs; [
     gcc
     gnumake
+    nixfmt-rfc-style
     # WIP: j-link
   ];
 }
