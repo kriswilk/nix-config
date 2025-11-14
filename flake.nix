@@ -56,7 +56,7 @@
       nixpkgs.lib.nixosSystem {
         system = hostData.system;
         modules = [
-          "${hostDir}/${hostName}.nix"
+          "${hostDir}/${hostName}"
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           nix-index-database.nixosModules.nix-index
