@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./modules
+    ../_modules
   ];
 
   programs.git = {
