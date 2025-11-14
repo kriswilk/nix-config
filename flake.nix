@@ -17,9 +17,13 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, nix-index-database, ... }:
+  outputs = { self, nixpkgs, disko, home-manager, nix-index-database, stylix, ... }:
   let
   
     # Hosts
@@ -52,15 +56,16 @@
     };
 
   in {
-    nixosConfigurations = nixpkgs.lib.mapAttrs (hostName: hostData:
+    nixosConfigurations = nixpkgs.lib.mapAttrs (hostName: hostAttrs:
       nixpkgs.lib.nixosSystem {
-        system = hostData.system;
+        system = hostAttrs.system;
         modules = [
           "${hostDir}/${hostName}"
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           nix-index-database.nixosModules.nix-index
           { programs.nix-index-database.comma.enable = true; }
+          stylix.nixosModules.stylix
         ];
         specialArgs = { inherit hostDir hostName userDir userList; };
       }
