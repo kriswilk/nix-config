@@ -14,7 +14,6 @@
     lm_sensors
     lsof
     ltrace
-    neofetch
     pciutils
     strace
     sysstat
