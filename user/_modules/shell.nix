@@ -11,9 +11,9 @@
 
   programs.starship = {
     enable = true;
-    settings = {
-      python.symbol = " ";
-    };
+#    settings = {
+#      python.symbol = " ";
+#    };
   };
 
   home.shellAliases = {
