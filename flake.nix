@@ -65,7 +65,7 @@
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
           {
-            home-manager.modules = [
+            home-manager.sharedModules = [
               nvf.homeManagerModules.default
             ];
           }
