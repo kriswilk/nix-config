@@ -81,10 +81,6 @@
               ) userList;
             };
           }
-          {
-            # Pass flake inputs to home-manager modules
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
         ];
         specialArgs = { inherit hostDir hostName userDir userList; };
       }
