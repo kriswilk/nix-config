@@ -64,13 +64,13 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
-          {
-            home-manager.sharedModules = [
-              nvf.homeManagerModules.default
-            ];
-          }
+          # {
+          #   home-manager.sharedModules = [
+          #     nvf.homeManagerModules.default
+          #   ];
+          # }
         ];
-        specialArgs = { inherit hostDir hostName userDir userList; };
+        specialArgs = { inherit hostDir hostName userDir userList nvf; };
       }
     ) hostList;
   };
