@@ -23,7 +23,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, disko, home-manager, stylix, nvf, ... }:
+  outputs = inputs@{ self, nixpkgs, disko, home-manager, stylix, ... }:
   let
   
     # Hosts
@@ -63,7 +63,7 @@
           "${hostDir}/${hostName}"
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          #{ home-manager.extraSpecialArgs = { inherit inputs; }; }
+          { home-manager.extraSpecialArgs = { inherit inputs; }; }
           stylix.nixosModules.stylix
           # {
           #   home-manager.sharedModules = [
