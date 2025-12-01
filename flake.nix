@@ -63,13 +63,12 @@
           "${hostDir}/${hostName}"
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          { home-manager.extraSpecialArgs = { inherit inputs; }; }
           stylix.nixosModules.stylix
-          # {
-          #   home-manager.sharedModules = [
-          #     nvf.homeManagerModules.default
-          #   ];
-          # }
+          {
+            home-manager.modules = [
+              nvf.homeManagerModules.default
+            ];
+          }
         ];
         specialArgs = { inherit hostDir hostName userDir userList; };
       }
