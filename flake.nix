@@ -23,7 +23,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, stylix, nvf, lib, ... }:
+  outputs = { self, nixpkgs, disko, home-manager, stylix, nvf, ... }:
   let
   
     # Hosts
@@ -65,21 +65,9 @@
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
           {
-            users = {
-              mutableUsers = false;
-              users = userList;
-            };
-
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              sharedModules = [
-                nvf.homeManagerModules.default
-              ];
-              users = lib.mapAttrs (userName: userData:
-                "${userDir}/${userName}"
-              ) userList;
-            };
+            home-manager.sharedModules = [
+              nvf.homeManagerModules.default
+            ];
           }
         ];
         specialArgs = { inherit hostDir hostName userDir userList; };
