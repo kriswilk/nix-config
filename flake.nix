@@ -64,7 +64,27 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
-          nvf.nixosModules.default
+          {
+            users = {
+              mutableUsers = false;
+              users = userList;
+            };
+
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              sharedModules = [
+                nvf.homeManagerModules.default
+              ];
+              users = lib.mapAttrs (userName: userData:
+                "${userDir}/${userName}"
+              ) userList;
+            };
+          }
+          {
+            # Pass flake inputs to home-manager modules
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
         ];
         specialArgs = { inherit hostDir hostName userDir userList; };
       }
