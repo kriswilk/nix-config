@@ -23,7 +23,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, nix-index-database, stylix, ... }:
+  outputs = { self, nixpkgs, disko, home-manager, stylix, ... }:
   let
   
     # Hosts
