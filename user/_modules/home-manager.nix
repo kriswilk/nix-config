@@ -1,7 +1,7 @@
-{ config, lib, pkgs, nvf, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  imports = [ nvf.homeManagerModules.default ];
+  imports = [ inputs.nvf.homeManagerModules.default ];
 
   home.stateVersion = "25.05";
 
