@@ -13,12 +13,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     stylix = {
       url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nvf = {
+      url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -63,8 +63,6 @@
           "${hostDir}/${hostName}"
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          nix-index-database.nixosModules.nix-index
-          { programs.nix-index-database.comma.enable = true; }
           stylix.nixosModules.stylix
         ];
         specialArgs = { inherit hostDir hostName userDir userList; };
