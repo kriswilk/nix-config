@@ -4,6 +4,8 @@
   programs.nvf = {
     enable = true;
     settings = {
+      vim.viAlias = false;
+      vim.vimAlias = false;
       vim.lsp = {
         enable = true;
       };
