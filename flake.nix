@@ -23,7 +23,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, disko, home-manager, stylix, ... }:
+  outputs = inputs@{ self, nixpkgs, disko, home-manager, stylix, nvf, ... }:
   let
   
     # Hosts
