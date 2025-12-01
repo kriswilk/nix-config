@@ -64,8 +64,9 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
+          nvf.homeManagerModules.default
         ];
-        specialArgs = { inherit hostDir hostName userDir userList nvf; };
+        specialArgs = { inherit hostDir hostName userDir userList; };
       }
     ) hostList;
   };
