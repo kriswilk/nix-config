@@ -37,23 +37,7 @@
       };
     };
 
-    # Users
     userDir = ./user;
-    userGroups = [ "lp" "networkmanager" "scanner" ];
-    userList = {
-      kris = {
-        isNormalUser = true;
-        description = "Kris Wilk";
-        password = "12345";
-        extraGroups = userGroups ++ [ "wheel" ];
-      };
-      guest = {
-        isNormalUser = true;
-        description = "Guest User";
-        password = "guest";
-        extraGroups = userGroups;
-      };
-    };
 
   in {
     nixosConfigurations = nixpkgs.lib.mapAttrs (hostName: hostAttrs:
@@ -63,14 +47,18 @@
           "${hostDir}/${hostName}"
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
-          stylix.nixosModules.stylix
           {
-            home-manager.sharedModules = [
-              nvf.homeManagerModules.default
-            ];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              sharedModules = [
+                nvf.homeManagerModules.default
+              ];
+            };
           }
+          stylix.nixosModules.stylix
         ];
-        specialArgs = { inherit hostDir hostName userDir userList; };
+        specialArgs = { inherit hostDir hostName userDir; };
       }
     ) hostList;
   };
