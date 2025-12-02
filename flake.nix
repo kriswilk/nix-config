@@ -26,23 +26,17 @@
   outputs = { self, nixpkgs, disko, home-manager, stylix, nvf, ... }:
   let
   
-    # Hosts
-    hostDir = ./host;
     hostList = {
-      vm = {
-        system = "x86_64-linux";
-      };
-      desktop = {
-        system = "x86_64-linux";
-      };
+      vm = {};
+      desktop = {};
     };
-
+    hostDir = ./host;
     userDir = ./user;
 
   in {
     nixosConfigurations = nixpkgs.lib.mapAttrs (hostName: hostAttrs:
       nixpkgs.lib.nixosSystem {
-        system = hostAttrs.system;
+        system = "x86_64-linux";
         modules = [
           "${hostDir}/${hostName}"
           disko.nixosModules.disko
