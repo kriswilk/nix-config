@@ -25,9 +25,9 @@
 
   outputs = { self, nixpkgs, disko, home-manager, stylix, nvf, ... }:
   let
-    hostList = ["vm" "desktop"];
     hostDir = ./host;
     userDir = ./user;
+    hostList = ["vm" "desktop"];
   in {
     nixosConfigurations = nixpkgs.lib.genAttrs hostList (hostName: nixpkgs.lib.nixosSystem {
       modules = [
