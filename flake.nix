@@ -2,25 +2,11 @@
   description = "NixOS Host & User Configuration";
   
   inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
-    disko = {
-      url = "github:nix-community/disko";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
-    stylix = {
-      url = "github:nix-community/stylix";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nvf = {
-      url = "github:notashelf/nvf";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    disko.url = "github:nix-community/disko";
+    home-manager.url = "github:nix-community/home-manager";
+    stylix.url = "github:nix-community/stylix";
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs = { self, nixpkgs, disko, home-manager, stylix, nvf, ... }:
