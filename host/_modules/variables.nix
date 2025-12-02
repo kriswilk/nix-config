@@ -2,6 +2,6 @@
 
 {
   environment.sessionVariables = {
-    NH_FLAKE = "/etc/nixos";
+    NH_FLAKE = "/home/kris/nix-config";
   };
 }

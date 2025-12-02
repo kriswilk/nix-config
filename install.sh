@@ -27,4 +27,4 @@ notify "INSTALL NIXOS..."
 sudo nixos-install --no-channel-copy --no-root-password --flake ./nix-config#${host}
 
 notify "CLONE REPO TO NEW FILESYSTEM..."
-sudo git clone https://github.com/kriswilk/nix-config /mnt/etc/nixos
+sudo git clone https://github.com/kriswilk/nix-config /mnt/home/kris/nix-config
