@@ -7,11 +7,12 @@
       viAlias = false;
       vimAlias = false;
       
-      #lsp.enable = true;
+      lsp.enable = true;
 
       statusline.lualine.enable = true;
       telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
+      
       languages = {
         enableTreesitter = true;
 
