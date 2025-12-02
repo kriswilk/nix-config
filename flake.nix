@@ -30,7 +30,6 @@
     userDir = ./user;
   in {
     nixosConfigurations = nixpkgs.lib.genAttrs hostList (hostName: nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         "${hostDir}/${hostName}"
         disko.nixosModules.disko
