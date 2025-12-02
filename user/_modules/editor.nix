@@ -13,8 +13,8 @@
       telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
       languages = {
-        enableTreeSitter = true;
-        
+        enableTreesitter = true;
+
         nix.enable = true;
         ts.enable = true;
         python.enable = true;
