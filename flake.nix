@@ -25,35 +25,28 @@
 
   outputs = { self, nixpkgs, disko, home-manager, stylix, nvf, ... }:
   let
-  
-    hostList = {
-      vm = {};
-      desktop = {};
-    };
+    hostList = ["vm" "desktop"];
     hostDir = ./host;
     userDir = ./user;
-
   in {
-    nixosConfigurations = nixpkgs.lib.mapAttrs (hostName: hostAttrs:
-      nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          "${hostDir}/${hostName}"
-          disko.nixosModules.disko
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              sharedModules = [
-                nvf.homeManagerModules.default
-              ];
-            };
-          }
-          stylix.nixosModules.stylix
-        ];
-        specialArgs = { inherit hostDir hostName userDir; };
-      }
-    ) hostList;
+    nixosConfigurations = nixpkgs.lib.genAttrs hostList (hostName: nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        "${hostDir}/${hostName}"
+        disko.nixosModules.disko
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            sharedModules = [
+              nvf.homeManagerModules.default
+            ];
+          };
+        }
+        stylix.nixosModules.stylix
+      ];
+      specialArgs = { inherit hostDir hostName userDir; };
+    });
   };
 }

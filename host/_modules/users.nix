@@ -1,9 +1,7 @@
 { config, lib, pkgs, userDir, ... }:
 
 let
-
   userGroups = [ "lp" "networkmanager" "scanner" ];
-
   userList = {
     kris = {
       isNormalUser = true;
@@ -18,7 +16,6 @@ let
       extraGroups = userGroups;
     };
   };
-
 in {
   users = {
     mutableUsers = false;
