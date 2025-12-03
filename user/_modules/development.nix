@@ -5,6 +5,10 @@
     enable = true;
   };
 
+  programs.gh = {
+    enable = true;
+  };
+
   programs.vscode = {
     # WIP: use FHS version instead?
     # WIP: enable = true;
