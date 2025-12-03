@@ -12,14 +12,14 @@
     };
 
     fonts = {
-      monospace = {
+      sansSerif = {
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrains Mono Nerd Font";
       };
 
-      serif = monospace;
-      sansSerif = monospace;
-      emoji = monospace;
+      serif = sansSerif;
+      monospace = sansSerif;
+      emoji = sansSerif;
     };
   };
 }
