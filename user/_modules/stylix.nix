@@ -11,7 +11,7 @@
       base00 = "000000";
     };
 
-    fonts = {
+    fonts = rec {
       sansSerif = {
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrains Mono Nerd Font";
