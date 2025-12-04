@@ -14,7 +14,7 @@
       base05= "#b6b6b6"; # gray05
       base06= "#dbdbdb"; # gray06
       base07= "#ffffff"; # white
-      base08= "#fb0120"; # red
+      base08= "#e95e77"; # red
       base09= "#fc6d24"; # orange
       base0A= "#fda331"; # yellow
       base0B= "#a1c659"; # green
