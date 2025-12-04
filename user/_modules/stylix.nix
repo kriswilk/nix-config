@@ -33,7 +33,7 @@
       base06= "#dbdbdb"; # gray06
       base07= "#ffffff"; # white
       base08= "#eb4f6c"; # red
-      base09= "#fc6d24"; # orange
+      base09= "#ff6a2f"; # orange
       base0A= "#fda331"; # yellow
       base0B= "#98c440"; # green
       base0C= "#60c9c0"; # cyan
