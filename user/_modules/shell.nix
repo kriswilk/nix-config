@@ -16,7 +16,7 @@
         (builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml"
       ))
       {
-        # WIP: other custom configuration here
+        # WIP: other custom configuration here...
       }
     ];
   };
