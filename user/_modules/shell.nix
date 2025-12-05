@@ -13,11 +13,12 @@
     enable = true;
     settings = lib.mkMerge [
       (builtins.fromTOML
-        (builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml"
+        (builtins.readFile "${pkgs.starship}/share/starship/presets/nerd-font-symbols.toml"
       ))
       {
         # WIP: other custom configuration here
         username.format = "[$user]($style)@";
+        hostname.format = "[$hostname]($style) in ";
         hostname.style = "bold orange";
       }
     ];
