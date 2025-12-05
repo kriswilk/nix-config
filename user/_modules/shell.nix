@@ -13,7 +13,7 @@
     enable = true;
     settings = lib.mkMerge [
       (builtins.fromTOML
-        (builtins.readFile "${pkgs.starship}/share/starship/presets/nerd-font-symbols.toml"
+        (builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml"
       ))
       {
         # WIP: other custom configuration here
