@@ -17,6 +17,8 @@
       ))
       {
         # WIP: other custom configuration here
+        username.format = "[$user]($style)@";
+        hostname.style = "bold orange";
       }
     ];
   };
