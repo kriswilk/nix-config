@@ -11,8 +11,8 @@
 
     fonts = {
       monospace = {
-        name = "JetBrainsMonoNL Nerd Font Mono";
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        package = pkgs.nerdfonts.override {fonts = ["FiraCode"];};
+      name = "FiraCode Nerd Font";
       };
     };
   };
