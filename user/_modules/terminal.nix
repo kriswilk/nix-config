@@ -17,6 +17,10 @@
     enable = true;
   };
 
+  programs.foot = {
+    enable = true;
+  };
+
   programs.tmux = {
     enable = true;
   };
