@@ -17,10 +17,11 @@
       {
         # WIP: other custom configuration here
         username.show_always = true;
-        username.format = "[$user]($style) / ";
+        username.format = "[$user]($style)";
 
         hostname.ssh_only = false;
-        hostname.format = "[@$ssh_symbol$hostname]($style) / ";
+        hostname.ssh_symbol = "@";
+        hostname.format = "[@$ssh_symbol](bold white)[$hostname]($style) in ";
         hostname.style = "bold green";
         
         directory.style = "bold blue";
