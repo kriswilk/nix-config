@@ -19,7 +19,7 @@
         username.show_always = true;
         username.format = "[$user]($style)";
         hostname.ssh_only = false;
-        hostname.ssh_symbol = lib.mkForce "[@](bold)";
+        hostname.ssh_symbol = lib.mkForce "[@](bold white)";
         hostname.format = "@$ssh_symbol[$hostname]($style) ";
         hostname.style = "bold green";
         directory.style = "bold blue";
