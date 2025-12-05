@@ -11,9 +11,14 @@
 
   programs.starship = {
     enable = true;
-#    settings = {
-#      python.symbol = " ";
-#    };
+    settings = lib.mkMerge [
+      (builtins.fromTOML
+        (builtins.readFile "${pkgs.starship}/share/starship/presets/plain-text-symbols.toml"
+      ))
+      {
+        # WIP: other custom configuration here
+      }
+    ];
   };
 
   home.shellAliases = {
