@@ -9,11 +9,11 @@
       sha256 = "sha256:0527d5jc4m817pdwkbpm8yz780pggwgylc26qx79akrdnqibnk5g";
     };
 
-    fonts = {
-      monospace = {
-        name = "JetBrainsMonoNL Nerd Font";
-        package = pkgs.nerd-fonts.jetbrains-mono;
-      };
-    };
+    # fonts = {
+    #   monospace = {
+    #     name = "JetBrainsMonoNL Nerd Font";
+    #     package = pkgs.nerd-fonts.jetbrains-mono;
+    #   };
+    # };
   };
 }
