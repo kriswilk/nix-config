@@ -15,6 +15,9 @@
       (builtins.fromTOML
         (builtins.readFile "${pkgs.starship}/share/starship/presets/nerd-font-symbols.toml"
       ))
+      (builtins.fromTOML
+        (builtins.readFile "${pkgs.starship}/share/starship/presets/no-empty-icons.toml"
+      ))
       {
         # WIP: other custom configuration here
         hostname.style = "bold green";
