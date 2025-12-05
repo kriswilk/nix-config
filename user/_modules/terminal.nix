@@ -13,6 +13,10 @@
     enable = true;
   };
 
+  programs.wezterm = {
+    enable = true;
+  };
+
   programs.tmux = {
     enable = true;
   };
