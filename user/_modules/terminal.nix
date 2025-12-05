@@ -1,8 +1,16 @@
 { config, lib, pkgs, ... }:
 
 {
+  programs.alacritty = {
+    enable = true;
+  };
+
+  programs.ghostty = {
+    enable = true;
+  };
+
   programs.kitty = {
-    #enable = true;
+    enable = true;
   };
 
   programs.tmux = {

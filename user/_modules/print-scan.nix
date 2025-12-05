@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    #naps2
+    naps2
     # WIP: fineprint?
   ];
 }

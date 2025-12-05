@@ -2,7 +2,8 @@
 
 {
   programs.firefox = {
-    # WIP: enable = true;
+    enable = true;
+    # WIP: configure settings, extensions, etc...
   };
 
   home.packages = with pkgs; [

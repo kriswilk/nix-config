@@ -3,7 +3,7 @@
 {
   disko.devices = {
     disk.main = {
-      # specify 'disko.devices.disk.main.device = "/dev/<disk>"' in each host configuration
+      # specify 'disko.devices.disk.main.device' during deployment!
       type = "disk";
       content = {
         type = "gpt";
