@@ -25,6 +25,9 @@
         hostname.style = "bold green";
         
         directory.style = "bold blue";
+
+        format = "$directory$character";
+        right_format = "$all";
       }
     ];
   };
