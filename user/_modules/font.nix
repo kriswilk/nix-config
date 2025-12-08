@@ -10,7 +10,7 @@
     noto-fonts
     noto-fonts-color-emoji
     # programming
-    nerd.fonts.jetbrains-mono
+    nerd-fonts.jetbrains-mono
     nerd-fonts.symbols-only
   ];
 }
