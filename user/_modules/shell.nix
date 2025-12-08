@@ -29,7 +29,30 @@
         
         directory.style = "bold blue";
 
-        format = "$username$hostname$directory$fill$all";
+        format = "
+          $username\
+          $hostname\
+          $localip\
+          $shlvl\
+          $singularity\
+          $kubernetes\
+          $directory\
+          $vcsh\
+          $fossil_branch\
+          $fossil_metrics\
+          $git_branch\
+          $git_commit\
+          $git_state\
+          $git_metrics\
+          $git_status\
+          $hg_branch\
+          $hg_state\
+          $pijul_channel\
+          $docker_context\
+          $package\
+          $all
+        ";
+        fill.style = "bright-black";
         #line_break.disabled = true;
       }
     ];
