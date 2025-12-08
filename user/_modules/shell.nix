@@ -28,6 +28,9 @@
 
         sudo ={
           disabled = false;
+          symbol = "󰒃";
+          format = "[$symbol]($style) ";
+          style = "bold red";
         };
 
         username = {
