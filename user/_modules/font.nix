@@ -6,7 +6,7 @@
   };
 
   home.packages = with pkgs; [
-    # general purpose fonts
+    # general purpose
     noto-fonts
     noto-fonts-color-emoji
     # programming
