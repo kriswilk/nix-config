@@ -28,7 +28,7 @@
 
         sudo ={
           disabled = false;
-        }
+        };
 
         username = {
           show_always = true;
