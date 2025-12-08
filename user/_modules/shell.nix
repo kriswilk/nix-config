@@ -29,29 +29,7 @@
         
         directory.style = "bold blue";
 
-        format = "
-          $username\
-          $hostname\
-          $localip\
-          $shlvl\
-          $singularity\
-          $kubernetes\
-          $directory\
-          $vcsh\
-          $fossil_branch\
-          $fossil_metrics\
-          $git_branch\
-          $git_commit\
-          $git_state\
-          $git_metrics\
-          $git_status\
-          $hg_branch\
-          $hg_state\
-          $pijul_channel\
-          $docker_context\
-          $package\
-          $all
-        ";
+        format = "$username$hostname$localip$directory$git_branch$git_commit$git_state$git_metrics$git_status$docker_context$package$fill$all";
         fill.style = "bright-black";
         #line_break.disabled = true;
       }
