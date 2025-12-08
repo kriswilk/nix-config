@@ -35,13 +35,13 @@
 
         username = {
           show_always = true;
-          format = "[$user]($style) / ";
+          format = "[$user]($style)  ";
         };
 
         hostname = {
           ssh_only = false;
           ssh_symbol = lib.mkForce " ";
-          format = "[$ssh_symbol$hostname]($style) / ";
+          format = "[$ssh_symbol$hostname]($style)  ";
           style = "bold green";
         };
 
