@@ -15,8 +15,8 @@
   programs.starship = {
     enable = true;
     settings = lib.mkMerge [
-      #(builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/nerd-font-symbols.toml"))
-      #(builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/no-empty-icons.toml"))
+      (builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/nerd-font-symbols.toml"))
+      (builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/no-empty-icons.toml"))
       {
         # WIP: other custom configuration here
         username.show_always = true;
@@ -29,9 +29,10 @@
         
         directory.style = "bold blue";
 
+        cmd_duration.format = "󱎫 [$duration]($style) ";
+
         format = "$username$hostname$localip$directory$git_branch$git_commit$git_state$git_metrics$git_status$docker_context$package$fill$all";
         fill.style = "bright-black";
-        #line_break.disabled = true;
       }
     ];
   };
