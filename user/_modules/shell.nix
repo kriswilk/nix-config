@@ -19,15 +19,15 @@
       #(builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/no-empty-icons.toml"))
       {
         # WIP: other custom configuration here
-        #username.show_always = true;
-        #username.format = "[$user]($style) / ";
+        username.show_always = true;
+        username.format = "[$user]($style) / ";
 
-        #hostname.ssh_only = false;
-        #hostname.ssh_symbol = lib.mkForce " ";
-        #hostname.format = "[$ssh_symbol$hostname]($style) / ";
-        #hostname.style = "bold green";
+        hostname.ssh_only = false;
+        hostname.ssh_symbol = lib.mkForce " ";
+        hostname.format = "[$ssh_symbol$hostname]($style) / ";
+        hostname.style = "bold green";
         
-        #directory.style = "bold blue";
+        directory.style = "bold blue";
 
         format = "$directory$character";
         right_format = "$all";
