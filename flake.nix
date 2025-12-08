@@ -39,7 +39,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             sharedModules = [
-              nvf.homeManagerModules.default
+              inputs.nvf.homeManagerModules.default
             ];
           };
         }
