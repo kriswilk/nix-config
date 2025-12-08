@@ -28,6 +28,7 @@
 
         format = "$directory$character";
         right_format = "$username$hostname";
+        line_break.disabled = true;
       }
     ];
   };
