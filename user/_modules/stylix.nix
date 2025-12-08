@@ -11,22 +11,22 @@
 
     fonts = {
       serif = {
-        package = pkgs.noto-fonts;
+        #package = pkgs.noto-fonts;
         name = "Noto Serif";
       };
 
       sansSerif = {
-        package = pkgs.noto-fonts;
+        #package = pkgs.noto-fonts;
         name = "Noto Sans";
       };
 
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        #package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMonoNL Nerd Font";
       };
 
       emoji = {
-        package = pkgs.noto-fonts-color-emoji;
+        #package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
       };
     };
