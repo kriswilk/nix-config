@@ -29,8 +29,7 @@
         
         directory.style = "bold blue";
 
-        format = "$directory$character";
-        right_format = "$all";
+        format = "$username$hostname$directory$fill$all";
         #line_break.disabled = true;
       }
     ];
