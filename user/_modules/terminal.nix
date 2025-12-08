@@ -4,7 +4,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      #text_composition_strategy = "legacy";
+      text_composition_strategy = "legacy";
     };
   };
 
