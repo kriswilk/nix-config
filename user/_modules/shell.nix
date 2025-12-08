@@ -26,6 +26,10 @@
           style = "bright-black";
         };
 
+        sudo ={
+          disabled = false;
+        }
+
         username = {
           show_always = true;
           format = "[$user]($style) / ";
