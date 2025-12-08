@@ -4,7 +4,7 @@
   programs.bash = {
     enable = true;
     initExtra = ''
-      source ${pkgs.blesh}/share/blesh/ble.sh
+      source "${pkgs.blesh}/share/blesh/ble.sh"
     '';
   };
 
