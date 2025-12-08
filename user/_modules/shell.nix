@@ -48,7 +48,7 @@
         directory = {
           style = "bold blue";
           truncate_to_repo = false;
-          truncation_length = 3;
+          truncation_length = 8;
           truncation_symbol = "…/";
         };
 
