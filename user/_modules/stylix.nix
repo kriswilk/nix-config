@@ -10,9 +10,24 @@
     };
 
     fonts = {
+      serif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
+      };
+
+      sansSerif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
+      };
+
       monospace = {
-        name = "JetBrainsMonoNL Nerd Font";
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        package = pkgs.jetbrains-mono;
+        name = "JetBrains Mono";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
       };
     };
   };
