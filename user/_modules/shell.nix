@@ -47,6 +47,9 @@
 
         directory = {
           style = "bold blue";
+          truncate_to_repo = false;
+          truncation_length = 3;
+          truncation_symbol = "…/";
         };
 
         cmd_duration = {
