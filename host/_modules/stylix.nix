@@ -12,7 +12,7 @@
     fonts = {
       serif = {
         #package = pkgs.noto-fonts;
-        name = "Noto Seif";
+        name = "JetBrainsMonoNL Nerd Font";
       };
 
       sansSerif = {
