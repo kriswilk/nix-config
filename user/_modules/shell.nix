@@ -33,6 +33,10 @@
     ];
   };
 
+  home.packages = with pkgs; [
+    blesh
+  ];
+
   home.shellAliases = {
     # cd
     ".." = "cd ..";
