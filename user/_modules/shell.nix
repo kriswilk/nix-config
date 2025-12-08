@@ -3,9 +3,6 @@
 {
   programs.bash = {
     enable = true;
-    initExtra = ''
-      source ${pkgs.blesh}/share/blesh/ble.sh
-    '';
   };
 
   programs.direnv = {
@@ -35,10 +32,6 @@
       }
     ];
   };
-
-  home.packages = with pkgs; [
-    blesh
-  ];
 
   home.shellAliases = {
     # cd
