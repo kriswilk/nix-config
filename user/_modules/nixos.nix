@@ -7,6 +7,7 @@
 
   programs.nix-index = {
     enable = true;
+    enableBashIntegration = true;
   };
 
   # programs.nix-index-database = {
