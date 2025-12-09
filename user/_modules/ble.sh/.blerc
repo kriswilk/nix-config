@@ -1,28 +1,18 @@
-# Note: If you want to combine fzf-completion with bash_completion, you need to
-# load bash_completion earlier than fzf-completion.  This is required
-# regardless of whether to use ble.sh or not.
-source /etc/profile.d/bash_completion.sh
-
+# fzf integration
 ble-import -d integration/fzf-completion
 ble-import -d integration/fzf-key-bindings
 
-
 # Disable EOF marker like "[ble: EOF]"
 bleopt prompt_eol_mark=''
-
 # Disable error exit marker like "[ble: exit %d]"
 bleopt exec_errexit_mark=
-
 # Disable elapsed-time marker like "[ble: elapsed 1.203s (CPU 0.4%)]"
 bleopt exec_elapsed_mark=
-
 # Disable exit marker like "[ble: exit]"
 bleopt exec_exit_mark=
-
 # Disable some other markers like "[ble: ...]"
 bleopt edit_marker=
 bleopt edit_marker_error=
-
 
 # A more subtle color for auto-completion
 ble-face auto_complete='fg=250,underline,italic'
