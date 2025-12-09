@@ -87,6 +87,8 @@ truncation_symbol = '…/'
 
 [cmd_duration]
 format = '[󱎫 $duration]($style)'
+style = 'white'
+min_time = 0
 
 
 
