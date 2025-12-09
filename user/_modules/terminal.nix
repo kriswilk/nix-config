@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       text_composition_strategy = "legacy";
-      window_padding_width = 5;
+      window_padding_width = 4;
     };
   };
 
