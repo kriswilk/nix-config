@@ -14,49 +14,7 @@
 
   programs.starship = {
     enable = true;
-    settings = lib.mkMerge [
-      (builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/nerd-font-symbols.toml"))
-      (builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/no-empty-icons.toml"))
-      {
-        # WIP: other custom configuration here
-
-        format = "$sudo$username$hostname$directory$git_branch$git_commit$git_state$git_metrics$git_status$docker_context$package$fill$all";
-
-        fill = {
-          style = "bright-black";
-        };
-
-        sudo ={
-          disabled = false;
-          symbol = "󰒃";
-          format = "[$symbol]($style) ";
-          style = "bold yellow";
-        };
-
-        username = {
-          show_always = true;
-          format = "[$user]($style) [|](bright-black) ";
-        };
-
-        hostname = {
-          ssh_only = false;
-          ssh_symbol = lib.mkForce " ";
-          format = "[$ssh_symbol$hostname]($style) [|](bright-black) ";
-          style = "bold green";
-        };
-
-        directory = {
-          style = "bold blue";
-          truncate_to_repo = false;
-          truncation_length = 8;
-          truncation_symbol = "…/";
-        };
-
-        cmd_duration = {
-          format = "[󱎫 $duration]($style) ";
-        };
-      }
-    ];
+    settings = lib.importTOML ./starship/starship.toml
   };
 
   home.packages = with pkgs; [
