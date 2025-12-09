@@ -16,4 +16,4 @@ bleopt edit_marker_error=
 
 
 # A more subtle color for auto-completion
-ble-face auto_complete='fg=240,underline,italic'
+ble-face auto_complete='fg=250,underline,italic'
