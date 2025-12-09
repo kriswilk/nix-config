@@ -113,7 +113,7 @@ symbol = '󰍛 '
 
 [nix_shell]
 symbol = ' '
-format = 'via [$symbol$state( \($name\))]($style) '
+format = '[$symbol$state( \($name\))]($style) [|](bright-black)'
 
 [status]
 symbol = ' '
@@ -126,51 +126,51 @@ disabled = false
 
 [c]
 symbol = 'C '
-format = '([$symbol($version(-$name) )]($style) [|](bright-black))'
+format = '([$symbol($version(-$name))]($style) [|](bright-black)) '
 
 [cpp]
 symbol = 'C++ '
-format = '([$symbol($version(-$name) )]($style) [|](bright-black))'
+format = '([$symbol($version(-$name))]($style) [|](bright-black)) '
 
 [cmake]
 symbol = 'cmake '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [cobol]
 symbol = 'cobol '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [dart]
 symbol = 'dart '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [dotnet]
 symbol = '.NET '
-format = '([$symbol($version )(target $tfm )]($style) [|](bright-black))'
+format = '([$symbol($version )(target $tfm )]($style)[|](bright-black)) '
 
 [fortran]
 symbol = 'fortran '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [golang]
 symbol = 'go '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [haskell]
 symbol = 'haskell '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [java]
 symbol = 'java '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [lua]
 symbol = 'lua '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style)[|] (bright-black)) '
 
 [nodejs]
 symbol = 'nodejs '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style)[|] (bright-black)) '
 
 
 
@@ -184,11 +184,11 @@ format = '(is [$symbol$version]($style) )'
 
 [perl]
 symbol = 'pl '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [php]
 symbol = 'php '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [python]
 symbol = 'py '
@@ -196,12 +196,12 @@ format = '([${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) [|]
 
 [ruby]
 symbol = 'rb '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [rust]
 symbol = 'rs '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [swift]
 symbol = 'swift '
-format = '([$symbol($version )]($style) [|](bright-black))'
+format = '([$symbol($version)]($style) [|](bright-black)) '
