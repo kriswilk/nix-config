@@ -17,6 +17,10 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvf = {
       # FIXME: Temporary solution for neovim lsp warning.
       #        Remove "?ref=v0.8" once merged into main branch!
@@ -42,6 +46,7 @@
             useUserPackages = true;
             sharedModules = [
               inputs.nvf.homeManagerModules.default
+              inputs.nix-index-database.homeManagerModules.default
             ];
           };
         }
