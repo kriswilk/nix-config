@@ -3,9 +3,10 @@
 {
   programs.bash = {
     enable = true;
-    initExtra = ''
-      source -- ${pkgs.blesh}/share/blesh/ble.sh
-    '';
+    initExtra =
+      ''
+        source -- ${pkgs.blesh}/share/blesh/ble.sh
+      '';
   };
 
   programs.direnv = {
