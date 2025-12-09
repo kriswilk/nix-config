@@ -49,7 +49,7 @@ $azure\
 $direnv\
 $env_var\
 $custom\
-󱎫$cmd_duration\
+󱎫 $cmd_duration\
 \
 $line_break\
 \
@@ -86,7 +86,7 @@ truncation_length = 3
 truncation_symbol = '…/'
 
 [cmd_duration]
-format = ' [$duration]($style)'
+format = '[$duration]($style)'
 style = 'white'
 min_time = 0
 
