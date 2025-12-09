@@ -46,7 +46,7 @@
             useUserPackages = true;
             sharedModules = [
               inputs.nvf.homeManagerModules.default
-              inputs.nix-index-database.homeManagerModules.default
+              inputs.nix-index-database.homeModules.default
             ];
           };
         }
