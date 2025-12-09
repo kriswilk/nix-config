@@ -3,11 +3,12 @@
 {
   programs.bash = {
     enable = true;
-    initExtra =
-      ''
-        source -- ${pkgs.blesh}/share/blesh/ble.sh
-      '';
+    initExtra = ''
+      source -- ${pkgs.blesh}/share/blesh/ble.sh
+    '';
   };
+
+  home.file.".blerc".file = ./ble.sh/.blerc
 
   programs.direnv = {
     enable = true;
