@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.sessionVariables = {
+  home.sessionVariables = {
     NH_FLAKE = "/home/kris/nix-config";
   };
 }
