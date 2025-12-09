@@ -30,7 +30,7 @@
           disabled = false;
           symbol = "󰒃";
           format = "[$symbol]($style) ";
-          style = "bold red";
+          style = "bold yellow";
         };
 
         username = {
@@ -53,7 +53,7 @@
         };
 
         cmd_duration = {
-          format = "󱎫 [$duration]($style) ";
+          format = "[󱎫 $duration]($style) ";
         };
       }
     ];
