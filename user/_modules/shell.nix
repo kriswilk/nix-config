@@ -8,7 +8,7 @@
     '';
   };
 
-  home.file.".blerc".file = ./ble.sh/.blerc;
+  home.file.".blerc".text = lib.readFile ./ble.sh/.blerc;
 
   programs.direnv = {
     enable = true;
