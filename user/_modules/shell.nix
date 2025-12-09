@@ -14,7 +14,7 @@
 
   programs.starship = {
     enable = true;
-    settings = lib.importTOML ./starship/starship.toml
+    settings = lib.importTOML ./starship/starship.toml;
   };
 
   home.packages = with pkgs; [
