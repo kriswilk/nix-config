@@ -10,7 +10,7 @@
     settings = {
       text_composition_strategy = "legacy";
       window_padding_width = 4;
-      programs.kitty.shellIntegration.enableBashIntegration = false;
+      shellIntegration.enableBashIntegration = false;
     };
   };
 
