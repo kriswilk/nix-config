@@ -30,9 +30,9 @@
   # ];
   home.packages = with pkgs; [
     (blesh.overrideAttrs {
-      version = "nightly-20241231+3d8f626";
+      version = "nightly-20250604+c6bcb82";
       src = fetchzip {
-        url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20241231+3d8f626.tar.xz";
+        url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20250604+c6bcb82.tar.xz";
         sha256 = "sha256-Xk+QwQ6RDagrf+HgT4OFzgoeQS0N2qnrESx6BwBw4/I=";
       };
     })
