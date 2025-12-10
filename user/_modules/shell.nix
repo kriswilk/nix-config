@@ -1,20 +1,13 @@
-{ config, lib, pkgs, fetchzip, ... }:
+{ config, lib, pkgs, ... }:
 
 let
 
-      blesh-nightly = pkgs.blesh.overrideAttrs {
-        version = "nightly-20251019+2f564e6";
-        src = fetchzip {
-          url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20251019+2f564e6.tar.xz";
-          sha256 = "sha256-fpNorzJcKs1vVhaYKgRz5vcs6jsEvdxe3N4F2L81Rc0=";
-        };
-      };
 
 in {
   programs.bash = {
     enable = true;
     initExtra = ''
-      source -- ${blesh-nightly}/share/blesh/ble.sh
+      source -- ${pkgs.blesh}/share/blesh/ble.sh
     '';
   };
 
@@ -29,8 +22,14 @@ in {
     settings = lib.importTOML ./starship/starship.toml;
   };
 
-  home.packages = [
-    blesh-nightly
+  home.packages = with pkgs; [
+    (blesh.overrideAttrs {
+      version = "nightly-20251019+2f564e6";
+      src = lib.fetchzip {
+        url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20251019+2f564e6.tar.xz";
+        sha256 = "sha256-fpNorzJcKs1vVhaYKgRz5vcs6jsEvdxe3N4F2L81Rc0=";
+      };
+    })
   ];
 
   home.shellAliases = {
