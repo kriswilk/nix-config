@@ -7,7 +7,7 @@ in {
   programs.bash = {
     enable = true;
     initExtra = ''
-      source -- ${pkgs.blesh}/share/blesh/ble.sh
+      source -- ${blesh-share}/share/blesh/ble.sh
     '';
   };
 
