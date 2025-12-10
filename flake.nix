@@ -34,33 +34,6 @@
     hostDir = ./host;
     userDir = ./user;
     hostList = ["vm" "desktop"];
-
-    pkgs = import nixpkgs { 
-      system = "x86_64-linux"; 
-      # This is a bit of notation that is a little confusing at first. `final` refers 
-      # to the "output" package set, or what the pkg set will look like after the overlay
-      # is applied. 
-      # "Prev" is the packageset before the current overlay; this is helpful because we don't
-      # have to worry about "retouching" the overlay. For example, if we set `final.a` in the
-      # overlay and also use it, it will infinitely evaluate the overlay.
-      overlays = [(final: prev: {
-        # you create some new package in the overlay,
-        # or modify an old one.
-        pythonWithPandas = prev.python311.withPackages(pythonPackages: [ 
-            pythonPackages.pandas 
-        ]);
-
-        blesh-nightly = prev.blesh.overrideAttrs {
-          version = "nightly-20251019+2f564e6";
-          src = nixpkgs.lib.fetchzip {
-            url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20251019+2f564e6.tar.xz";
-            sha256 = "sha256-fpNorzJcKs1vVhaYKgRz5vcs6jsEvdxe3N4F2L81Rc0=";
-          };
-        };
-
-      })];
-    };
-
   in {
     # this has pandas! It didn't even exist before our overlay.
         packages."x86_64-linux".pythonWithPandas = pkgs.pythonWithPandas;
