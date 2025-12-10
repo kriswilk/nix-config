@@ -64,7 +64,7 @@
   in {
     # this has pandas! It didn't even exist before our overlay.
         packages."x86_64-linux".pythonWithPandas = pkgs.pythonWithPandas;
-        packages."x86_64-linux".blesh-nightly = pkgs.blesh-nightly
+        packages."x86_64-linux".blesh-nightly = pkgs.blesh-nightly;
 
 
     nixosConfigurations = nixpkgs.lib.genAttrs hostList (hostName: nixpkgs.lib.nixosSystem {
