@@ -33,7 +33,7 @@
       version = "nightly-20240611+afb2907";
       src = fetchzip {
         url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20240611+afb2907.tar.xz";
-        sha256 = "sha256-fpNorzJcKs1vVhaYKgRz5vcs6jsEvdxe3N4F2L81Rc0=";
+        sha256 = "sha256-Xk+QwQ6RDagrf+HgT4OFzgoeQS0N2qnrESx6BwBw4/I=";
       };
     })
   ];
