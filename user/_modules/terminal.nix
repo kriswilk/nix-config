@@ -10,8 +10,8 @@
     settings = {
       text_composition_strategy = "legacy";
       window_padding_width = 4;
-      shellIntegration.enableBashIntegration = false;
     };
+    shellIntegration.enableBashIntegration = false;
   };
 
   programs.tmux = {
