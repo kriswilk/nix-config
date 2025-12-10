@@ -28,15 +28,17 @@
   #     };
   #   })
   # ];
-  # 611 slim cursor, doesn't work
-  # 622 slim cursor, works
+  # 131 
+  # 401 slim, not working
+  # 611 slim, not working
+  # 622 slim, working
   # 701 no cursor but works
   home.packages = with pkgs; [
     (blesh.overrideAttrs {
-      version = "nightly-20240401+adf9ab8";
+      version = "nightly-20240131+838b465";
       src = fetchzip {
-        url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20240401+adf9ab8.tar.xz";
-        sha256 = "sha256-ds6Yxlkrrfcpc3BAweHsLlz5TIAfjJ49oU1HSXh0c9k=";
+        url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20240131+838b465.tar.xz";
+        sha256 = "";
       };
     })
   ];
