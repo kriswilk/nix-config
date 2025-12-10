@@ -29,7 +29,7 @@
     };
   };
 
-  outputs = { nixpkgs, ... }@inputs:
+  outputs = { nixpkgs, lib, ... }@inputs:
   let
     hostDir = ./host;
     userDir = ./user;
