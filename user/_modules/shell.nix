@@ -4,7 +4,7 @@
   programs.bash = {
     enable = true;
     initExtra = ''
-      source -- ${pkgs.blesh}/share/blesh/ble.sh
+      source -- ${pkgs.blesh-nightly}/share/blesh/ble.sh
     '';
   };
 
@@ -19,20 +19,8 @@
     settings = lib.importTOML ./starship/starship.toml;
   };
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      blesh = prev.blesh.overrideAttrs {
-        version = "nightly-20251019+2f564e6";
-        src = lib.fetchzip {
-          url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20251019+2f564e6.tar.xz";
-          sha256 = "sha256-fpNorzJcKs1vVhaYKgRz5vcs6jsEvdxe3N4F2L81Rc0=";
-        };
-      };
-    })
-  ];
-
   home.packages = with pkgs; [
-    blesh
+    blesh-nightly
   ];
 
   home.shellAliases = {
