@@ -8,12 +8,14 @@ let
       description = "Kris Wilk";
       password = "12345";
       extraGroups = userGroups ++ [ "wheel" ];
+      shell = pkgs.fish;
     };
     guest = {
       isNormalUser = true;
       description = "Guest User";
       password = "guest";
       extraGroups = userGroups;
+      shell = pkgs.fish;
     };
   };
 in {

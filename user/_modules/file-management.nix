@@ -9,7 +9,6 @@
 
   programs.fzf = {
     enable = true;
-    enableBashIntegration = true;
   };
 
   programs.yazi = {
@@ -18,7 +17,6 @@
 
   programs.zoxide = {
     enable = true;
-    enableBashIntegration = true;
   };
 
   home.packages = with pkgs; [

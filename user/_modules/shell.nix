@@ -8,6 +8,10 @@
     '';
   };
 
+  programs.fish = {
+    enable = true;
+  };
+
   home.file.".blerc".text = lib.readFile ./ble.sh/.blerc;
 
   programs.direnv = {
