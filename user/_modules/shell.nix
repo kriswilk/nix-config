@@ -36,7 +36,7 @@
       version = "nightly-20240401+adf9ab8";
       src = fetchzip {
         url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20240401+adf9ab8.tar.xz";
-        sha256 = "";
+        sha256 = "sha256-ds6Yxlkrrfcpc3BAweHsLlz5TIAfjJ49oU1HSXh0c9k=";
       };
     })
   ];
