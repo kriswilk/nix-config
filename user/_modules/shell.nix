@@ -23,7 +23,7 @@
     (blesh.overrideAttrs {
       version = "nightly-20251019+2f564e6";
       src = fetchzip {
-        url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ ble-nightly-20251019+2f564e6.tar.xz";
+        url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20251019+2f564e6.tar.xz";
         sha256 = "sha256:565e9aa9806d1f2f2362d6293f480d17f0be06623fd8d12945995231933fc428";
       };
     })
