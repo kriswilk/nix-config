@@ -2,7 +2,7 @@
 
 let
 
-#    packageOverrides = pkgs: {
+    packageOverrides = pkgs: {
       blesh-nightly = pkgs.blesh.overrideAttrs {
         version = "nightly-20251019+2f564e6";
         src = lib.fetchzip {
@@ -10,7 +10,7 @@ let
           sha256 = "sha256-fpNorzJcKs1vVhaYKgRz5vcs6jsEvdxe3N4F2L81Rc0=";
         };
       };
-#    };
+    };
 
 in {
   programs.bash = {
