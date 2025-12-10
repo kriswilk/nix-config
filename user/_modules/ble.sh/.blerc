@@ -13,6 +13,3 @@ bleopt exec_exit_mark=
 # Disable some other markers like "[ble: ...]"
 bleopt edit_marker=
 bleopt edit_marker_error=
-
-# A more subtle color for auto-completion
-ble-face auto_complete='fg=250,underline,italic'
