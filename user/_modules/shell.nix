@@ -28,12 +28,14 @@
   #     };
   #   })
   # ];
+  # 611 slim cursor, doesn't work
+  # 701 no cursor but works
   home.packages = with pkgs; [
     (blesh.overrideAttrs {
-      version = "nightly-20240701+fcbf1ed";
+      version = "nightly-20240622+79beebd";
       src = fetchzip {
-        url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20240701+fcbf1ed.tar.xz";
-        sha256 = "sha256-kKzOQ7J/H89VlniJ4JgsqPkKvoXe3DuiJ/ii6Rji81A=";
+        url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly-20240622+79beebd.tar.xz";
+        sha256 = "";
       };
     })
   ];
