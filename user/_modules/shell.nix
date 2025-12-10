@@ -4,7 +4,7 @@
   programs.bash = {
     enable = true;
     initExtra = ''
-      source -- ${pkgs.blesh-nightly}/share/blesh/ble.sh
+      source -- ${pkgs.blesh}/share/blesh/ble.sh
     '';
   };
 
@@ -28,12 +28,11 @@
           sha256 = "sha256-fpNorzJcKs1vVhaYKgRz5vcs6jsEvdxe3N4F2L81Rc0=";
         };
       };
-      blesh-nightly = final.blesh;
     })
   ];
 
   home.packages = with pkgs; [
-    blesh-nightly
+    blesh
   ];
 
   home.shellAliases = {
