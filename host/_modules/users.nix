@@ -9,6 +9,7 @@ let
       password = "12345";
       extraGroups = userGroups ++ [ "wheel" ];
       shell = pkgs.fish;
+      # WIP: method to set fish as default with home-manager instead?
     };
     guest = {
       isNormalUser = true;
@@ -16,6 +17,7 @@ let
       password = "guest";
       extraGroups = userGroups;
       shell = pkgs.fish;
+      # WIP: method to set fish as default with home-manager instead?
     };
   };
 in {
