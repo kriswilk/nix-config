@@ -168,11 +168,11 @@ format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [lua]
 symbol = 'lua '
-format = '([$symbol($version)]($style)[|] (bright-black)) '
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [nodejs]
 symbol = 'nodejs '
-format = '([$symbol($version)]($style)[|] (bright-black)) '
+format = '([$symbol($version)]($style) [|](bright-black)) '
 
 
 
