@@ -22,9 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvf = {
-      # FIXME: Temporary solution for neovim lsp warning.
-      #        Remove "?ref=v0.8" once merged into main branch!
-      url = "github:notashelf/nvf?ref=v0.8";
+      url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
