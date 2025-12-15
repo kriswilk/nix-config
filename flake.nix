@@ -50,11 +50,12 @@
               inputs.nvf.homeManagerModules.default
               inputs.nix-index-database.homeModules.default
             ];
+            extraSpecialArgs = { inherit inputs };
           };
         }
         inputs.stylix.nixosModules.stylix
       ];
-      specialArgs = { inherit inputs hostDir hostName userDir; };
+      specialArgs = { inherit hostDir hostName userDir; };
     });
   };
 }
