@@ -50,7 +50,7 @@
               inputs.nvf.homeManagerModules.default
               inputs.nix-index-database.homeModules.default
             ];
-            extraSpecialArgs = { inherit inputs };
+            extraSpecialArgs = { inherit inputs; };
           };
         }
         inputs.stylix.nixosModules.stylix
