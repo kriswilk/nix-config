@@ -54,7 +54,7 @@
         }
         inputs.stylix.nixosModules.stylix
       ];
-      specialArgs = { inherit hostDir hostName userDir; };
+      specialArgs = { inherit inputs hostDir hostName userDir; };
     });
   };
 }
