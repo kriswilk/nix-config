@@ -4,31 +4,31 @@
   programs.firefox = {
     enable = true;
     profiles.default = {
-      search.engines = {
-        "Nix Packages" = {
-          definedAliases = [ "@np" ];
-          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          urls = [{
-            template = "https://search.nixos.org/packages";
-            params = [
-              { name = "type"; value = "packages"; }
-              { name = "query"; value = "{searchTerms}"; }
-            ];
-          }];
-        };
-        "Nix Options" = {
-          definedAliases = [ "@no" ];
-          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          urls = [{
-            template = "https://search.nixos.org/options";
-            params = [
-              { name = "type"; value = "options"; }
-              { name = "query"; value = "{searchTerms}"; }
-            ];
-          }];
-        };
-      };
-      search.force = true;
+      # search.engines = {
+      #   "Nix Packages" = {
+      #     definedAliases = [ "@np" ];
+      #     icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+      #     urls = [{
+      #       template = "https://search.nixos.org/packages";
+      #       params = [
+      #         { name = "type"; value = "packages"; }
+      #         { name = "query"; value = "{searchTerms}"; }
+      #       ];
+      #     }];
+      #   };
+      #   "Nix Options" = {
+      #     definedAliases = [ "@no" ];
+      #     icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+      #     urls = [{
+      #       template = "https://search.nixos.org/options";
+      #       params = [
+      #         { name = "type"; value = "options"; }
+      #         { name = "query"; value = "{searchTerms}"; }
+      #       ];
+      #     }];
+      #   };
+      # };
+      # search.force = true;
 
       # bookmarks = [
       #   {
@@ -52,7 +52,7 @@
 
       extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
         #bitwarden
-        #ublock-origin
+        ublock-origin
         #sponsorblock
         #keepa???
         #webedit???
