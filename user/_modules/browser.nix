@@ -50,10 +50,10 @@
       #   /* some css */                        
       # '';                                      
 
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-        bitwarden
+      extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+        #bitwarden
         ublock-origin
-        sponsorblock
+        #sponsorblock
         #keepa???
         #webedit???
         #sinkitforreddit???
