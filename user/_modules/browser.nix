@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   programs.firefox = {
@@ -50,7 +50,7 @@
       #   /* some css */                        
       # '';                                      
 
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+      extensions = with firefox-addons.packages."x86_64-linux"; [
         bitwarden
         ublock-origin
         sponsorblock
