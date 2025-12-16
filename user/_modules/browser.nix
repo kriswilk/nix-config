@@ -23,7 +23,6 @@
       DisableAppUpdate = true;
       DisableFirefoxAccounts = true;
       DisableFormHistory = true;
-      DisablePocket = true;
       DisableTelemetry = true;
       DisplayBookmarksToolbar = "never";
 
@@ -36,60 +35,63 @@
         "{1be309c5-3e4f-4b99-927d-bb500eb4fa88}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/augmented-steam/latest.xpi";
           installation_mode = "force_installed";
+          default_area = "menupanel";
         };
 
         # bitwarden
         "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
           installation_mode = "force_installed";
+          default_area = "navbar";
         };
 
         # clearurls
         "{74145f27-f039-47ce-a470-a662b129930a}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
           installation_mode = "force_installed";
+          default_area = "menupanel";
         };
 
         # keepa
         "amptra@keepa.com" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/keepa/latest.xpi";
           installation_mode = "force_installed";
+          default_area = "menupanel";
         };
 
         # web edit
         "webedit@ryanluu.dev" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/web-edit/latest.xpi";
           installation_mode = "force_installed";
+          default_area = "menupanel";
         };
 
         # raindrop.io
         "jid0-adyhmvsP91nUO8pRv0Mn2VKeB84@jetpack" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/raindropio/latest.xpi";
           installation_mode = "force_installed";
+          default_area = "navbar";
         };
 
         # sink it for reddit
         "{09acf9ff-55d4-4366-a1a9-c9b3c8877c09}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/sink-it-for-reddit/latest.xpi";
           installation_mode = "force_installed";
+          default_area = "menupanel";
         };
 
         # sponsorblock
         "sponsorBlocker@ajay.app" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
           installation_mode = "force_installed";
+          default_area = "menupanel";
         };
 
         # ublock-origin
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
-        };
-
-        # vimium
-        "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-ff/latest.xpi";
-          installation_mode = "force_installed";
+          default_area = "navbar";
         };
       };
 
@@ -149,8 +151,6 @@
 
       ShowHomeButton = false;
       SkipTermsOfUse = true;
-      TranslateEnabled = true;
-      VisualSearchEnabled = true;
     };
 
   };
