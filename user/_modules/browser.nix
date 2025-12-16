@@ -105,7 +105,7 @@
       PasswordManagerEnabled = false;
 
       Preferences = {
-        # "browser.startup.homepage" = "about:newtab";
+        "browser.ml.linkPreview.enabled" = false;
       };
 
       SearchEngines.Add = [
