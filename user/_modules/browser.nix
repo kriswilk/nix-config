@@ -96,6 +96,7 @@
         Locked = true;
       };
 
+      Homepage = "none";
       HttpsOnlyMode = "force_enabled";
       NewTabPage = false;
       NoDefaultBookmarks = true;
