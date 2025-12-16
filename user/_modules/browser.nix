@@ -81,6 +81,19 @@
         };
       };
 
+      FirefoxHome = {
+        Search = true;
+        TopSites = false;
+        SponsoredTopSites = false;
+        Highlights = false;
+        Pocket = false;
+        Stories = false;
+        SponsoredPocket = false;
+        SpomoredStories = false;
+        Snippets = false;
+        Locked = true;
+      };
+
       FirefoxSuggest = {
         WebSuggestions = true;
         SponsoredSuggestions = false;
