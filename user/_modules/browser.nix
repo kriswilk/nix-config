@@ -1,6 +1,7 @@
 { inputs, config, lib, pkgs, ... }:
 
 {
+  # WIP: still need to fine tune preferences, incl. UI arrangement??
   programs.firefox = {
     enable = true;
     policies = {
