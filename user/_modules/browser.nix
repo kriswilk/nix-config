@@ -96,7 +96,12 @@
         Locked = true;
       };
 
-      Homepage = "none";
+      Homepage = {
+        URL = "about:blank";
+        StartPage = "none";
+        Locked = true;
+      };
+      
       HttpsOnlyMode = "force_enabled";
       NewTabPage = false;
       NoDefaultBookmarks = true;
