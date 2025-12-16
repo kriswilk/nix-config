@@ -3,20 +3,6 @@
 {
   programs.firefox = {
     enable = true;
-    # profiles.default = {
-    #   settings = {
-    #     #"dom.security.https_only_mode" = true;
-    #     #"browser.download.panel.shown" = true;
-    #     #"identity.fxaccounts.enabled" = false;
-    #     #"signon.rememberSignons" = false;
-    #   };
-
-    #   # userChrome = ''                         
-    #   #   /* some css */                        
-    #   # '';                                      
-
-    # };
-
     policies = {
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
@@ -95,19 +81,6 @@
         };
       };
 
-      FirefoxHome = {
-        Search = true;
-        TopSites = false;
-        SponsoredTopSites = false;
-        Highlights = false;
-        Pocket = false;
-        Stories = false;
-        SponsoredPocket = false;
-        SpomoredStories = false;
-        Snippets = false;
-        Locked = true;
-      };
-
       FirefoxSuggest = {
         WebSuggestions = true;
         SponsoredSuggestions = false;
@@ -124,6 +97,7 @@
       };
 
       HttpsOnlyMode = "force_enabled";
+      NewTabPage = false;
       NoDefaultBookmarks = true;
       OfferToSaveLogins = false;
       OverrideFirstRunPage = "";
@@ -131,28 +105,92 @@
       PasswordManagerEnabled = false;
 
       Preferences = {
-        "browser.startup.homepage" = "about:newtab";
+        # "browser.startup.homepage" = "about:newtab";
       };
 
       SearchEngines.Add = [
         {
+          Name = "Docker Hub";
+          Alias = "@dh";
+          URLTemplate = "https://hub.docker.com/search?q={searchTerms}";
+          IconURL = "https://hub.docker.com/favicon.ico";
+        }
+        {
+          Name = "Flathub";
+          Alias = "@fh";
+          URLTemplate = "https://flathub.org/apps/search?q={searchTerms}";
+          IconURL = "https://flathub.org/favicon.png";
+        }
+        {
+          Name = "GitHub";
+          Alias = "@gh";
+          URLTemplate = "https://github.com/search?q={searchTerms}";
+          IconURL = "https://github.com/favicon.ico";
+        }
+        {
+          Name = "GitHub Nix";
+          Alias = "@gn";
+          URLTemplate = "https://github.com/search?q=language%3ANix+{searchTerms}&type=code";
+          IconURL = "https://github.com/favicon.ico";
+        }
+        {
+          Name = "Home Manager";
+          Alias = "@hm";
+          URLTemplate = "https://home-manager-options.extranix.com/?query={searchTerms}";
+          IconURL = "https://home-manager-options.extranix.com/images/favicon.png";
+        }
+        {
           Name = "Nix Packages";
-          URLTemplate = "https://search.nixos.org/packages?query={searchTerms}";
-          IconURL = "https://nixos.org/favicon.ico";
           Alias = "@np";
+          URLTemplate = "https://search.nixos.org/packages?query={searchTerms}";
+          IconURL = "https://search.nixos.org/favicon.ico";
         }
         {
           Name = "Nix Options";
-          URLTemplate = "https://search.nixos.org/options?query={searchTerms}";
-          IconURL = "https://nixos.org/favicon.ico";
           Alias = "@no";
+          URLTemplate = "https://search.nixos.org/options?query={searchTerms}";
+          IconURL = "https://search.nixos.org/favicon.ico";
+        }
+       {
+          Name = "NixOS Wiki";
+          Alias = "@nw";
+          URLTemplate = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
+          IconURL = "https://wiki.nixos.org/favicon.ico";
+        }
+        {
+          Name = "Reddit";
+          Alias = "@reddit";
+          URLTemplate = "https://www.reddit.com/search/?q={searchTerms}";
+          IconURL = "https://www.reddit.com/favicon.ico";
+        }
+        {
+          Name = "Stack Overflow";
+          Alias = "@so";
+          URLTemplate = "https://stackoverflow.com/search?q={searchTerms}";
+          IconURL = "https://stackoverflow.com/favicon.ico";
+        }
+        {
+          Name = "YouTube";
+          Alias = "@yt";
+          URLTemplate = "https://www.youtube.com/results?search_query={searchTerms}";
+          IconURL = "https://www.youtube.com/favicon.ico";
         }
       ];
 
       ShowHomeButton = false;
       SkipTermsOfUse = true;
-    };
 
+      UserMessaging = {
+        ExtensionRecommendations = false;
+        FeatureRecommendations = false;
+        FirefoxLabs = false;
+        MoreFromMozilla = false;
+        SkipOnboarding = true;
+        UrlbarInterventions = false;
+        WhatsNew = false;
+        Locked = true;
+      };
+    };
   };
 
   home.packages = with pkgs; [
