@@ -149,7 +149,7 @@
         {
           Name = "GitHub Nix";
           Alias = "@gn";
-          URLTemplate = "https://github.com/search?q=language%3ANix+{searchTerms}&type=code";
+          URLTemplate = "https://github.com/search?q=language%3Anix+{searchTerms}&type=code";
           IconURL = "https://github.com/favicon.ico";
         }
         {
