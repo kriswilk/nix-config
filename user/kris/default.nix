@@ -1,12 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [
+  imports = lib.fileset.toList (
+    lib.fileset.fileFilter (file: file.hasExt "nix" && file.name != "default.nix") ./.
+  ) ++ [
     ../_modules
   ];
-
-  programs.git = {
-    settings.user.name = "Kris Wilk";
-    settings.user.email = "kris@reefnet.ca";
-  };
 }
