@@ -3,8 +3,7 @@
 {
   imports = [
     ../_modules
-    ./hardware-configuration.nix
-  ];
-
-  disko.devices.disk.main.device = "/dev/sda";
+  ] ++ lib.fileset.toList (
+    lib.fileset.fileFilter (file: file.hasExt "nix" && file.name != "default.nix") ./.
+  );
 }
