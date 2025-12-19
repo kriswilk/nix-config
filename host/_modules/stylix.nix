@@ -3,6 +3,7 @@
 {
   stylix = {
     enable = true;
+    targets.kde.enable = false;
 
     base16Scheme = builtins.fetchurl {
       url = "https://github.com/kriswilk/themes/raw/refs/heads/main/ekko/base16/ekko-dark.yaml";
@@ -28,14 +29,7 @@
       emoji = {
         package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
-      };
-      
-      sizes = {
-        desktop = 10;
-        popups = 10;
-        applications = 10;
-        terminal = 10;
-      };
+      };      
     };
   };
 }
