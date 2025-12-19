@@ -60,13 +60,6 @@
           default_area = "navbar";
         };
 
-        # sink it for reddit
-        "{09acf9ff-55d4-4366-a1a9-c9b3c8877c09}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/sink-it-for-reddit/latest.xpi";
-          installation_mode = "force_installed";
-          default_area = "menupanel";
-        };
-
         # sponsorblock
         "sponsorBlocker@ajay.app" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
