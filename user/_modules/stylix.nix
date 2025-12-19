@@ -3,7 +3,6 @@
 {
   stylix = {
     enable = true;
-    polarity = "light";
 
     base16Scheme = builtins.fetchurl {
       url = "https://github.com/kriswilk/themes/raw/refs/heads/main/base16/ekko-dark.yaml";
