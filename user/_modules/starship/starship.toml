@@ -92,11 +92,8 @@ min_time = 1_000
 
 
 
-
-
 [aws]
 symbol = ' '
-
 
 
 
