@@ -3,7 +3,7 @@
 {
   stylix = {
     enable = true;
-    target.kde.enable = false;
+    targets.kde.enable = false;
 
     base16Scheme = builtins.fetchurl {
       url = "https://github.com/kriswilk/themes/raw/refs/heads/main/ekko/base16/ekko-dark.yaml";
