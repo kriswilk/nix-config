@@ -65,7 +65,7 @@ style = 'bright-black'
 [sudo]
 disabled = false
 symbol = ''
-format = '[$symbol]($style) '
+format = '[$symbol]($style) '
 style = 'bold yellow'
 
 [username]
