@@ -3,11 +3,10 @@
 {
   stylix = {
     enable = true;
-    polarity = "light";
 
     base16Scheme = builtins.fetchurl {
-      url = "https://github.com/kriswilk/themes/raw/refs/heads/main/base16/ekko-light.yaml";
-      sha256 = "sha256:0fjlqhqgzcba1v8sir4n6hp8qgx7rfi2x2vmsxj97s12d5qlb9r7";
+      url = "https://github.com/kriswilk/themes/raw/refs/heads/main/ekko/base16/ekko-dark.yaml";
+      sha256 = "sha256:0527d5jc4m817pdwkbpm8yz780pggwgylc26qx79akrdnqibnk5g";
     };
 
     fonts = {
