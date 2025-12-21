@@ -3,7 +3,7 @@
 {
   programs.chromium = {
     enable = true;
-#    package = pkgs.brave;
+    package = pkgs.brave;
     extensions = [
  #     "dnhpnfgdlenaccegplpojghhmaamnnfp" # augmented steam
  #     "nngceckbapebfimnlniiiahkandclblb" # bitwarden
