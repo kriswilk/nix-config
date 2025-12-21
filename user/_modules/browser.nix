@@ -1,17 +1,16 @@
 { inputs, config, lib, pkgs, ... }:
 
 {
-  programs.chromium = {
+  programs.brave = {
     enable = true;
-    package = pkgs.brave;
     extensions = [
-      "dnhpnfgdlenaccegplpojghhmaamnnfp" # augmented steam
- #     "nngceckbapebfimnlniiiahkandclblb" # bitwarden
- #     "neebplgakaahbhdphmkckjjcegoiijjo" # keepa
- #     "ldgfbffkinooeloadekpmfoklnobpien" # raindrop.io
- #     "mnjggcdmjocbbbhaepdhchncahnbgone" # sponsorblock
- #     "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
-      "kcjhkbajobnhihpodnphdndhmniglmpc" # web edit
+      { id = "dnhpnfgdlenaccegplpojghhmaamnnfp"; } # augmented steam
+      { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
+      { id = "neebplgakaahbhdphmkckjjcegoiijjo"; } # keepa
+      { id = "ldgfbffkinooeloadekpmfoklnobpien"; } # raindrop.io
+      { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # sponsorblock
+      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
+      { id = "kcjhkbajobnhihpodnphdndhmniglmpc"; } # web edit
     ];
   };
 
