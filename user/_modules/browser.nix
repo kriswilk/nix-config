@@ -3,14 +3,14 @@
 {
   programs.chromium = {
     enable = true;
-    package = pkgs.brave;
+#    package = pkgs.brave;
     extensions = [
-      "dnhpnfgdlenaccegplpojghhmaamnnfp" # augmented steam
-      "nngceckbapebfimnlniiiahkandclblb" # bitwarden
-      "neebplgakaahbhdphmkckjjcegoiijjo" # keepa
-      "ldgfbffkinooeloadekpmfoklnobpien" # raindrop.io
-      "mnjggcdmjocbbbhaepdhchncahnbgone" # sponsorblock
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+ #     "dnhpnfgdlenaccegplpojghhmaamnnfp" # augmented steam
+ #     "nngceckbapebfimnlniiiahkandclblb" # bitwarden
+ #     "neebplgakaahbhdphmkckjjcegoiijjo" # keepa
+ #     "ldgfbffkinooeloadekpmfoklnobpien" # raindrop.io
+ #     "mnjggcdmjocbbbhaepdhchncahnbgone" # sponsorblock
+ #     "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
       "kcjhkbajobnhihpodnphdndhmniglmpc" # web edit
     ];
   };
