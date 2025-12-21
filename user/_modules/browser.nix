@@ -1,6 +1,23 @@
 { inputs, config, lib, pkgs, ... }:
 
 {
+  programs.chromium = {
+    enable = true;
+    package = pkgs.brave;
+    extensions = [
+      { id = "dnhpnfgdlenaccegplpojghhmaamnnfp"; } # augmented steam
+      { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
+      { id = "neebplgakaahbhdphmkckjjcegoiijjo"; } # keepa
+      { id = "ldgfbffkinooeloadekpmfoklnobpien"; } # raindrop.io
+      { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # sponsorblock
+      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
+      { id = "kcjhkbajobnhihpodnphdndhmniglmpc"; } # web edit
+    ];
+    commandLineArgs = [
+      "--disable-features=WebRtcAllowInputVolumeAdjustment"
+    ];
+  }
+
   # WIP: still need to fine tune preferences, incl. UI arrangement??
   programs.firefox = {
     enable = true;
@@ -32,23 +49,9 @@
           default_area = "navbar";
         };
 
-        # clearurls
-        "{74145f27-f039-47ce-a470-a662b129930a}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
-          installation_mode = "force_installed";
-          default_area = "menupanel";
-        };
-
         # keepa
         "amptra@keepa.com" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/keepa/latest.xpi";
-          installation_mode = "force_installed";
-          default_area = "menupanel";
-        };
-
-        # web edit
-        "webedit@ryanluu.dev" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/web-edit/latest.xpi";
           installation_mode = "force_installed";
           default_area = "menupanel";
         };
@@ -72,6 +75,13 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
           default_area = "navbar";
+        };
+
+        # web edit
+        "webedit@ryanluu.dev" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/web-edit/latest.xpi";
+          installation_mode = "force_installed";
+          default_area = "menupanel";
         };
       };
 
