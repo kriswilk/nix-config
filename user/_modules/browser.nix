@@ -16,7 +16,7 @@
     commandLineArgs = [
       "--disable-features=WebRtcAllowInputVolumeAdjustment"
     ];
-  }
+  };
 
   # WIP: still need to fine tune preferences, incl. UI arrangement??
   programs.firefox = {
