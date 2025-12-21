@@ -5,7 +5,7 @@
     enable = true;
     package = pkgs.brave;
     extensions = [
- #     "dnhpnfgdlenaccegplpojghhmaamnnfp" # augmented steam
+      "dnhpnfgdlenaccegplpojghhmaamnnfp" # augmented steam
  #     "nngceckbapebfimnlniiiahkandclblb" # bitwarden
  #     "neebplgakaahbhdphmkckjjcegoiijjo" # keepa
  #     "ldgfbffkinooeloadekpmfoklnobpien" # raindrop.io
