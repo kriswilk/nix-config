@@ -12,6 +12,10 @@
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
       { id = "kcjhkbajobnhihpodnphdndhmniglmpc"; } # web edit
     ];
+    commandLineArgs = [
+      "--disable-features=PasswordManagerOnboarding"
+      "--disable-features=AutofillEnableAccountWalletStorage"
+    ];
   };
 
   # WIP: still need to fine tune preferences, incl. UI arrangement??
