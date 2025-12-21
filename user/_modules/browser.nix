@@ -5,16 +5,13 @@
     enable = true;
     package = pkgs.brave;
     extensions = [
-      { id = "dnhpnfgdlenaccegplpojghhmaamnnfp"; } # augmented steam
-      { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
-      { id = "neebplgakaahbhdphmkckjjcegoiijjo"; } # keepa
-      { id = "ldgfbffkinooeloadekpmfoklnobpien"; } # raindrop.io
-      { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # sponsorblock
-      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
-      { id = "kcjhkbajobnhihpodnphdndhmniglmpc"; } # web edit
-    ];
-    commandLineArgs = [
-      "--disable-features=WebRtcAllowInputVolumeAdjustment"
+      "dnhpnfgdlenaccegplpojghhmaamnnfp" # augmented steam
+      "nngceckbapebfimnlniiiahkandclblb" # bitwarden
+      "neebplgakaahbhdphmkckjjcegoiijjo" # keepa
+      "ldgfbffkinooeloadekpmfoklnobpien" # raindrop.io
+      "mnjggcdmjocbbbhaepdhchncahnbgone" # sponsorblock
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+      "kcjhkbajobnhihpodnphdndhmniglmpc" # web edit
     ];
   };
 
