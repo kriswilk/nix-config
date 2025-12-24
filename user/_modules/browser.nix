@@ -115,15 +115,53 @@
         "browser.uiCustomization.state" = builtins.toJSON {
           placements = {
             widget-overflow-fixed-list = [];
-            unified-extensions-area = [ "sponsorblocker_ajay_app-browser-action" "amptra_keepa_com-browser-action" ];
-            nav-bar = [ "sidebar-button" "back-button" "forward-button" "stop-reload-button" "urlbar-container" "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action" "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action" "ublock0_raymondhill_net-browser-action" "webedit_ryanluu_dev-browser-action" "unified-extensions-button" "downloads-button" ];
-            toolbar-menubar = [ "menubar-items" ];
-            TabsToolbar = [ "firefox-view-button" "tabbrowser-tabs" "new-tab-button" "alltabs-button" ];
+            unified-extensions-area = [];
+            nav-bar = [
+              "sidebar-button"
+              "back-button"
+              "forward-button"
+              "stop-reload-button"
+              "urlbar-container"
+              
+              "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action"
+              "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"
+              "ublock0_raymondhill_net-browser-action"
+              "sponsorblocker_ajay_app-browser-action"
+              "amptra_keepa_com-browser-action"
+              "webedit_ryanluu_dev-browser-action"
+              
+              "unified-extensions-button"
+              "downloads-button"
+            ];
+            toolbar-menubar = [
+              "menubar-items"
+            ];
+            TabsToolbar = [
+              "firefox-view-button"
+              "tabbrowser-tabs"
+              "new-tab-button"
+              "alltabs-button"
+            ];
             vertical-tabs = [];
-            PersonalToolbar = [ "personal-bookmarks" ];
+            PersonalToolbar = [
+              "personal-bookmarks" 
+            ];
           };
-          #seen = [ "amptra_keepa_com-browser-action" "ublock0_raymondhill_net-browser-action" "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action" "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action" "sponsorblocker_ajay_app-browser-action" "webedit_ryanluu_dev-browser-action" "developer-button" "screenshot-button" ];
-          #dirtyAreaCache = [ "unified-extensions-area","nav-bar","vertical-tabs" ];
+          # seen = [
+          #   "developer-button"
+          #   "screenshot-button"
+          #   "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action"
+          #   "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"
+          #   "ublock0_raymondhill_net-browser-action"
+          #   "sponsorblocker_ajay_app-browser-action"
+          #   "amptra_keepa_com-browser-action"
+          #   "webedit_ryanluu_dev-browser-action"
+          # ];
+          # dirtyAreaCache = [
+          #   "unified-extensions-area"
+          #   "nav-bar"
+          #   "vertical-tabs"
+          # ];
           currentVersion = 23;
           newElementCount = 1;
         };
