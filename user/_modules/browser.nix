@@ -166,8 +166,8 @@
           currentVersion = 23;
           newElementCount = 1;
         };
-        privacy.userContext.enabled = true;
-        privacy.userContext.ui.enabled = true;
+        "privacy.userContext.enabled" = true;
+        "privacy.userContext.ui.enabled" = true;
       };
 
       SearchEngines.Add = [
