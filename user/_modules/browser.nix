@@ -112,6 +112,7 @@
 
       Preferences = {
         "browser.ml.linkPreview.enabled" = false;
+        "browser.download.autohideButton" = false;
         "browser.uiCustomization.state" = builtins.toJSON {
           placements = {
             widget-overflow-fixed-list = [];
