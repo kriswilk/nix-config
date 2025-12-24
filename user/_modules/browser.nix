@@ -112,6 +112,8 @@
 
       Preferences = {
         "browser.ml.linkPreview.enabled" = false;
+
+        # ui customization
         "browser.download.autohideButton" = false;
         "browser.uiCustomization.state" = builtins.toJSON {
           placements = {
@@ -141,7 +143,6 @@
               "firefox-view-button"
               "tabbrowser-tabs"
               "new-tab-button"
-              #"alltabs-button"
             ];
             vertical-tabs = [];
             PersonalToolbar = [
@@ -166,6 +167,8 @@
           currentVersion = 23;
           newElementCount = 1;
         };
+
+        # enable container tabs
         "privacy.userContext.enabled" = true;
         "privacy.userContext.ui.enabled" = true;
       };
