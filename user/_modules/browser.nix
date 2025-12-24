@@ -141,7 +141,7 @@
               "firefox-view-button"
               "tabbrowser-tabs"
               "new-tab-button"
-              "alltabs-button"
+              #"alltabs-button"
             ];
             vertical-tabs = [];
             PersonalToolbar = [
@@ -166,6 +166,8 @@
           currentVersion = 23;
           newElementCount = 1;
         };
+        privacy.userContext.enabled = true;
+        privacy.userContext.ui.enabled = true;
       };
 
       SearchEngines.Add = [
