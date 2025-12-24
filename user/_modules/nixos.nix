@@ -3,6 +3,7 @@
 {
   programs.nh = {
     enable = true;
+    flake = "/home/kris/nix-config";
   };
 
   programs.nix-index = {
