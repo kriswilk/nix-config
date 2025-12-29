@@ -5,13 +5,7 @@ $sudo\
 $username\
 $hostname\
 $localip\
-$shlvl\
-$singularity\
-$kubernetes\
 $directory\
-$vcsh\
-$fossil_branch\
-$fossil_metrics\
 $git_branch\
 $git_commit\
 $git_state\
@@ -23,27 +17,20 @@ $package\
 $fill\
 \
 $c\
+$cpp\
 $cmake\
-$cobol\
-$dart\
-$dotnet\
-$fortran\
 $golang\
-$haskell\
 $java\
 $lua\
 $nodejs\
 $perl\
-$php\
 $python\
 $ruby\
 $rust\
-$swift\
 \
 $nix_shell\
 $aws\
 $gcloud\
-$openstack\
 $azure\
 \
 $direnv\
@@ -57,6 +44,7 @@ $jobs\
 $battery\
 $status\
 $container\
+$shlvl\
 $character"""
 
 [fill]
@@ -86,6 +74,11 @@ truncate_to_repo = false
 truncation_length = 3
 truncation_symbol = '…/'
 
+[package]
+symbol = '󰏗 '
+format = '(is [$symbol$version]($style) )'
+
+
 [cmd_duration]
 format = '[$duration]($style)'
 style = 'white'
@@ -93,14 +86,14 @@ min_time = 1_000
 
 
 
-[aws]
-symbol = ' '
+
+
 
 
 
 [docker_context]
 symbol = ' '
-format = 'via [$symbol$context]($style) '
+format = '[$symbol$context]($style) [|](bright-black) '
 
 [git_branch]
 symbol = ' '
@@ -108,8 +101,8 @@ symbol = ' '
 [git_commit]
 tag_symbol = '  '
 
-[memory_usage]
-symbol = '󰍛 '
+[aws]
+symbol = ' '
 
 [nix_shell]
 symbol = ' '
@@ -120,6 +113,12 @@ symbol = ' '
 disabled = false
 
 
+[shlvl]
+disabled = false
+format = '[$symbol]($style)'
+repeat = true
+symbol = '❯'
+repeat_offset = 1
 
 
 
@@ -136,28 +135,8 @@ format = '([$symbol($version(-$name))]($style) [|](bright-black)) '
 symbol = 'cmake '
 format = '([$symbol($version)]($style) [|](bright-black)) '
 
-[cobol]
-symbol = 'cobol '
-format = '([$symbol($version)]($style) [|](bright-black)) '
-
-[dart]
-symbol = 'dart '
-format = '([$symbol($version)]($style) [|](bright-black)) '
-
-[dotnet]
-symbol = '.NET '
-format = '([$symbol($version )(target $tfm )]($style)[|](bright-black)) '
-
-[fortran]
-symbol = 'fortran '
-format = '([$symbol($version)]($style) [|](bright-black)) '
-
 [golang]
 symbol = 'go '
-format = '([$symbol($version)]($style) [|](bright-black)) '
-
-[haskell]
-symbol = 'haskell '
 format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [java]
@@ -172,22 +151,8 @@ format = '([$symbol($version)]($style) [|](bright-black)) '
 symbol = 'nodejs '
 format = '([$symbol($version)]($style) [|](bright-black)) '
 
-
-
-
-[package]
-symbol = '󰏗 '
-format = '(is [$symbol$version]($style) )'
-
-
-
-
 [perl]
 symbol = 'pl '
-format = '([$symbol($version)]($style) [|](bright-black)) '
-
-[php]
-symbol = 'php '
 format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [python]
@@ -200,8 +165,4 @@ format = '([$symbol($version)]($style) [|](bright-black)) '
 
 [rust]
 symbol = 'rs '
-format = '([$symbol($version)]($style) [|](bright-black)) '
-
-[swift]
-symbol = 'swift '
 format = '([$symbol($version)]($style) [|](bright-black)) '
