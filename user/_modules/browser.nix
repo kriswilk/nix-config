@@ -149,6 +149,7 @@
               "personal-bookmarks" 
             ];
           };
+          # WIP: not sure if any of this is needed....
           # seen = [
           #   "developer-button"
           #   "screenshot-button"
