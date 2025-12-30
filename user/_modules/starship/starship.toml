@@ -4,7 +4,6 @@ format = """
 $sudo\
 $username\
 $hostname\
-$localip\
 $directory\
 $git_branch\
 $git_commit\
@@ -33,10 +32,7 @@ $aws\
 $gcloud\
 $azure\
 \
-$direnv\
-$env_var\
-$custom\
-󱎫 $cmd_duration\
+$cmd_duration\
 \
 $line_break\
 \
@@ -47,8 +43,6 @@ $container\
 $shlvl\
 $character"""
 
-[fill]
-style = 'bright-black'
 
 [sudo]
 disabled = false
@@ -74,53 +68,29 @@ truncate_to_repo = false
 truncation_length = 3
 truncation_symbol = '…/'
 
-[package]
-symbol = '󰏗 '
-format = '(is [$symbol$version]($style) )'
-
-
-[cmd_duration]
-format = '[$duration]($style)'
-style = 'white'
-min_time = 1_000
-
-
-
-
-
-
-
-
-[docker_context]
-symbol = ' '
-format = '[$symbol$context]($style) [|](bright-black) '
-
 [git_branch]
 symbol = ' '
 
 [git_commit]
 tag_symbol = '  '
 
-[aws]
-symbol = ' '
+[git_state]
 
-[nix_shell]
-symbol = ' '
-format = '[$symbol$state( \($name\))]($style) [|](bright-black) '
+[git_metrics]
 
-[status]
-symbol = ' '
-disabled = false
+[git_status]
 
+[docker_context]
+symbol = ' '
+format = '[$symbol$context]($style) [|](bright-black) '
 
-[shlvl]
-disabled = false
-format = '[$symbol]($style)'
-repeat = true
-symbol = '❯'
-repeat_offset = 1
+[package]
+symbol = '󰏗 '
+format = '(is [$symbol$version]($style) )'
 
 
+[fill]
+style = 'bright-black'
 
 
 [c]
@@ -166,3 +136,41 @@ format = '([$symbol($version)]($style) [|](bright-black)) '
 [rust]
 symbol = 'rs '
 format = '([$symbol($version)]($style) [|](bright-black)) '
+
+
+[nix_shell]
+symbol = ' '
+format = '[$symbol$state( \($name\))]($style) [|](bright-black) '
+
+[aws]
+symbol = ' '
+
+[gcloud]
+
+[azure]
+
+
+[cmd_duration]
+format = '󱎫 [$duration]($style)'
+style = 'white'
+min_time = 1_000
+
+
+[jobs]
+
+[battery]
+
+[status]
+symbol = ' '
+disabled = false
+
+[container]
+
+[shlvl]
+disabled = false
+format = '[$symbol]($style)'
+repeat = true
+symbol = '❯'
+repeat_offset = 1
+
+[character]
