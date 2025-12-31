@@ -32,7 +32,7 @@ $aws\
 $gcloud\
 $azure\
 \
-$cmd_duration\
+󱎫$cmd_duration\
 \
 $line_break\
 \
@@ -143,15 +143,20 @@ symbol = ' '
 format = '[$symbol$state( \($name\))]($style) [|](bright-black) '
 
 [aws]
-symbol = ' '
+symbol = 'aws '
+format = '[$symbol($profile )(\($region\) )(\[$duration\] )]($style) [|](bright-black) '
 
 [gcloud]
+symbol = 'gcp '
+format = '[$symbol$account(@$domain)(\($region\))]($style) [|](bright-black) '
 
 [azure]
+symbol = 'azr '
+format = 'on [$symbol($subscription)]($style) [|](bright-black) '
 
 
 [cmd_duration]
-format = '󱎫 [$duration]($style)'
+format = ' [$duration]($style)'
 style = 'white'
 min_time = 1_000
 
