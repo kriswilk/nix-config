@@ -32,7 +32,7 @@ $aws\
 $gcloud\
 $azure\
 \
-󱎫 $cmd_duration\
+$cmd_duration\
 \
 $line_break\
 \
@@ -156,9 +156,8 @@ format = 'on [$symbol($subscription)]($style) [|](bright-black) '
 
 
 [cmd_duration]
-format = '[$duration]($style)'
+format = '󱎫 [$duration]($style)'
 style = 'white'
-min_time = 1_000
 
 
 [jobs]
