@@ -5,7 +5,6 @@
     enable = true;
     settings = {
       animation = "matrix";
-      bigclock = "en";
       hide_key_hints = true;
       hide_version_string = true;
       input_len = 24;
