@@ -4,7 +4,7 @@
   services.displayManager.ly = {
     enable = true;
     settings = {
-      animation = "doom";
+      animation = "gameoflife";
       bigclock = "en";
       bigclock_12hr = true;
       bigclock_seconds = true;
