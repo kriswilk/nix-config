@@ -6,17 +6,11 @@
     settings = {
       animation = "gameoflife";
       bigclock = "en";
-      bigclock_12hr = true;
-      bigclock_seconds = true;
-
-      box_title = "Welcome to NixOS";
-
       #hide_key_hints = true;
-      clear_password = true;
       #hide_version_string = true;
-      save = true;
-      input_len = 20;
+      input_len = 24;
       text_in_center = true;
+      clear_password = true;
     };
   };
 
