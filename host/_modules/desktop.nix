@@ -1,32 +1,35 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Enable the COSMIC login manager
-  services.displayManager.cosmic-greeter.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "doom";
+      bigclock = "en";
+      bigclock_12hr = true;
+      bigclock_seconds = true;
 
-  # Enable the COSMIC desktop environment
-  services.desktopManager.cosmic.enable = true;
+      box_title = "Welcome to NixOS";
 
-  # services.displayManager.ly = {
-  #   enable = true;
-  #   settings = {
-  #     animation = "matrix";
-  #     bigclock = true;
-  #     hide_key_hints = true;
-  #     clear_password = true;
-  #     hide_version_string = true;
-  #   };
-  # };
+      #hide_key_hints = true;
+      clear_password = true;
+      #hide_version_string = true;
+      save = true;
+      input_len = 20;
+      text_in_center = true;
+    };
+  };
 
   services.desktopManager.plasma6.enable = true;
 
-  programs.niri.enable = true;
+  # WIP: Niri needs a lot more configuration to be usable...
+  # programs.niri.enable = true;
   
-  environment.systemPackages = with pkgs; [
-    fuzzel
-    alacritty
-    swaylock
-    xwayland-satellite
-    waybar
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   fuzzel
+  #   alacritty
+  #   swaylock
+  #   xwayland-satellite
+  #   waybar
+  # ];
 }
