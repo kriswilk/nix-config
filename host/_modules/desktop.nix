@@ -4,13 +4,14 @@
   services.displayManager.ly = {
     enable = true;
     settings = {
-      animation = "gameoflife";
+      animation = "matrix";
       bigclock = "en";
-      #hide_key_hints = true;
-      #hide_version_string = true;
+      hide_key_hints = true;
+      hide_version_string = true;
       input_len = 24;
       text_in_center = true;
       clear_password = true;
+      save = true;
     };
   };
 
