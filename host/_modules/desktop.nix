@@ -23,6 +23,7 @@
   
   environment.systemPackages = with pkgs; [
     fuzzel
+    mako
     alacritty
     swayidle
     swaylock
