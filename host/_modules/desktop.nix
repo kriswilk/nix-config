@@ -19,7 +19,7 @@
 
   # WIP: Niri needs a lot more configuration to be usable...
   programs.niri.enable = true;
-  programs.dms-shell.enable = true;
+  #programs.dms-shell.enable = true;
   
   environment.systemPackages = with pkgs; [
     fuzzel
