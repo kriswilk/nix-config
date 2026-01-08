@@ -8,8 +8,10 @@
   programs.foot = {
     enable = true;
     settings = {
-      resize_by_cells = false;
-      pad = "4x4 center-when-maximized-and-fullscreen";
+      main = {
+        resize_by_cells = false;
+        pad = "4x4 center-when-maximized-and-fullscreen";
+      };
     };
   };
 
