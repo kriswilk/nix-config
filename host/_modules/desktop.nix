@@ -28,7 +28,7 @@
     swayidle
     swaylock
     xwayland-satellite
-    waybar
+    #waybar
 
     qalculate-qt
   ];
