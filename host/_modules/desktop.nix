@@ -32,5 +32,6 @@
 
     speedcrunch
     qalculate-qt
+    qalculate-gtk
   ];
 }
