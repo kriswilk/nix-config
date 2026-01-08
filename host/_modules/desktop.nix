@@ -27,7 +27,7 @@
     swayidle
     swaylock
     xwayland-satellite
-    #waybar
+    waybar
 
     speedcrunch
     qalculate-qt
