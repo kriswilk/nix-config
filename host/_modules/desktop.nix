@@ -14,16 +14,22 @@
     };
   };
 
-  services.desktopManager.plasma6.enable = true;
+  # WIP: to be replaced by niri or hyprland?
+  #services.desktopManager.plasma6.enable = true;
 
   # WIP: Niri needs a lot more configuration to be usable...
-  # programs.niri.enable = true;
+  programs.niri.enable = true;
+  programs.dms-shell.enable = true;
   
-  # environment.systemPackages = with pkgs; [
-  #   fuzzel
-  #   alacritty
-  #   swaylock
-  #   xwayland-satellite
-  #   waybar
-  # ];
+  environment.systemPackages = with pkgs; [
+    fuzzel
+    alacritty
+    swayidle
+    swaylock
+    xwayland-satellite
+    #waybar
+
+    speedcrunch
+    qalculate-qt
+  ];
 }
