@@ -9,12 +9,15 @@
     enable = true;
     settings = {
       main = {
+        pad = "5x5";
         resize-by-cells = false;
         resize-keep-grid = "no";
-        pad = "5x5";
       };
       csd = {
         preferred = "none";
+      };
+      scrollback = {
+        lines = 10000;
       };
     };
   };
