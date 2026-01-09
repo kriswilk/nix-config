@@ -11,10 +11,13 @@
       main = {
         resize-by-cells = false;
         resize-keep-grid = "no";
-        pad = "8x8 center-when-maximized-and-fullscreen";
+        pad = "5x5";
       };
       csd = {
         preferred = "none";
+      };
+      colors = {
+        alpha = 0.9;
       };
     };
   };
