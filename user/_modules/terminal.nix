@@ -10,7 +10,11 @@
     settings = {
       main = {
         resize-by-cells = false;
-        pad = "4x4 center-when-maximized-and-fullscreen";
+        resize-keep-grid = "no";
+        pad = "8x8 center-when-maximized-and-fullscreen";
+      };
+      csd = {
+        preferred = "none";
       };
     };
   };

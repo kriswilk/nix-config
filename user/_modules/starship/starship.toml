@@ -40,7 +40,6 @@ $jobs\
 $battery\
 $status\
 $container\
-$shlvl\
 $character"""
 
 
@@ -169,12 +168,5 @@ symbol = ' '
 disabled = false
 
 [container]
-
-[shlvl]
-disabled = false
-format = '[$symbol]($style)'
-repeat = true
-symbol = '❯'
-repeat_offset = 1
 
 [character]
