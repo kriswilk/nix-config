@@ -9,7 +9,7 @@
     enable = true;
     settings = {
       main = {
-        resize_by_cells = false;
+        resize-by-cells = false;
         pad = "4x4 center-when-maximized-and-fullscreen";
       };
     };
