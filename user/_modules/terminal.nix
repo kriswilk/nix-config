@@ -16,9 +16,6 @@
       csd = {
         preferred = "none";
       };
-      colors = {
-        alpha = lib.mkForce 0.9;
-      };
     };
   };
 
