@@ -17,7 +17,7 @@
         preferred = "none";
       };
       colors = {
-        alpha = 0.9;
+        alpha = lib.mkForce 0.9;
       };
     };
   };
