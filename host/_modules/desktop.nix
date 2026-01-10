@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --cmd niri-session --time --user-menu --width 60 --window-padding 2 --container-padding 2 --greeting '. . . Welcome to NixOS . . .' --asterisks --theme 'container=black;border=blue;title=yellow;greet=white;text=gray;prompt=green;input=gray;time=white;action=blue;button=yellow'";
+        command = "${pkgs.tuigreet}/bin/tuigreet --cmd niri-session --time --width 40 --window-padding 2 --container-padding 4 --greeting 'Welcome to NixOS!' --asterisks --theme 'container=black;border=blue;title=yellow;greet=white;text=gray;prompt=green;input=gray;time=white;action=blue;button=yellow'";
         user = "greeter";
       };
     };
