@@ -1,14 +1,11 @@
 { config, lib, pkgs, ... }:
 
-let
-  tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
-  niri-session = "${pkgs.niri}/bin/niri-session";
-in {
+{
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${tuigreet} --time --remember --remember-session --sessions ${niri-session}";
+        command = "${pkgs.tuigreet}/bin/tuigreet --cmd niri-session --time --user-menu --window-padding 1";
         user = "greeter";
       };
     };
