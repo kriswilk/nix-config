@@ -3,9 +3,17 @@
 {
   services.greetd = {
     enable = true;
-    settings = {
+    settings = 
+    let
+      cmd = "--cmd niri-session";
+      time = "--time --time-format '%a, %b %d %Y • %T'";
+      greeting = "--greeting 'Welcome to NixOS!\n\n'";
+      geometry = "--width 40 --window-padding 1 --container-padding 2";
+      theme = "--theme 'container=black;border=blue;title=yellow;greet=white;text=gray;prompt=green;input=gray;time=white;action=blue;button=yellow'";
+      other = "--asterisks";
+    in {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --cmd niri-session --time --time-format '%a, %b %d %Y • %T' --greeting  'Welcome to NixOS!\n\n' --width 40 --window-padding 1 --container-padding 2 --asterisks --theme 'container=black;border=blue;title=yellow;greet=white;text=gray;prompt=green;input=gray;time=white;action=blue;button=yellow'";
+        command = "${pkgs.tuigreet}/bin/tuigreet ${cmd} ${time} ${greeting} ${geometry} ${theme} ${other}";
         user = "greeter";
       };
     };
