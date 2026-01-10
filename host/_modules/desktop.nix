@@ -5,7 +5,7 @@
     enable = true;
     settings = 
     let
-      cmd = "--cmd niri-session";
+      cmd = "--sessions ${config.services.displayManager.sessionData.desktops}/share/xsessions:${config.services.displayManager.sessionData.desktops}/share/wayland-sessions";#"--cmd niri-session";
       time = "--time --time-format '%a, %b %d %Y • %T'";
       greeting = "";#"--greeting 'Welcome to NixOS!'";
       geometry = "--width 50 --window-padding 1 --container-padding 2";
