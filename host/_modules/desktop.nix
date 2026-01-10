@@ -16,6 +16,13 @@
         command = "${pkgs.tuigreet}/bin/tuigreet ${cmd} ${time} ${greeting} ${geometry} ${theme} ${other}";
         user = "greeter";
       };
+      sessions = [
+      {
+        name = "custom-session";
+        command = "fish";
+        user = "greeter";
+      }
+];
     };
   };
 
