@@ -1,18 +1,49 @@
 { config, lib, pkgs, ... }:
 
-{
-  services.displayManager.ly = {
+let
+  tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
+  niri-session = "${pkgs.niri}/bin/niri-session";
+in {
+  services.greetd = {
     enable = true;
     settings = {
-      animation = "matrix";
-      #hide_key_hints = true;
-      #hide_version_string = true;
-      input_len = 24;
-      text_in_center = true;
-      clear_password = true;
-      save = true;
+      default_session = {
+        command = "${tuigreet} --time --remember --remember-session --sessions ${niri-session}";
+        user = "greeter";
+      };
     };
   };
+
+  # this is a life saver.
+  # literally no documentation about this anywhere.
+  # might be good to write about this...
+  # https://www.reddit.com/r/NixOS/comments/u0cdpi/tuigreet_with_xmonad_how/
+  # systemd.services.greetd.serviceConfig = {
+  #   Type = "idle";
+  #   StandardInput = "tty";
+  #   StandardOutput = "tty";
+  #   StandardError = "journal"; # Without this errors will spam on screen
+  #   # Without these bootlogs will spam on screen
+  #   TTYReset = true;
+  #   TTYVHangup = true;
+  #   TTYVTDisallocate = true;
+  # };
+
+
+
+
+  # services.displayManager.ly = {
+  #   enable = true;
+  #   settings = {
+  #     animation = "matrix";
+  #     #hide_key_hints = true;
+  #     #hide_version_string = true;
+  #     input_len = 24;
+  #     text_in_center = true;
+  #     clear_password = true;
+  #     save = true;
+  #   };
+  # };
 
   # services.displayManager.dms-greeter = {
   #   enable = true;
