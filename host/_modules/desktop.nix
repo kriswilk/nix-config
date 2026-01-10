@@ -7,9 +7,9 @@
     let
       cmd = "--cmd niri-session";
       time = "--time --time-format '%a, %b %d %Y • %T'";
-      greeting = "--greeting 'Welcome to NixOS!\n .'";
-      geometry = "--width 40 --window-padding 1 --container-padding 2";
-      theme = "--theme 'container=black;border=blue;title=yellow;greet=white;text=gray;prompt=green;input=gray;time=white;action=blue;button=yellow'";
+      greeting = "--greeting 'Welcome to NixOS!'";
+      geometry = "--width 40 --window-padding 1 --container-padding 1";
+      theme = "--theme 'container=black;border=blue;title=yellow;greet=blue;text=gray;prompt=White;input=gray;time=white;action=blue;button=yellow'";
       other = "--asterisks";
     in {
       default_session = {
