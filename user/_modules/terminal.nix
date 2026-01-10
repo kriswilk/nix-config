@@ -1,10 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.alacritty = {
-    enable = true;
-  };
-
   programs.foot = {
     enable = true;
     settings = {
