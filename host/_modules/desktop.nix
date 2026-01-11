@@ -1,5 +1,19 @@
 { config, lib, pkgs, ... }:
 
+let
+  # Define the custom Wayland session package
+  myCustomWaylandSession = pkgs.writeTextFile {
+    name = "my-fish-session";
+    destination = "${config.services.displayManager.sessionData.desktops}/share/wayland-sessions/my-fish.desktop";
+    text = ''
+      [Desktop Entry]
+      Name=Shell
+      Comment=Starts a basic shell session
+      Exec=${pkgs.fish}/bin/fish
+      Type=Application
+    '';
+  };
+in
 {
   services.greetd = {
     enable = true;
@@ -10,7 +24,6 @@
           ${pkgs.tuigreet}/bin/tuigreet \
           --sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions \
           --time --time-format '%a, %b %d %Y • %T' \
-          --greeting 'Welcome to NixOS!' --greet-align left \
           --width 50 --window-padding 1 --container-padding 2 \
           --theme 'container=black;border=blue;title=yellow;greet=blue;text=gray;prompt=White;input=gray;time=white;action=blue;button=yellow' \
           --asterisks \
