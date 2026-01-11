@@ -10,12 +10,10 @@
           ${pkgs.tuigreet}/bin/tuigreet \
           --sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions \
           --time --time-format '%a, %b %d %Y • %T' \
-          --greeting 'Welcome to NixOS!' \
+          --greeting 'Welcome to NixOS!' --greet-align left \
           --width 50 --window-padding 1 --container-padding 2 \
           --theme 'container=black;border=blue;title=yellow;greet=blue;text=gray;prompt=White;input=gray;time=white;action=blue;button=yellow' \
           --asterisks \
-          --user-menu \
-          --remember \
         '';
         user = "greeter";
       };
