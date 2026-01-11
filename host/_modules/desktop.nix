@@ -1,23 +1,14 @@
 { config, lib, pkgs, ... }:
 
-let
-  # Define the custom Wayland session package
-  myCustomWaylandSession = pkgs.writeTextFile {
-    name = "my-fish-session";
-    destination = "${config.services.displayManager.sessionData.desktops}/share/wayland-sessions/my-fish.desktop";
-    text = ''
+{
+  services.displayManager.sessionPackages = [
+    (pkgs.writeTextDir "share/wayland-sessions/fish-shell.desktop" ''
       [Desktop Entry]
       Name=Shell
-      Comment=Starts a basic shell session
-      Exec=${pkgs.fish}/bin/fish
+      Comment=Log in to a fish shell
+      Exec=${pkgs.fish}/bin/fish --login
       Type=Application
-    '';
-  };
-in
-{
-services.xserver.displayManager.sessionPackages = [
-    myCustomWaylandSession
-    # Include other default sessions if desired, e.g., pkgs.gnome.gnome-session
+    '')
   ];
 
   services.greetd = {
