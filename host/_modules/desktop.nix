@@ -2,15 +2,14 @@
 
 {
   services.displayManager.sessionPackages = [
-    (pkgs.writeTextDir "share/wayland-sessions/fish-shell.desktop" ''
+    ((pkgs.writeTextDir "share/wayland-sessions/fish-shell.desktop" ''
       [Desktop Entry]
       Name=Shell
       Comment=Log in to a fish shell
       Exec=${pkgs.fish}/bin/fish --login
       Type=Application
-    '').overrideAttrs
-      (_: {
-        passthru.providedSessions = [ "fish-shell" ];
+    '') // {
+      passthru.providedSessions = [ "fish-shell" ];
     })
   ];
 
