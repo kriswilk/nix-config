@@ -11,7 +11,7 @@
           --time --time-format '%a, %b %d %Y • %T' \
           --width 50 --window-padding 1 --container-padding 2 \
           --greeting 'Welcome to NixOS!' --greet-align left \
-          --theme 'container=black;border=black;title=black;greet=blue;text=gray;prompt=White;input=gray;time=white;action=blue;button=yellow' \
+          --theme 'container=black;border=blue;title=yellow;greet=blue;text=gray;prompt=White;input=gray;time=white;action=blue;button=yellow' \
           --asterisks \
         '';
         user = "greeter";
