@@ -3,6 +3,7 @@
 {
   services.greetd = {
     enable = true;
+    useTextGreeter = true;
     settings = {
       default_session = {
         command = ''
@@ -14,6 +15,7 @@
           --theme 'container=black;border=blue;title=yellow;greet=blue;text=gray;prompt=White;input=gray;time=white;action=blue;button=yellow' \
           --asterisks \
           --user-menu \
+          --remember \
         '';
         user = "greeter";
       };
