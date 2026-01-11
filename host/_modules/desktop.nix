@@ -2,15 +2,20 @@
 
 {
   services.displayManager.sessionPackages = [
-    ((pkgs.writeTextDir "share/wayland-sessions/fish-shell.desktop" ''
+    (pkgs.runCommand "fish-shell-session" {
+      # This tells the display manager that this package provides a session named "fish-shell"
+      # This must match the filename created below (minus .desktop)
+      passthru.providedSessions = [ "fish-shell" ];
+    } ''
+      mkdir -p $out/share/wayland-sessions
+      cat > $out/share/wayland-sessions/fish-shell.desktop <<EOF
       [Desktop Entry]
       Name=Shell
       Comment=Log in to a fish shell
       Exec=${pkgs.fish}/bin/fish --login
       Type=Application
-    '') // {
-      passthru.providedSessions = [ "fish-shell" ];
-    })
+      EOF
+    '')
   ];
 
   services.greetd = {
