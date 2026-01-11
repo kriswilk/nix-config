@@ -3,26 +3,20 @@
 {
   services.greetd = {
     enable = true;
-    settings = 
-    let
-      cmd = "--sessions ${config.services.displayManager.sessionData.desktops}/share/xsessions:${config.services.displayManager.sessionData.desktops}/share/wayland-sessions";#"--cmd niri-session";
-      time = "--time --time-format '%a, %b %d %Y • %T'";
-      greeting = "";#"--greeting 'Welcome to NixOS!'";
-      geometry = "--width 50 --window-padding 1 --container-padding 2";
-      theme = "--theme 'container=black;border=blue;title=yellow;greet=blue;text=gray;prompt=White;input=gray;time=white;action=blue;button=yellow'";
-      other = "--asterisks";
-    in {
+    settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet ${cmd} ${time} ${greeting} ${geometry} ${theme} ${other}";
+        command = ''
+          ${pkgs.tuigreet}/bin/tuigreet \
+          --sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions \
+          --time --time-format '%a, %b %d %Y • %T' \
+          --greeting 'Welcome to NixOS!' \
+          --width 50 --window-padding 1 --container-padding 2 \
+          --theme 'container=black;border=blue;title=yellow;greet=blue;text=gray;prompt=White;input=gray;time=white;action=blue;button=yellow' \
+          --asterisks \
+          --user-menu \
+        '';
         user = "greeter";
       };
-      sessions = [
-      {
-        name = "custom-session";
-        command = "fish";
-        user = "greeter";
-      }
-];
     };
   };
 
