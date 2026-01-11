@@ -4,7 +4,7 @@ let
   # Define the custom Wayland session package
   myCustomWaylandSession = pkgs.writeTextFile {
     name = "my-fish-session";
-    destination = "/share/wayland-sessions/my-fish.desktop";
+    destination = "${config.services.displayManager.sessionData.desktops}/share/wayland-sessions/my-fish.desktop";
     text = ''
       [Desktop Entry]
       Name=Shell
