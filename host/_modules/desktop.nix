@@ -1,23 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  services.displayManager.sessionPackages = [
-    (pkgs.runCommand "fish-shell-session" {
-      # This tells the display manager that this package provides a session named "fish-shell"
-      # This must match the filename created below (minus .desktop)
-      passthru.providedSessions = [ "fish-shell" ];
-    } ''
-      mkdir -p $out/share/wayland-sessions
-      cat > $out/share/wayland-sessions/fish-shell.desktop <<EOF
-      [Desktop Entry]
-      Name=Shell
-      Comment=Log in to a fish shell
-      Exec=${pkgs.fish}/bin/fish --login
-      Type=Application
-      EOF
-    '')
-  ];
-
   services.greetd = {
     enable = true;
     useTextGreeter = true;
@@ -25,6 +8,7 @@
       default_session = {
         command = ''
           ${pkgs.tuigreet}/bin/tuigreet \
+          --cmd niri-session \
           --time --time-format '%a, %b %d %Y • %T' \
           --width 50 --window-padding 1 --container-padding 2 \
           --theme 'container=black;border=blue;title=yellow;greet=blue;text=gray;prompt=White;input=gray;time=white;action=blue;button=yellow' \
@@ -34,24 +18,6 @@
       };
     };
   };
-
-  # this is a life saver.
-  # literally no documentation about this anywhere.
-  # might be good to write about this...
-  # https://www.reddit.com/r/NixOS/comments/u0cdpi/tuigreet_with_xmonad_how/
-  # systemd.services.greetd.serviceConfig = {
-  #   Type = "idle";
-  #   StandardInput = "tty";
-  #   StandardOutput = "tty";
-  #   StandardError = "journal"; # Without this errors will spam on screen
-  #   # Without these bootlogs will spam on screen
-  #   TTYReset = true;
-  #   TTYVHangup = true;
-  #   TTYVTDisallocate = true;
-  # };
-
-
-
 
   # services.displayManager.ly = {
   #   enable = true;
@@ -64,11 +30,6 @@
   #     clear_password = true;
   #     save = true;
   #   };
-  # };
-
-  # services.displayManager.dms-greeter = {
-  #   enable = true;
-  #   compositor.name = "niri";
   # };
 
   # WIP: to be replaced by niri or hyprland?
