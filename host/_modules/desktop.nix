@@ -15,6 +15,11 @@ let
   };
 in
 {
+services.xserver.displayManager.sessionPackages = [
+    myCustomWaylandSession
+    # Include other default sessions if desired, e.g., pkgs.gnome.gnome-session
+  ];
+
   services.greetd = {
     enable = true;
     useTextGreeter = true;
