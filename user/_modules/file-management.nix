@@ -27,11 +27,13 @@
     tree
     wget
 
-    # WIP: bcompare
+    nemo
+    krename
+    bcompare
+
     # WIP: kdePackages.ark # already installed?
     # WIP: kdePackages.filelight # already installed?
     # WIP: kdePackages.k3b # already installed?
-    # WIP: krename # anything better?
     # WIP: onedrive, gdrive ?
     # WIP: qbittorrent
     # WIP: jdownloader2
