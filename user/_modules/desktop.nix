@@ -29,6 +29,12 @@
 
   programs.tofi = {
     enable = true;
+    settings = {
+      width = "50%";
+      height = "50%";
+      scale = false;
+      anchor = "center";
+    };
   };
 
   programs.waybar = {
