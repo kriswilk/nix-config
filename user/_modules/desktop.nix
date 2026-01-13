@@ -29,10 +29,6 @@
 
   programs.tofi = {
     enable = true;
-    settings = {
-      prompt-text = ">  ";
-      corner-radius = "5";
-    };
   };
 
   programs.waybar = {
