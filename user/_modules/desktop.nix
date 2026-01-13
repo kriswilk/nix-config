@@ -5,6 +5,10 @@
     enable = true;
   };
 
+  # WIP: remove fuzzel once rofi keybind is configured
+  programs.fuzzel = {
+    enable = true;
+  };
   programs.rofi = {
     enable = true;
   };
@@ -16,8 +20,8 @@
   services.swayidle = {
     enable = true;
     timeouts = [
-      { timeout = 60; command = "${pkgs.swaylock}/bin/swaylock -fF"; }
-      { timeout = 90; command = "${pkgs.systemd}/bin/systemctl suspend"; }
+      #{ timeout = 60; command = "${pkgs.swaylock}/bin/swaylock -fF"; }
+      #{ timeout = 90; command = "${pkgs.systemd}/bin/systemctl suspend"; }
     ];
   };
 
@@ -35,7 +39,7 @@
 
   home.packages = with pkgs; [
     #noctalia-shell
-    #wl-clipboard installed by cliphist?
+    wl-clipboard
     xwayland-satellite
   ];
 }
