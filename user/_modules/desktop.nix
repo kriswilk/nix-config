@@ -23,7 +23,11 @@
 
   programs.waybar = {
     enable = true;
+    settings = lib.importJSON ./waybar/config.json;
+    style = lib.importJSON ./waybar/style.css;
   };
+#  xdg.configFile."waybar/config".source = ./waybar/config.json);
+#  xdg.configFile."waybar/style.css".source = ./waybar/style.css);
 
   home.packages = with pkgs; [
     #noctalia-shell
