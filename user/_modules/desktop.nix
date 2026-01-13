@@ -12,11 +12,11 @@
   programs.rofi = {
     enable = true;
     plugins = with pkgs; [
-      rofi-bluetooth
+      
       rofi-calc
       rofi-emoji
       rofi-screenshot
-      rofi-power-menu
+      
       rofi-network-manager
     ];
   };
@@ -49,5 +49,7 @@
     #noctalia-shell
     wl-clipboard
     xwayland-satellite
+    rofi-bluetooth
+    rofi-power-menu
   ];
 }
