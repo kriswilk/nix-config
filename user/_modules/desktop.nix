@@ -58,6 +58,7 @@
   #xdg.configFile."waybar/style.css".source = ./waybar/style.css;
 
   home.packages = with pkgs; [
+    bc
     wl-clipboard
     xwayland-satellite
   ];
