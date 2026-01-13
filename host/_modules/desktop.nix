@@ -18,22 +18,17 @@
   #   };
   # };
 
-  # services.displayManager.ly = {
-  #   enable = true;
-  #   settings = {
-  #     animation = "matrix";
-  #     #hide_key_hints = true;
-  #     #hide_version_string = true;
-  #     input_len = 24;
-  #     text_in_center = true;
-  #     clear_password = true;
-  #     save = true;
-  #   };
-  # };
-
-  services.displayManager.dms-greeter = {
+  services.displayManager.ly = {
     enable = true;
-    compositor.name = "niri";
+    settings = {
+      animation = "matrix";
+      #hide_key_hints = true;
+      #hide_version_string = true;
+      input_len = 24;
+      text_in_center = true;
+      clear_password = true;
+      save = true;
+    };
   };
 
   # WIP: to be replaced by niri or hyprland?
