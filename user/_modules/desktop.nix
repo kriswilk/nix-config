@@ -1,7 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.fuzzel = {
+  programs.cliphist = {
+    enable = true;
+  };
+
+  programs.rofi = {
     enable = true;
   };
 
@@ -19,6 +23,7 @@
 
   programs.swaylock = {
     enable = true;
+    package = pkgs.swaylock-effects;
   };
 
   programs.waybar = {
@@ -30,6 +35,7 @@
 
   home.packages = with pkgs; [
     #noctalia-shell
+    #wl-clipboard installed by cliphist?
     xwayland-satellite
   ];
 }
