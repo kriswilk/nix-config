@@ -30,8 +30,9 @@
   programs.tofi = {
     enable = true;
     settings = {
-      width = "50%";
-      height = "50%";
+      width = "100%";
+      height = "100%";
+      border-width = "0";
       scale = false;
       anchor = "center";
     };
