@@ -5,10 +5,6 @@
     enable = true;
   };
 
-  programs.mako = {
-    enable = true;
-  };
-
   programs.swayidle = {
     enable = true;
     timeouts = [
@@ -22,6 +18,10 @@
   };
 
   programs.waybar = {
+    enable = true;
+  };
+
+  services.mako = {
     enable = true;
   };
 
