@@ -7,7 +7,7 @@
     settings = {
       main = {
         icons-enabled = "no";
-        terminal = "foot -e";
+        terminal = "${pkgs.foot}/bin/foot";
         minimal-lines = "yes";
         inner-pad = 20;
       };
