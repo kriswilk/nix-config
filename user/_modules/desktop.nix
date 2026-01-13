@@ -11,21 +11,27 @@
   };
   programs.tofi = {
     enable = true;
+    settings = {
+      font-size = 12;
+      width = "25%";
+      height = "25%";
+      corner-radius = 5;
+    };
   };
-  programs.rofi = {
-    enable = true;
-    plugins = with pkgs; [
+  # programs.rofi = {
+  #   enable = true;
+  #   plugins = with pkgs; [
       
-      rofi-calc
-      rofi-emoji
-      rofi-screenshot
+  #     rofi-calc
+  #     rofi-emoji
+  #     rofi-screenshot
       
-      rofi-network-manager
-    ];
-  };
-  services.walker = {
-    enable = true;
-  };
+  #     rofi-network-manager
+  #   ];
+  # };
+  # services.walker = {
+  #   enable = true;
+  # };
 
   services.mako = {
     enable = true;
