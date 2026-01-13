@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.cliphist = {
+  services.cliphist = {
     enable = true;
   };
 
