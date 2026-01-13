@@ -5,7 +5,11 @@
     enable = true;
   };
 
-  programs.swayidle = {
+  services.mako = {
+    enable = true;
+  };
+
+  services.swayidle = {
     enable = true;
     timeouts = [
       { timeout = 60; command = "${pkgs.swaylock}/bin/swaylock -fF"; }
@@ -18,10 +22,6 @@
   };
 
   programs.waybar = {
-    enable = true;
-  };
-
-  services.mako = {
     enable = true;
   };
 
