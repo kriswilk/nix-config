@@ -20,6 +20,9 @@
       rofi-network-manager
     ];
   };
+  services.walker = {
+    enable = true;
+  };
 
   services.mako = {
     enable = true;
