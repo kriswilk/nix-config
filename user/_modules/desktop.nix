@@ -7,9 +7,9 @@
     settings = {
       icons-enabled = "no";
       terminal = "foot -e";
-      minimal-lines = "yes"
+      minimal-lines = "yes";
       inner-pad = 20;
-      
+
     };
   };
   
