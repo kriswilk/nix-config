@@ -31,7 +31,14 @@
     enable = true;
     settings = {
       font-size = lib.mkForce 18;
+      
       background-color = lib.mkForce "#000000AA";
+      prompt-background-color = lib.mkForce "#000000AA";
+      placeholder-background-color = lib.mkForce "#000000AA";
+      input-background-color = lib.mkForce "#000000AA";
+      default-result-background-color = lib.mkForce "#000000AA";
+      selection-background-color = lib.mkForce "#000000AA";
+
       width = "100%";
       height = "100%";
       border-width = 0;
