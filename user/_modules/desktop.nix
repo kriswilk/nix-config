@@ -12,27 +12,10 @@
   programs.tofi = {
     enable = true;
     settings = {
-      font-size = lib.mkForce "12";
-      width = "25%";
-      height = "25%";
       corner-radius = "5";
     };
   };
-  # programs.rofi = {
-  #   enable = true;
-  #   plugins = with pkgs; [
-      
-  #     rofi-calc
-  #     rofi-emoji
-  #     rofi-screenshot
-      
-  #     rofi-network-manager
-  #   ];
-  # };
-  # services.walker = {
-  #   enable = true;
-  # };
-
+  
   services.mako = {
     enable = true;
   };
@@ -58,10 +41,7 @@
   #xdg.configFile."waybar/style.css".source = ./waybar/style.css;
 
   home.packages = with pkgs; [
-    #noctalia-shell
     wl-clipboard
     xwayland-satellite
-    rofi-bluetooth
-    rofi-power-menu
   ];
 }
