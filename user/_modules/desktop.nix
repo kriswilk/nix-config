@@ -36,6 +36,10 @@
       outline-width = 0;
       scale = false;
       anchor = "center";
+      padding-top = "20%";
+      padding-bottom = "20%";
+      padding-left = "25%";
+      padding-right = "25%";
     };
   };
 
