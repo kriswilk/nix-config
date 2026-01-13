@@ -32,8 +32,9 @@
     settings = {
       width = "50%";
       height = "50%";
-      border-width = "0";
-      scale = "false";
+      border-width = 0;
+      outline-width = 0;
+      scale = false;
       anchor = "center";
     };
   };
