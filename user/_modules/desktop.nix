@@ -26,7 +26,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    noctalia-shell
+    #noctalia-shell
     xwayland-satellite
   ];
 }
