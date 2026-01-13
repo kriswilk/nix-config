@@ -4,6 +4,13 @@
   # WIP: remove fuzzel once rofi keybind is configured
   programs.fuzzel = {
     enable = true;
+    settings = {
+      icons-enabled = "no";
+      terminal = "foot -e";
+      minimal-lines = "yes"
+      inner-pad = 20;
+      
+    };
   };
   
   services.mako = {
