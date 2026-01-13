@@ -9,6 +9,9 @@
   programs.fuzzel = {
     enable = true;
   };
+  programs.tofi = {
+    enable = true;
+  };
   programs.rofi = {
     enable = true;
     plugins = with pkgs; [
