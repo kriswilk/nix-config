@@ -9,12 +9,6 @@
   programs.fuzzel = {
     enable = true;
   };
-  programs.tofi = {
-    enable = true;
-    settings = {
-      corner-radius = "5";
-    };
-  };
   
   services.mako = {
     enable = true;
@@ -31,6 +25,13 @@
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
+  };
+
+  programs.tofi = {
+    enable = true;
+    settings = {
+      corner-radius = "5";
+    };
   };
 
   programs.waybar = {
