@@ -12,10 +12,10 @@
   programs.tofi = {
     enable = true;
     settings = {
-      font-size = 12;
+      font-size = "12";
       width = "25%";
       height = "25%";
-      corner-radius = 5;
+      corner-radius = "5";
     };
   };
   # programs.rofi = {
