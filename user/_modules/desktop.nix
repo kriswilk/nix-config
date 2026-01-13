@@ -30,7 +30,7 @@
   programs.tofi = {
     enable = true;
     settings = {
-      prompt-text = "> ";
+      prompt-text = ">  ";
       corner-radius = "5";
     };
   };
