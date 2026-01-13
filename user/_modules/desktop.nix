@@ -5,11 +5,12 @@
   programs.fuzzel = {
     enable = true;
     settings = {
-      icons-enabled = "no";
-      terminal = "foot -e";
-      minimal-lines = "yes";
-      inner-pad = 20;
-
+      main = {
+        icons-enabled = "no";
+        terminal = "foot -e";
+        minimal-lines = "yes";
+        inner-pad = 20;
+      };
     };
   };
   
