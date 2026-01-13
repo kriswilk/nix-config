@@ -39,14 +39,6 @@
   #programs.dms-shell.enable = true;
   
   environment.systemPackages = with pkgs; [
-    noctalia-shell
-    fuzzel
-    mako
-    swayidle
-    swaylock
     xwayland-satellite
-    waybar
-
-    qalculate-qt
   ];
 }
