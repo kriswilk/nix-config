@@ -1,10 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
+  services.cliphist = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
-    # calculator
-    bc
-    libqalculate
-    qalculate-qt
+    wl-clipboard
   ];
 }

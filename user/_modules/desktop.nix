@@ -1,10 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  services.cliphist = {
-    enable = true;
-  };
-
   # WIP: remove fuzzel once rofi keybind is configured
   programs.fuzzel = {
     enable = true;
@@ -25,6 +21,14 @@
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
+  };
+
+  programs.rofi = {
+    enable = true;
+    plugins = with pkgs; [
+      rofi-emoji
+      rofi-calc
+    ];
   };
 
   programs.tofi = {
@@ -58,8 +62,6 @@
   #xdg.configFile."waybar/style.css".source = ./waybar/style.css;
 
   home.packages = with pkgs; [
-    bc
-    wl-clipboard
     xwayland-satellite
   ];
 }
