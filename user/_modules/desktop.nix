@@ -32,7 +32,7 @@
     settings = {
       font-size = lib.mkForce 18;
 
-      background-color = lib.mkForce "#00000000";
+      background-color = lib.mkForce "#000000AA";
       prompt-background = lib.mkForce "#00000000";
       placeholder-background = lib.mkForce "#00000000";
       input-background = lib.mkForce "#00000000";
