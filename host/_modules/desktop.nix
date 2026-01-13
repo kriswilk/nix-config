@@ -3,7 +3,7 @@
 {
   services.greetd = {
     enable = true;
-    #useTextGreeter = true;
+    useTextGreeter = true;
     settings = {
       default_session = {
         command = ''
@@ -36,16 +36,16 @@
 
   # WIP: Niri needs a lot more configuration to be usable...
   programs.niri.enable = true;
-  programs.dms-shell.enable = true;
+  #programs.dms-shell.enable = true;
   
   environment.systemPackages = with pkgs; [
-    #noctalia-shell
-    #fuzzel
-    #mako
-    #swayidle
-    #swaylock
+    noctalia-shell
+    fuzzel
+    mako
+    swayidle
+    swaylock
     xwayland-satellite
-    #waybar
+    waybar
 
     qalculate-qt
   ];

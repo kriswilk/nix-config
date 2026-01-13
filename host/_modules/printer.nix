@@ -17,6 +17,7 @@
   };
 
   # WIP: need better naming scheme for printers
+  # WIP: customize printer features (eg., duplex?)
   hardware.printers.ensurePrinters = [
     {
       name = "fathoms-daniela";
@@ -34,21 +35,21 @@
       location = "fathoms";
       deviceUri = "socket://10.0.0.216";
       model = "CNRCUPSMF450ZS.ppd";
-      #ppdOptions = {
-      #  PageSize = "Letter";
-      #  Option1 = "True"; # duplexer
-      #};
+      # ppdOptions = {
+      #   PageSize = "Letter";
+      #   Option1 = "True"; # duplexer
+      # };
     }
     {
       name = "fathoms-office";
       description = "Canon MF455dw";
       location = "fathoms";
       deviceUri = "socket://10.0.0.215";
-      model = "drv:///sample.drv/generpcl.ppd";
-      ppdOptions = {
-        PageSize = "Letter";
-        Option1 = "True"; # duplexer
-      };
+      model = "CNRCUPSMF450ZS.ppd";
+      # ppdOptions = {
+      #   PageSize = "Letter";
+      #   Option1 = "True"; # duplexer
+      # };
     }
     {
       name = "fathoms-thermal";
