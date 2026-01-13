@@ -12,7 +12,7 @@
   programs.tofi = {
     enable = true;
     settings = {
-      font-size = "12";
+      font-size = lib.mkForce "12";
       width = "25%";
       height = "25%";
       corner-radius = "5";
