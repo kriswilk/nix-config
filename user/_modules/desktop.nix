@@ -19,7 +19,7 @@ in
         inner-pad = 20;
       };
       colors = {
-        selection = lib.mkForce (colors.base03 + "FF");
+        selection = lib.mkForce (colors.base02 + "FF");
         border = lib.mkForce (colors.base0D + "FF"); # WIP: set color to match niri border...
       };
       border = {
