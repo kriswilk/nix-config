@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  colors = config.lib.stylix.colors;
+  colors = config.lib.stylix.colors.withHashtag;
 in
 {
   # WIP: remove fuzzel once rofi keybind is configured
@@ -31,7 +31,7 @@ in
         # selection-text = lib.mkForce "#FFFFFFAA";
         # selection-match = lib.mkForce "#eecc00FF";
 
-        border = lib.mkForce colors.base0D; # WIP: set color to match niri border...
+        border = lib.mkForce colors.base0D + "FF"; # WIP: set color to match niri border...
       };
       border = {
         width = 4;
