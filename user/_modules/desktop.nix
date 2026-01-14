@@ -9,7 +9,6 @@
         font = lib.mkForce "JetbrainsMonoNL Nerd Font:size=12";
         icons-enabled = "no";
         terminal = "${pkgs.foot}/bin/foot";
-        minimal-lines = "yes";
         horizontal-pad = 20;
         vertical-pad = 20;
         inner-pad = 20;
