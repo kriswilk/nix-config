@@ -24,7 +24,7 @@ in
       };
       border = {
         width = 4;
-        radius = 0;
+        radius = 4;
       };
     };
   };
@@ -44,29 +44,6 @@ in
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
-  };
-
-  programs.tofi = {
-    enable = true;
-    settings = {
-      font-size = lib.mkForce 18;
-
-      background-color = lib.mkForce "#000000AA";
-      prompt-background = lib.mkForce "#00000000";
-      placeholder-background = lib.mkForce "#00000000";
-      input-background = lib.mkForce "#00000000";
-      default-result-background = lib.mkForce "#00000000";
-      selection-background = lib.mkForce "#00000000";
-
-      width = "100%";
-      height = "100%";
-      border-width = 0;
-      outline-width = 0;
-      padding-top = "20%";
-      padding-bottom = "20%";
-      padding-left = "25%";
-      padding-right = "25%";
-    };
   };
 
   programs.waybar = {
