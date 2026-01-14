@@ -1,5 +1,8 @@
 { config, lib, pkgs, ... }:
 
+let
+  colors = config.lib.stylix.colors;
+in
 {
   # WIP: remove fuzzel once rofi keybind is configured
   programs.fuzzel = {
@@ -16,15 +19,19 @@
         inner-pad = 20;
       };
       colors = {
-        background = lib.mkForce "#000000AA";
-        border = lib.mkForce "#3ba3f0ff"; # WIP: set color to match niri border...
+        # background = lib.mkForce colors.base00;
 
-        text = lib.mkForce "#bbbbbbAA";
-        match = lib.mkForce "#eecc00AA";
+        # text = lib.mkForce "#bbbbbbAA";
+        # #message = lib.mkForce "";
+        # #prompt = lib.mkForce "";
+        # placeholder = lib.mkForce "#777777AA";
+        # match = lib.mkForce "#eecc00AA";
 
-        selection = lib.mkForce "#000000AA";
-        selection-text = lib.mkForce "#FFFFFFAA";
-        selection-match = lib.mkForce "#eecc00FF";
+        # selection = lib.mkForce "#00000000";
+        # selection-text = lib.mkForce "#FFFFFFAA";
+        # selection-match = lib.mkForce "#eecc00FF";
+
+        # border = lib.mkForce "#3ba3f0ff"; # WIP: set color to match niri border...
       };
       border = {
         width = 4;
