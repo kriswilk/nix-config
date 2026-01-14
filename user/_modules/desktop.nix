@@ -13,6 +13,7 @@ in
         prompt = "''";
         placeholder = "Begin typing...";
         icons-enabled = "no";
+        keyboard-focus = "on-demand";
         terminal = "${pkgs.foot}/bin/foot";
         horizontal-pad = 25;
         vertical-pad = 25;
