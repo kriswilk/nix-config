@@ -7,6 +7,7 @@
     settings = {
       main = {
         font = lib.mkForce "JetbrainsMonoNL Nerd Font:size=12";
+        prompt = "";
         icons-enabled = "no";
         terminal = "${pkgs.foot}/bin/foot";
         horizontal-pad = 20;
@@ -39,14 +40,6 @@
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
-  };
-
-  programs.rofi = {
-    enable = true;
-    plugins = with pkgs; [
-      rofi-emoji
-      rofi-calc
-    ];
   };
 
   programs.tofi = {
