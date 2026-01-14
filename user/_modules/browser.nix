@@ -4,6 +4,11 @@
   # WIP: still need to fine tune preferences, incl. UI arrangement??
   programs.firefox = {
     enable = true;
+    profiles."default".settings = {
+      # sidebar cannot be configured via policies
+      "sidebar.revamp" = true;
+      "sidebar.main.tools" = "aichat,history";
+    };
     policies = {
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
