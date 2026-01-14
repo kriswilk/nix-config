@@ -16,7 +16,7 @@
       };
       colors = {
         background = lib.mkForce "#000000AA";
-        border = lib.mkForce "#3ba3f0";
+        border = lib.mkForce "#3ba3f0ff";
       };
       border = {
         width = 4;
