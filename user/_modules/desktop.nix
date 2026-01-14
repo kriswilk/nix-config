@@ -6,6 +6,7 @@
     enable = true;
     settings = {
       main = {
+        font = "JetbrainsMonoNL Nerd Font:size=12";
         icons-enabled = "no";
         terminal = "${pkgs.foot}/bin/foot";
         minimal-lines = "yes";
@@ -14,7 +15,7 @@
         inner-pad = 20;
       };
       colors = {
-        background = "#000000AA";
+        background = lib.mkForce "#000000AA";
       };
       border = {
         width = 0;
