@@ -17,7 +17,7 @@ in
         horizontal-pad = 20;
         vertical-pad = 20;
         inner-pad = 20;
-        width = 30;
+        width = 40;
       };
       colors = {
         selection = lib.mkForce (colors.base02 + "FF");
