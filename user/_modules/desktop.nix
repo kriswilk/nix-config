@@ -8,6 +8,7 @@
       main = {
         font = lib.mkForce "JetbrainsMonoNL Nerd Font:size=12";
         prompt = "\"\"";
+        placeholder = "Begin typing...";
         icons-enabled = "no";
         terminal = "${pkgs.foot}/bin/foot";
         horizontal-pad = 20;
@@ -16,7 +17,8 @@
       };
       colors = {
         background = lib.mkForce "#000000AA";
-        border = lib.mkForce "#3ba3f0ff";
+        border = lib.mkForce "#3ba3f0ff"; # WIP: set color to match niri border...
+        selection = lib.mkForce "#000000AA";
       };
       border = {
         width = 4;
