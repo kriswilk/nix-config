@@ -9,14 +9,14 @@ in
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "JetbrainsMonoNL Nerd Font:size=12";
+        font = lib.mkForce "JetbrainsMonoNL Nerd Font:size=14";
         prompt = "''";
         placeholder = "Begin typing...";
         icons-enabled = "no";
         terminal = "${pkgs.foot}/bin/foot";
-        horizontal-pad = 20;
-        vertical-pad = 20;
-        inner-pad = 20;
+        horizontal-pad = 25;
+        vertical-pad = 25;
+        inner-pad = 25;
         lines = 10;
         width = 40;
       };
