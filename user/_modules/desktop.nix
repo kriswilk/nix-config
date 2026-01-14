@@ -19,6 +19,7 @@
         background = lib.mkForce "#000000AA";
         border = lib.mkForce "#3ba3f0ff"; # WIP: set color to match niri border...
         selection = lib.mkForce "#000000AA";
+        selection = lib.mkForce "#FFFFFFAA";
       };
       border = {
         width = 4;
