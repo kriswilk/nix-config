@@ -6,7 +6,7 @@
     enable = true;
     settings = {
       main = {
-        font = "JetbrainsMonoNL Nerd Font:size=12";
+        font = lib.mkForce "JetbrainsMonoNL Nerd Font:size=12";
         icons-enabled = "no";
         terminal = "${pkgs.foot}/bin/foot";
         minimal-lines = "yes";
