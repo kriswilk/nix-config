@@ -18,8 +18,13 @@
       colors = {
         background = lib.mkForce "#000000AA";
         border = lib.mkForce "#3ba3f0ff"; # WIP: set color to match niri border...
+
+        text = lib.mkForce "#bbbbbbAA";
+        match = lib.mkForce "#eecc00AA";
+
         selection = lib.mkForce "#000000AA";
-        selection = lib.mkForce "#FFFFFFAA";
+        selection-text = lib.mkForce "#FFFFFFAA";
+        selection-match = lib.mkForce "#eecc00FF";
       };
       border = {
         width = 4;
