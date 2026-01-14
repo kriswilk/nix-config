@@ -7,7 +7,7 @@
     settings = {
       main = {
         font = lib.mkForce "JetbrainsMonoNL Nerd Font:size=12";
-        prompt = """";
+        prompt = "\"\"";
         icons-enabled = "no";
         terminal = "${pkgs.foot}/bin/foot";
         horizontal-pad = 20;
