@@ -24,7 +24,7 @@ in
       };
       border = {
         width = 4;
-        radius = 4;
+        radius = 6;
       };
     };
   };
