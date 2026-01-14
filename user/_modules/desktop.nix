@@ -9,7 +9,16 @@
         icons-enabled = "no";
         terminal = "${pkgs.foot}/bin/foot";
         minimal-lines = "yes";
+        horizontal-pad = 20;
+        vertical-pad = 20;
         inner-pad = 20;
+      };
+      colors = {
+        background = "#000000AA";
+      };
+      border = {
+        width = 0;
+        radius = 0;
       };
     };
   };
