@@ -10,8 +10,8 @@ in
     settings = {
       main = {
         font = lib.mkForce "JetbrainsMonoNL Nerd Font:size=12";
-        prompt = "\"\"";
-        placeholder = "Begin typing...";
+        prompt = "''";
+        placeholder = " Begin typing...";
         icons-enabled = "no";
         terminal = "${pkgs.foot}/bin/foot";
         horizontal-pad = 20;
