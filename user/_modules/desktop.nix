@@ -17,6 +17,7 @@ in
         horizontal-pad = 20;
         vertical-pad = 20;
         inner-pad = 20;
+        lines = 10;
         width = 40;
       };
       colors = {
