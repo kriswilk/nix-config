@@ -14,7 +14,7 @@
     # plugins = {
     #   smart-enter = pkgs.yaziPlugins.smart-enter;
     # };
-    options = {
+    settings = {
       open.prepend_rules = [
         {
           url = "*/";
