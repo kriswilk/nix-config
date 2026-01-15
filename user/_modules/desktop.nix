@@ -5,22 +5,23 @@
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "${config.stylix.fonts.monospace.name}:size=14";
+        width = 40;
+        lines = 10;
+        horizontal-pad = 25;
+        vertical-pad = 25;
+        inner-pad = 25;
+
         prompt = "''";
         placeholder = "Begin typing...";
         icons-enabled = "no";
         keyboard-focus = "on-demand";
+        
+        font = lib.mkForce "${config.stylix.fonts.monospace.name}:size=14";
         terminal = "${pkgs.foot}/bin/foot";
-
-        horizontal-pad = 25;
-        vertical-pad = 25;
-        inner-pad = 25;
-        lines = 10;
-        width = 40;
       };
       colors = {
-        selection = lib.mkForce "#${config.stylix.colors.base02}FF";
-        border = lib.mkForce "#${config.stylix.colors.base0D}FF"; # WIP: make sure niri border matches!
+        selection = lib.mkForce "#${config.lib.stylix.colors.bright-black}FF";
+        border = lib.mkForce "#${config.lib.stylix.colors.blue}FF"; # WIP: make sure niri border matches!
       };
       border = {
         width = 4;
