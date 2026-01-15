@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "${config.lib.stylix.fonts.monospace.name}:size=14";
+        font = lib.mkForce "${config.stylix.fonts.monospace.name}:size=14";
         prompt = "''";
         placeholder = "Begin typing...";
         icons-enabled = "no";
