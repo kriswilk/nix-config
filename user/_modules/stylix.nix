@@ -40,7 +40,6 @@
 
     targets = {
       firefox.profileNames = [ "default" ];
-      firefox.colorTheme.enable = true;
     };
   };
 }
