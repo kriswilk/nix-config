@@ -1,15 +1,11 @@
 { config, lib, pkgs, ... }:
 
-let
-  colors = config.lib.stylix.colors;
-  fonts = config.lib.stylix.fonts;
-in
 {
   programs.fuzzel = {
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "${fonts.monospace.name}:size=14";
+        font = lib.mkForce "${config.lib.stylix.fonts.monospace.name}:size=14";
         prompt = "''";
         placeholder = "Begin typing...";
         icons-enabled = "no";
@@ -23,8 +19,8 @@ in
         width = 40;
       };
       colors = {
-        selection = lib.mkForce "#${colors.base02}FF";
-        border = lib.mkForce "#${colors.base0D}FF"; # WIP: make sure niri border matches!
+        selection = lib.mkForce "#${config.lib.stylix.colors.base02}FF";
+        border = lib.mkForce "#${config.lib.stylix.colors.base0D}FF"; # WIP: make sure niri border matches!
       };
       border = {
         width = 4;
