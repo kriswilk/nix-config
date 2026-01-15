@@ -20,7 +20,7 @@
         terminal = "${pkgs.foot}/bin/foot";
       };
       colors = {
-        selection = lib.mkForce "#${config.lib.stylix.colors.bright-black}FF";
+        selection = lib.mkForce "#${config.lib.stylix.colors.base02}FF";
         border = lib.mkForce "#${config.lib.stylix.colors.blue}FF"; # WIP: make sure niri border matches!
       };
       border = {
