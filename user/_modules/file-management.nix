@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  # WIP: yazi needs xclip / wl-clipboard / xsel ?
-
   programs.fd = {
     enable = true;
   };
