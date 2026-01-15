@@ -17,7 +17,6 @@
         keyboard-focus = "on-demand";
         
         font = lib.mkForce "${config.stylix.fonts.monospace.name}:size=14";
-        terminal = "${pkgs.foot}/bin/foot";
       };
       colors = {
         selection = lib.mkForce "#${config.lib.stylix.colors.base02}FF";
