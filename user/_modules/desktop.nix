@@ -1,20 +1,21 @@
 { config, lib, pkgs, ... }:
 
 let
-  colors = config.lib.stylix.colors.withHashtag;
+  colors = config.lib.stylix.colors;
+  fonts = config.lib.stylix.fonts;
 in
 {
-  # WIP: remove fuzzel once rofi keybind is configured
   programs.fuzzel = {
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "JetbrainsMonoNL Nerd Font:size=14";
+        font = lib.mkForce "${fonts.monospace.name}:size=14";
         prompt = "''";
         placeholder = "Begin typing...";
         icons-enabled = "no";
         keyboard-focus = "on-demand";
         terminal = "${pkgs.foot}/bin/foot";
+
         horizontal-pad = 25;
         vertical-pad = 25;
         inner-pad = 25;
@@ -22,8 +23,8 @@ in
         width = 40;
       };
       colors = {
-        selection = lib.mkForce (colors.base02 + "FF");
-        border = lib.mkForce (colors.base0D + "FF"); # WIP: set color to match niri border...
+        selection = lib.mkForce "#${colors.base02}FF";
+        border = lib.mkForce "#${colors.base0D}FF"; # WIP: make sure niri border matches!
       };
       border = {
         width = 4;
