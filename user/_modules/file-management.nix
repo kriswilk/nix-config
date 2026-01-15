@@ -11,18 +11,26 @@
 
   programs.yazi = {
     enable = true;
-    plugins = {
-      smart-enter = pkgs.yaziPlugins.smart-enter;
-    };
-    keymap = {
-      mgr.prepend_keymap = [
+    # plugins = {
+    #   smart-enter = pkgs.yaziPlugins.smart-enter;
+    # };
+    options = {
+      open.prepend_rules = [
         {
-          on = "<Enter>";
-          run = "plugin smart-enter";
-          desc = "Enter the child directory, or open the file";
+          url = "*/";
+          use = [];
         }
       ];
     };
+    # keymap = {
+    #   mgr.prepend_keymap = [
+    #     {
+    #       on = "<Enter>";
+    #       run = "plugin smart-enter";
+    #       desc = "Enter the child directory, or open the file";
+    #     }
+    #   ];
+    # };
   };
 
   programs.zoxide = {
