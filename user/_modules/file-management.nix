@@ -13,6 +13,13 @@
 
   programs.yazi = {
     enable = true;
+    settings = {
+      mgr = {
+        prepend_keymap = [
+          { on = "<Enter>"; run = "enter"; desc = "Enter child directory"; }
+        ];
+      };
+    };
   };
 
   programs.zoxide = {
