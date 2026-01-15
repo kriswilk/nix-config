@@ -19,8 +19,8 @@
         width = 40;
       };
       colors = {
-        selection = lib.mkForce "#${config.lib.stylix.colors.base02}FF";
-        border = lib.mkForce "#${config.lib.stylix.colors.base0D}FF"; # WIP: make sure niri border matches!
+        selection = lib.mkForce "#${config.stylix.colors.base02}FF";
+        border = lib.mkForce "#${config.stylix.colors.base0D}FF"; # WIP: make sure niri border matches!
       };
       border = {
         width = 4;
