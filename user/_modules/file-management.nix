@@ -12,7 +12,7 @@
   programs.yazi = {
     enable = true;
     plugins = {
-      smart-enter = pkgs.yazi-plugins.smart-enter;
+      smart-enter = pkgs.yaziPlugins.smart-enter;
     };
   };
 
