@@ -49,10 +49,10 @@
     settings = {
       image = ../_assets/padlock.png;
       scaling = lib.mkForce "center";
-      font-size = 32;
-      indicator-radius = 150;
+      font-size = 24;
+      indicator-radius = 100;
       indicator-thickness = 12;
-      show-failed-attempts = true;
+      inside-color = "${config.lib.stylix.colors.base00}00";
     };
   };
 
