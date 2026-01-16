@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SELECTION="$(printf " Lock\n󰒲 Suspend\n󰍃 Log Out\n Reboot\n Shutdown" | fuzzel --dmenu -l 5 -w 13 --hide-prompt -f "monospace:size=20")"
+SELECTION="$(printf " Lock\n󰤄 Suspend\n󰩈 Log Out\n Reboot\n Shutdown" | fuzzel --dmenu -l 5 -w 13 --hide-prompt -f "monospace:size=20")"
 
 case $SELECTION in
 	*"Lock")
