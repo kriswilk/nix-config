@@ -7,5 +7,6 @@
 
   home.packages = with pkgs; [
     wl-clipboard
+    wtype
   ];
 }

@@ -1,9 +1,27 @@
 #!/usr/bin/env bash
-
 set -euo pipefail
 
-EMOJI=$(sed '1,/^### DATA ###$/d' "$0" | fuzzel --dmenu -w 60 | cut -d ' ' -f 1 | tr -d '\n')
-echo -n "$EMOJI" | wl-copy
+MODE="${1:-type}"
+
+emoji="$(sed '1,/^### DATA ###$/d' "$0" | fuzzel --match-mode fzf --dmenu | cut -d ' ' -f 1 | tr -d '\n')"
+
+case "$MODE" in
+    type)
+        wtype "${emoji}" || wl-copy "${emoji}"
+        ;;
+    copy)
+        wl-copy "${emoji}"
+        ;;
+    both)
+        wtype "${emoji}" || true
+        wl-copy "${emoji}"
+        ;;
+    *)
+        echo "Usage: $0 [type|copy|both]"
+        exit 1
+        ;;
+esac
+
 exit
 ### DATA ###
 😀 grinning face face smile happy joy :D grin
