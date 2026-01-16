@@ -36,7 +36,7 @@
   services.swayidle = {
     enable = true;
     timeouts = [
-      #{ timeout = 10; command = "swaylock -f"; }
+      #{ timeout = 10; command = "${pkgs.swaylock}/bin/swaylock -f"; }
       #{ timeout = 90; command = "systemctl suspend"; }
     ];
     events = {
@@ -48,7 +48,7 @@
     enable = true;
     settings = {
       color = lib.mkForce "808080";
-      font-size = 24;
+      font-size = 48;
       indicator-idle-visible = true;
       indicator-radius = 100;
       line-color = "ffffff";
