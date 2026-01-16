@@ -52,7 +52,7 @@
       font-size = 24;
       indicator-radius = 100;
       indicator-thickness = 12;
-      inside-color = "${config.lib.stylix.colors.base00}00";
+      inside-color = lib.mkForce "${config.lib.stylix.colors.base00}00";
     };
   };
 
