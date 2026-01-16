@@ -1,6 +1,19 @@
 { config, lib, pkgs, ... }:
 
 {
+  # specify default (env)
+  home.sessionVariables = {
+    BROWSER = "firefox";
+  };
+
+  # specify default (xdg)
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [ "foot.desktop" ];
+    };
+  };
+
   programs.foot = {
     enable = true;
     settings = {
@@ -17,15 +30,6 @@
       };
     };
   };
-
-  # WIP: eventually remove this in favor of "foot" only?
-  # programs.kitty = {
-  #   enable = true;
-  #   settings = {
-  #     text_composition_strategy = "legacy";
-  #     window_padding_width = 4;
-  #   };
-  # };
 
   programs.tmux = {
     enable = true;

@@ -5,7 +5,7 @@
   programs.firefox = {
     enable = true;
     profiles."default".settings = {
-      # sidebar cannot be configured via policies
+      # sidebar cannot be configured by policy
       "sidebar.revamp" = true;
       "sidebar.main.tools" = "aichat,history,{446900e4-71c2-419f-a6a7-df9c091e268b},jid0-adyhmvsP91nUO8pRv0Mn2VKeB84@jetpack";
     };
