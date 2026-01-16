@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-EMOJI=$(sed '1,/^### DATA ###$/d' "$0" | fuzzel --dmenu "$@" | cut -d ' ' -f 1 | tr -d '\n')
+EMOJI=$(sed '1,/^### DATA ###$/d' "$0" | fuzzel --dmenu -w 60 | cut -d ' ' -f 1 | tr -d '\n')
 echo -n "$EMOJI" | wl-copy
 exit
 ### DATA ###
