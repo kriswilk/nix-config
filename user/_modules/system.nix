@@ -10,6 +10,7 @@
   };
 
   home.packages = with pkgs; [
+    brightnessctl
     ethtool
     lm_sensors
     lsof
