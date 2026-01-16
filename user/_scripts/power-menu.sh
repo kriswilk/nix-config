@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SELECTION="$(printf " Lock\n󰤄 Suspend\n󰗽 Log Out\n Reboot\n Shutdown" | fuzzel --dmenu -l 5 -w 10 -f "JetbrainsMono Nerd Font:size=16")"
+SELECTION="$(printf " Lock\n󰤄 Suspend\n󰗽 Log Out\n Reboot\n Shutdown" | fuzzel --dmenu -l 5 -w 13 --placeholder "Power Menu" -f "monospace:size=20")"
 
 case $SELECTION in
 	*"Lock")
@@ -10,7 +10,7 @@ case $SELECTION in
 	*"Log Out")
 		niri msg action quit;;
 	*"Reboot")
-		systemctl reboot;;
+		sudo systemctl reboot;;
 	*"Shutdown")
-		systemctl poweroff;;
+		sudo systemctl poweroff;;
 esac
