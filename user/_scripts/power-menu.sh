@@ -6,11 +6,11 @@ case $SELECTION in
 	*"Lock")
 		swaylock;;
 	*"Suspend")
-		sudo systemctl suspend;;
+		systemctl suspend;;
 	*"Log Out")
 		niri msg action quit;;
 	*"Reboot")
-		sudo systemctl reboot;;
+		systemctl reboot;;
 	*"Shutdown")
-		sudo systemctl poweroff;;
+		systemctl poweroff;;
 esac
