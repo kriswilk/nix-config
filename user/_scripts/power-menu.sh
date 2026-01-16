@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SELECTION="$(printf " Lock\n󰤄 Suspend\n󰗽 Log Out\n Reboot\n Shutdown" | fuzzel --dmenu -l 5 -p "Power Menu: ")"
+SELECTION="$(printf " Lock\n󰤄 Suspend\n󰗽 Log Out\n Reboot\n Shutdown" | fuzzel --dmenu -l 5 -w 10 -f "JetbrainsMono Nerd Font:size=16")"
 
 case $SELECTION in
 	*"Lock")
