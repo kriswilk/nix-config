@@ -40,7 +40,7 @@
       #{ timeout = 90; command = "systemctl suspend"; }
     ];
     events = {
-      before-sleep = "${pkgs.swaylock}/bin/swaylock -f";
+      before-sleep = "${config.programs.swaylock.package}/bin/swaylock -f";
     };
   };
 
