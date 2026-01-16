@@ -47,7 +47,7 @@
   programs.swaylock = {
     enable = true;
     settings = {
-      image = ../_assets/padlock.png
+      image = ../_assets/padlock.png;
       font-size = 30;
       indicator-radius = 150;
       indicator-thickness = 7;
