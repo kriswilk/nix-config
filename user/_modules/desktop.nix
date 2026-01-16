@@ -48,9 +48,10 @@
     enable = true;
     settings = {
       image = ../_assets/padlock.png;
-      font-size = 30;
+      scaling = "center";
+      font-size = 32;
       indicator-radius = 150;
-      indicator-thickness = 7;
+      indicator-thickness = 12;
       show-failed-attempts = true;
     };
   };
