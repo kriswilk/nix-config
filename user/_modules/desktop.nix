@@ -47,7 +47,7 @@
   programs.swaylock = {
     enable = true;
     settings = {
-      color = "808080";
+      color = lib.mkForce "808080";
       font-size = 24;
       indicator-idle-visible = true;
       indicator-radius = 100;
