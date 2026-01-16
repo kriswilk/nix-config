@@ -36,7 +36,7 @@
   services.swayidle = {
     enable = true;
     timeouts = [
-      { timeout = 10; command = "${pkgs.swaylock}/bin/swaylock -f"; }
+      #{ timeout = 10; command = "${pkgs.swaylock}/bin/swaylock -f"; }
       #{ timeout = 90; command = "systemctl suspend"; }
     ];
     events = {
@@ -46,7 +46,7 @@
 
   programs.swaylock = {
     enable = true;
-    package = pkgs.swaylock-effects;
+    #package = pkgs.swaylock-effects;
   };
 
   programs.waybar = {
