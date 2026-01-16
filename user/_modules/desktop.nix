@@ -48,7 +48,7 @@
     enable = true;
     settings = {
       image = ../_assets/padlock.png;
-      scaling = "center";
+      scaling = lib.mkForce "center";
       font-size = 32;
       indicator-radius = 150;
       indicator-thickness = 12;
