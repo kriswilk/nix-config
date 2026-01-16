@@ -16,7 +16,7 @@
         icons-enabled = "no";
         keyboard-focus = "on-demand";
         
-        font = lib.mkForce "${config.stylix.fonts.monospace.name}:size=14";
+        font = lib.mkForce "monospace:size=14";
       };
       colors = {
         selection = lib.mkForce "#${config.lib.stylix.colors.base02}FF";
