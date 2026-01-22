@@ -2,7 +2,7 @@
 set -euo pipefail
 
 CHOICES="$(sed '1,/^### DATA ###$/d' "$0")"
-DMENU="fuzzel --dmenu"
+DMENU="fuzzel --dmenu -w 60"
 
 MODE="${1:-type}"
 
