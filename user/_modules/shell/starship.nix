@@ -44,7 +44,7 @@
         "$battery"
         "$status"
         "$container"
-        X"$character"
+        "X$character"
       ];
 
       # left side segments - core
