@@ -156,7 +156,7 @@
 
       python = {
         symbol = "py ";
-        format = "([${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)[|](bright-black)) ";
+        format = "([\${symbol}\${pyenv_prefix}(\${version} )(\($virtualenv\) )]($style)[|](bright-black)) ";
       };
 
       ruby = {
