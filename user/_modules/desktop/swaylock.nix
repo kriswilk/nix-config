@@ -13,6 +13,8 @@
       indicator-radius = 256;
       indicator-thickness = 18;
 
+      disable-caps-lock-text = true;
+
       color = "000000"; # black
 
       bs-hl-color = "${config.lib.stylix.colors.base08}"; # red
@@ -33,7 +35,7 @@
       ring-ver-color = "${config.lib.stylix.colors.base0A}FF"; # yellow
       ring-wrong-color = "${config.lib.stylix.colors.base08}FF"; # red
 
-      separator-color = "00000000";
+      #separator-color = "00000000";
     };
   };
 }
