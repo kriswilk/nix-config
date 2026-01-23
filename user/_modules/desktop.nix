@@ -58,10 +58,12 @@
 
   programs.waybar = {
     enable = true;
-    style = builtins.readFile ./waybar/style.css;
+    style = builtins.readFile ../_dotfiles/waybar/style.css;
   };
-  xdg.configFile."waybar/config".source = ./waybar/config.jsonc;
-  #xdg.configFile."waybar/style.css".source = ./waybar/style.css;
+  xdg.configFile."waybar/config".source = ../_dotfiles/waybar/config.jsonc;
+  #xdg.configFile."waybar/style.css".source = ../_dotfiles/waybar/style.css;
+
+  xdg.configFile."niri/config.kdl".source = ../_dotfiles/niri/config.kdl;
 
   home.packages = with pkgs; [
     xwayland-satellite
