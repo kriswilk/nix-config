@@ -1,7 +1,7 @@
 { inputs, config, lib, pkgs, ... }:
 
 {
-  programs.stylix.targets.firefox = {
+  stylix.targets.firefox = {
     profileNames = [ "default" ];
   };
 
