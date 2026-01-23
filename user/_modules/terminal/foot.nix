@@ -17,8 +17,4 @@
       };
     };
   };
-
-  programs.tmux = {
-    enable = true;
-  };
 }

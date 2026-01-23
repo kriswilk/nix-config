@@ -44,7 +44,7 @@
         "$battery"
         "$status"
         "$container"
-        "X$character"
+        "$character"
       ];
 
       # left side segments - core
@@ -53,7 +53,7 @@
         disabled = false;
         symbol = " ";
         format = "[$symbol]($style)";
-        style = "bold yellow";
+        style = "bold green";
       };
 
       username = {

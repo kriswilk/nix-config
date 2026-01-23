@@ -263,8 +263,4 @@
       };
     };
   };
-
-  home.packages = with pkgs; [
-    lynx
-  ];
 }
