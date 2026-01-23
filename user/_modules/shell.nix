@@ -13,11 +13,6 @@
     enable = true;
   };
 
-  programs.starship = {
-    enable = true;
-    settings = lib.importTOML ./starship/starship.toml;
-  };
-
   home.shellAliases = {
     # cd
     ".." = "cd ..";
