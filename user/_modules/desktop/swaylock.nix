@@ -11,6 +11,10 @@
       indicator-radius = 256;
       indicator-thickness = 18;
 
+      color = lib.mkForce "000000"; # black
+
+      indicator-caps-lock = true;
+
       # keypresses
       bs-hl-color = lib.mkForce "${config.lib.stylix.colors.base08}"; # red
       key-hl-color = lib.mkForce "${config.lib.stylix.colors.base0B}"; # green
