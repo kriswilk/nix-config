@@ -1,49 +1,39 @@
 { config, lib, pkgs, ... }:
 
 {
+  programs.stylix.targets.swaylock = {
+    enable = false;
+  };
+
   programs.swaylock = {
     enable = true;
     settings = {
       image = ./swaylock.png;
-      scaling = lib.mkForce "center";
-      font = "monospace";
-      font-size = 36;
+      scaling = "center";
       indicator-radius = 256;
       indicator-thickness = 18;
 
-      color = lib.mkForce "000000"; # black
+      color = "000000"; # black
 
-      indicator-caps-lock = true;
+      bs-hl-color = "${config.lib.stylix.colors.base08}"; # red
+      key-hl-color = "${config.lib.stylix.colors.base0B}"; # green
 
-      # keypresses
-      bs-hl-color = lib.mkForce "${config.lib.stylix.colors.base08}"; # red
-      key-hl-color = lib.mkForce "${config.lib.stylix.colors.base0B}"; # green
-      # ...
-      caps-lock-bs-hl-color = lib.mkForce "${config.lib.stylix.colors.base08}"; # red
-      caps-lock-key-hl-color = lib.mkForce "${config.lib.stylix.colors.base0A}"; # yellow
+      inside-color = "00000000";
+      inside-clear-color = "00000000";
+      inside-ver-color = "00000000";
+      inside-wrong-color = "00000000";
 
-      inside-color = lib.mkForce "00000000";
-      # ...
-      inside-caps-lock-color = lib.mkForce "${config.lib.stylix.colors.base0A}88";
-      inside-clear-color = lib.mkForce "00000000";
-      inside-ver-color = lib.mkForce "00000000";
-      inside-wrong-color = lib.mkForce "00000000";
+      text-color = "00000000";
+      text-clear-color = "00000000";
+      text-ver-color = "00000000";
+      text-wrong-color = "00000000";
 
-      text-color = lib.mkForce "FFFFFF";
-      # ...
-      text-caps-lock-color = lib.mkForce "FFFFFF";
-      text-clear-color = lib.mkForce "FFFFFF";
-      text-ver-color = lib.mkForce "FFFFFF";
-      text-wrong-color = lib.mkForce "FFFFFF";
+      ring-color = "${config.lib.stylix.colors.base03}AA"; # medium gray
+      ring-clear-color = "${config.lib.stylix.colors.base0D}FF"; # blue
+      ring-ver-color = "${config.lib.stylix.colors.base0A}FF"; # yellow
+      ring-wrong-color = "${config.lib.stylix.colors.base08}FF"; # red
 
-      ring-color = lib.mkForce "${config.lib.stylix.colors.base05}AA"; # light gray
-      # ...
-      ring-caps-lock-color = lib.mkForce "${config.lib.stylix.colors.base05}FF"; # light gray
-      ring-clear-color = lib.mkForce "${config.lib.stylix.colors.base0D}FF"; # blue
-      ring-ver-color = lib.mkForce "${config.lib.stylix.colors.base0A}FF"; # yellow
-      ring-wrong-color = lib.mkForce "${config.lib.stylix.colors.base08}FF"; # red
-
-      separator-color = lib.mkForce "00000000";
+      separator-color = "00000000";
     };
   };
 }

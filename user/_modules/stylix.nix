@@ -37,9 +37,5 @@
         terminal = 12;
       };
     };
-
-    targets = {
-      firefox.profileNames = [ "default" ];
-    };
   };
 }

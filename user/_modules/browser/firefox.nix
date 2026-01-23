@@ -1,6 +1,10 @@
 { inputs, config, lib, pkgs, ... }:
 
 {
+  programs.stylix.targets.firefox = {
+    profileNames = [ "default" ];
+  };
+
   # WIP: still need to fine tune preferences, incl. UI arrangement??
   programs.firefox = {
     enable = true;
