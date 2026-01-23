@@ -10,6 +10,8 @@
       indicator-radius = 256;
       indicator-thickness = 18;
       inside-color = lib.mkForce "${config.lib.stylix.colors.base00}00";
+      inside-clear-color = lib.mkForce "${config.lib.stylix.colors.base00}00";
+      ring-clear-color = lib.mkForce "${config.lib.stylix.colors.base0D}00";
     };
   };
 }
