@@ -15,7 +15,7 @@
 
       disable-caps-lock-text = true;
 
-      color = "${config.lib.stylix.colors.black}";
+      color = "000000";
 
       bs-hl-color = "${config.lib.stylix.colors.red}";
       key-hl-color = "${config.lib.stylix.colors.green}";
