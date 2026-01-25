@@ -17,7 +17,7 @@
 
       color = "000000"; # black
 
-      bs-hl-color = "${config.lib.stylix.colors.base08}"; # red
+      bs-hl-color = "${config.lib.stylix.colors.red}"; # red
       key-hl-color = "${config.lib.stylix.colors.base0B}"; # green
 
       inside-color = "00000000";
@@ -34,8 +34,6 @@
       ring-clear-color = "${config.lib.stylix.colors.base0D}FF"; # blue
       ring-ver-color = "${config.lib.stylix.colors.base0A}FF"; # yellow
       ring-wrong-color = "${config.lib.stylix.colors.base08}FF"; # red
-
-      #separator-color = "00000000";
     };
   };
 }
