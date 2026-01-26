@@ -16,13 +16,13 @@ with config.lib.stylix.colors;
 
       disable-caps-lock-text = true;
 
-      color = "${base00}"; # black
+      color = base00; # black
 
       bs-hl-color = red;
-      key-hl-color = "${green}";
+      key-hl-color = green;
 
       # transparent
-      inside-color = "${base00}00";
+      inside-color = base00 + "00";
       inside-clear-color = "${base00}00";
       inside-ver-color = "${base00}00";
       inside-wrong-color = "${base00}00";
@@ -33,10 +33,10 @@ with config.lib.stylix.colors;
       text-ver-color = "${base00}00";
       text-wrong-color = "${base00}00";
 
-      ring-color = "${base02}"; # medium-dark gray
-      ring-clear-color = "${blue}";
-      ring-ver-color = "${yellow}";
-      ring-wrong-color = "${red}";
+      ring-color = base02; # medium-dark gray
+      ring-clear-color = blue;
+      ring-ver-color = yellow;
+      ring-wrong-color = red;
     };
   };
 }
