@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }:
 
+with config.lib.stylix.colors;
 {
   stylix.targets.swaylock = {
     enable = false;
@@ -15,29 +16,27 @@
 
       disable-caps-lock-text = true;
 
-      with config.lib.stylix.colors; {
-        color = "${base00}"; # black
+      color = "${base00}"; # black
 
-        bs-hl-color = "${red}";
-        key-hl-color = "${green}";
+      bs-hl-color = "${red}";
+      key-hl-color = "${green}";
 
-        # transparent
-        inside-color = "${base00}00";
-        inside-clear-color = "${base00}00";
-        inside-ver-color = "${base00}00";
-        inside-wrong-color = "${base00}00";
+      # transparent
+      inside-color = "${base00}00";
+      inside-clear-color = "${base00}00";
+      inside-ver-color = "${base00}00";
+      inside-wrong-color = "${base00}00";
 
-        # transparent
-        text-color = "${base00}00";
-        text-clear-color = "${base00}00";
-        text-ver-color = "${base00}00";
-        text-wrong-color = "${base00}00";
+      # transparent
+      text-color = "${base00}00";
+      text-clear-color = "${base00}00";
+      text-ver-color = "${base00}00";
+      text-wrong-color = "${base00}00";
 
-        ring-color = "${base03}"; # medium gray
-        ring-clear-color = "${blue}";
-        ring-ver-color = "${yellow}";
-        ring-wrong-color = "${red}";
-      };
+      ring-color = "${base03}"; # medium gray
+      ring-clear-color = "${blue}";
+      ring-ver-color = "${yellow}";
+      ring-wrong-color = "${red}";
     };
   };
 }
