@@ -39,7 +39,7 @@ in
       text-ver-color = transparent black;
       text-wrong-color = transparent black;
 
-      ring-color = medium-dark-gray; # medium-dark gray
+      ring-color = medium-dark-gray;
       ring-clear-color = blue;
       ring-ver-color = yellow;
       ring-wrong-color = red;
