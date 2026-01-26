@@ -33,7 +33,7 @@ with config.lib.stylix.colors;
       text-ver-color = "${base00}00";
       text-wrong-color = "${base00}00";
 
-      ring-color = "${base03}"; # medium gray
+      ring-color = "${base02}"; # medium-dark gray
       ring-clear-color = "${blue}";
       ring-ver-color = "${yellow}";
       ring-wrong-color = "${red}";
