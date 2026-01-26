@@ -18,7 +18,7 @@ with config.lib.stylix.colors;
 
       color = "${base00}"; # black
 
-      bs-hl-color = "${red}";
+      bs-hl-color = red;
       key-hl-color = "${green}";
 
       # transparent
@@ -33,7 +33,7 @@ with config.lib.stylix.colors;
       text-ver-color = "${base00}00";
       text-wrong-color = "${base00}00";
 
-      ring-color = "${base01}"; # dark gray
+      ring-color = "${base02}"; # medium-dark gray
       ring-clear-color = "${blue}";
       ring-ver-color = "${yellow}";
       ring-wrong-color = "${red}";
