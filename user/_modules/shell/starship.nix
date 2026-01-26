@@ -53,7 +53,7 @@
         disabled = false;
         symbol = " ";
         format = "[$symbol]($style)";
-        style = "bold green";
+        style = "bold yellow";
       };
 
       username = {
