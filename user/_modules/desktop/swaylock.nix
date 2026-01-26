@@ -15,25 +15,29 @@
 
       disable-caps-lock-text = true;
 
-      color = "000000";
+      with config.lib.stylix.colors; {
+        color = "${base00}"; # black
 
-      bs-hl-color = "${config.lib.stylix.colors.red}";
-      key-hl-color = "${config.lib.stylix.colors.green}";
+        bs-hl-color = "${red}";
+        key-hl-color = "${green}";
 
-      inside-color = "00000000";
-      inside-clear-color = "00000000";
-      inside-ver-color = "00000000";
-      inside-wrong-color = "00000000";
+        # transparent
+        inside-color = "${base00}00";
+        inside-clear-color = "${base00}00";
+        inside-ver-color = "${base00}00";
+        inside-wrong-color = "${base00}00";
 
-      text-color = "00000000";
-      text-clear-color = "00000000";
-      text-ver-color = "00000000";
-      text-wrong-color = "00000000";
+        # transparent
+        text-color = "${base00}00";
+        text-clear-color = "${base00}00";
+        text-ver-color = "${base00}00";
+        text-wrong-color = "${base00}00";
 
-      ring-color = "${config.lib.stylix.colors.base03}AA"; # medium gray
-      ring-clear-color = "${config.lib.stylix.colors.blue}FF";
-      ring-ver-color = "${config.lib.stylix.colors.yellow}FF";
-      ring-wrong-color = "${config.lib.stylix.colors.red}FF";
+        ring-color = "${base03}"; # medium gray
+        ring-clear-color = "${blue}";
+        ring-ver-color = "${yellow}";
+        ring-wrong-color = "${red}";
+      };
     };
   };
 }
