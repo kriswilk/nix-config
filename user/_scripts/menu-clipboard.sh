@@ -5,6 +5,6 @@ dmenu="fuzzel -d"
 
 item="$(cliphist list | $dmenu)"
 
-if [ -z "$item" ]; then
+if [ -n "$item" ]; then
     echo "$item" | cliphist decode | wl-copy
 fi
