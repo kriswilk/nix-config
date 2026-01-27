@@ -5,6 +5,7 @@ let
   black = base00;
   medium-dark-gray = base02;
 
+  opaque = color: color + "ff";
   transparent = color: color + "00";
 in
 {
@@ -26,8 +27,8 @@ in
         font = lib.mkForce "monospace:size=14";
       };
       colors = {
-        selection = lib.mkForce medium-dark-gray;
-        border = lib.mkForce blue; # WIP: make sure niri border matches!
+        selection = lib.mkForce opaque medium-dark-gray;
+        border = lib.mkForce opaque blue; # WIP: make sure niri border matches!
       };
       border = {
         width = 4;

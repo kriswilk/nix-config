@@ -5,6 +5,7 @@ let
   black = base00;
   medium-dark-gray = base02;
 
+  opaque = color: color + "ff";
   transparent = color: color + "00";
 in
 {
