@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-mode="${1:-copy}"
+mode="${1:-type}"
 
 list="$(sed '1,/^### DATA ###$/d' "$0")"
 dmenu="fuzzel --dmenu -w 70"
@@ -14,9 +14,7 @@ case "$mode" in
         wl-copy "${symbol}"
         ;;
     type)
-        wl-copy "${symbol}"
-        wl-paste
-        #wtype "${symbol}"
+        wtype "${symbol}"
         ;;
     *)
         echo "Usage: $0 [type|copy]"

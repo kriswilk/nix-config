@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 list="   Lock\n 󰤄  Suspend\n 󰜎  Log Out\n   Reboot\n   Shutdown"
-dmenu="fuzzel --dmenu -l 5 -w 13 --line-height 45 --vertical-pad 20 --hide-prompt -f monospace:size=20"
+dmenu="fuzzel --dmenu -l 5 -w 13 --line-height 45 --vertical-pad 20 --hide-prompt -f size=20"
 
 action="$(printf "$list" | $dmenu)"
 
