@@ -4,23 +4,19 @@ set -euo pipefail
 CHOICES="$(sed '1,/^### DATA ###$/d' "$0")"
 DMENU="fuzzel --dmenu -w 70"
 
-MODE="${1:-type}"
+MODE="${1:-copy}"
 
 emoji="$(printf "$CHOICES" | $DMENU | cut -d ' ' -f 1 | tr -d '\n')"
 
 case "$MODE" in
-    type)
-        wtype "${emoji}" || wl-copy "${emoji}"
-        ;;
     copy)
         wl-copy "${emoji}"
         ;;
-    both)
-        wtype "${emoji}" || true
-        wl-copy "${emoji}"
+    type)
+        wtype "${emoji}"
         ;;
     *)
-        echo "Usage: $0 [type|copy|both]"
+        echo "Usage: $0 [type|copy]"
         exit 1
         ;;
 esac
