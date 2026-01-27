@@ -9,8 +9,6 @@
       sha256 = "sha256:0527d5jc4m817pdwkbpm8yz780pggwgylc26qx79akrdnqibnk5g";
     };
 
-    colors.black = "000000";
-
     fonts = {
       serif = {
         package = pkgs.noto-fonts;
