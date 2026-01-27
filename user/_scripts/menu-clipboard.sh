@@ -5,6 +5,13 @@ dmenu="fuzzel -d --minimal-lines"
 
 item="$(cliphist list | $dmenu)"
 
-if [ -n "$item" ]; then
-    echo "$item" | cliphist decode | wl-copy
-fi
+[ -z "$item" ] && exit 123
+
+case "$item" in
+    wipe)
+        cliphist wipe
+        ;;
+    *)
+        echo "$item" | cliphist decode | wl-copy
+        ;;
+esac
