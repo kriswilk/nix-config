@@ -6,6 +6,8 @@ DMENU="fuzzel --dmenu -w 70"
 
 MODE="${1:-copy}"
 
+# WIP: once fuzzel fixes "nth-delimiter" debug output bug, change DMENU and switch to:
+# emoji="$(printf "$CHOICES" | $DMENU)"
 emoji="$(printf "$CHOICES" | $DMENU | cut -d ' ' -f 1 | tr -d '\n')"
 
 case "$MODE" in
