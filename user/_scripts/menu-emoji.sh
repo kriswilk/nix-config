@@ -14,6 +14,7 @@ case "$mode" in
         wl-copy "${symbol}"
         ;;
     type)
+        wl-copy "${symbol}"
         wl-paste
         #wtype "${symbol}"
         ;;
