@@ -21,6 +21,7 @@ in
 
         prompt = "''";
         placeholder = "Begin typing...";
+        counter = true;
         icons-enabled = "no";
         keyboard-focus = "on-demand";
         
@@ -29,6 +30,7 @@ in
       colors = {
         selection = lib.mkForce (opaque medium-dark-gray);
         border = lib.mkForce (opaque blue); # WIP: make sure niri border matches!
+        counter = placeholder;
       };
       border = {
         width = 4;
