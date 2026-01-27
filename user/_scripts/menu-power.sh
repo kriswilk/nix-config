@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-CHOICES="   Lock\n 󰤄  Suspend\n 󰜎  Log Out\n   Reboot\n   Shutdown"
-DMENU="fuzzel --dmenu -l 5 -w 13 --line-height 45 --vertical-pad 20 --hide-prompt -f monospace:size=20"
+list="   Lock\n 󰤄  Suspend\n 󰜎  Log Out\n   Reboot\n   Shutdown"
+dmenu="fuzzel --dmenu -l 5 -w 13 --line-height 45 --vertical-pad 20 --hide-prompt -f monospace:size=20"
 
-SELECTION="$(printf "$CHOICES" | $DMENU)"
+action="$(printf "$list" | $dmenu)"
 
-case $SELECTION in
+case $action in
 	*"Lock")
 		swaylock
 		;;

@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CHOICES="$(sed '1,/^### DATA ###$/d' "$0")"
-DMENU="fuzzel --dmenu -w 70"
+mode="${1:-copy}"
 
-MODE="${1:-copy}"
-
+list="$(sed '1,/^### DATA ###$/d' "$0")"
+dmenu="fuzzel --dmenu -w 70"
 # WIP: once fuzzel fixes "nth-delimiter" debug output bug, change DMENU and switch to:
-# emoji="$(printf "$CHOICES" | $DMENU)"
-emoji="$(printf "$CHOICES" | $DMENU | cut -d ' ' -f 1 | tr -d '\n')"
+# symbol="$(printf "$list" | $dmenu)"
+symbol="$(printf "$list" | $dmenu | cut -d ' ' -f 1 | tr -d '\n')"
 
-case "$MODE" in
+case "$mode" in
     copy)
-        wl-copy "${emoji}"
+        wl-copy "${symbol}"
         ;;
     type)
-        wtype "${emoji}"
+        wl-paste
+        #wtype "${symbol}"
         ;;
     *)
         echo "Usage: $0 [type|copy]"
