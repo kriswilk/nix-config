@@ -30,8 +30,7 @@ in
       colors = {
         selection = lib.mkForce (opaque medium-dark-gray);
         border = lib.mkForce (opaque blue); # WIP: make sure niri border matches!
-        counter = lib.mkForce (opaque blue);
-        placeholder = opaque medium-dark-gray;
+        counter = lib.mkForce (opaque medium-dark-gray);
       };
       border = {
         width = 4;
