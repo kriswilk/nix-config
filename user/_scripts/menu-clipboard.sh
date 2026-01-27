@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-dmenu="fuzzel -d"
+dmenu="fuzzel -d --minimal-lines"
 
 item="$(cliphist list | $dmenu)"
 
