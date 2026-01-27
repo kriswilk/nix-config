@@ -27,8 +27,8 @@ in
         font = lib.mkForce "monospace:size=14";
       };
       colors = {
-        selection = lib.mkForce opaque medium-dark-gray;
-        border = lib.mkForce opaque blue; # WIP: make sure niri border matches!
+        selection = lib.mkForce (opaque medium-dark-gray);
+        border = lib.mkForce (opaque blue); # WIP: make sure niri border matches!
       };
       border = {
         width = 4;
