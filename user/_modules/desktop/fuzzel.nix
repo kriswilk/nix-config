@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 
-with config.lib.stylix.colors.withHashtag;
+with config.lib.stylix.colors;
 let
   black = base00;
   medium-dark-gray = base02;
