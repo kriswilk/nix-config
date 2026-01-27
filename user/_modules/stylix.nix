@@ -9,7 +9,7 @@
       sha256 = "sha256:0527d5jc4m817pdwkbpm8yz780pggwgylc26qx79akrdnqibnk5g";
     };
 
-    colors.black = colors.base00;
+    colors.black = base00;
 
     fonts = {
       serif = {
