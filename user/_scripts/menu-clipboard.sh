@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+list="$(cliphist list)"
 dmenu="fuzzel -d --minimal-lines"
 
-item="$(cliphist list | $dmenu)"
-
-[ -z "$item" ] && exit 123
+item="$(printf "$list" | $dmenu)"
 
 case "$item" in
-    wipe)
+    "!wipe")
         cliphist wipe
         ;;
     *)
