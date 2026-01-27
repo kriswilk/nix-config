@@ -1,5 +1,12 @@
 { config, lib, pkgs, ... }:
 
+with config.lib.stylix.colors.withHashtag;
+let
+  black = base00;
+  medium-dark-gray = base02;
+
+  transparent = color: color + "00";
+in
 {
   programs.fuzzel = {
     enable = true;
@@ -16,11 +23,11 @@
         icons-enabled = "no";
         keyboard-focus = "on-demand";
         
-        font = lib.mkForce "${config.stylix.fonts.monospace.name}:size=14";
+        font = lib.mkForce "monospace:size=14";
       };
       colors = {
-        selection = lib.mkForce "#${config.lib.stylix.colors.base02}FF";
-        border = lib.mkForce "#${config.lib.stylix.colors.blue}FF"; # WIP: make sure niri border matches!
+        selection = lib.mkForce medium-dark-gray;
+        border = lib.mkForce blue; # WIP: make sure niri border matches!
       };
       border = {
         width = 4;

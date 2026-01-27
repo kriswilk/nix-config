@@ -18,10 +18,6 @@
 
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
-
-    elephant.url = "github:abenz1267/elephant";
-    walker.url = "github:abenz1267/walker";
-    walker.inputs.elephant.follows = "elephant";
   };
 
   outputs = { nixpkgs, ... }@inputs:
@@ -42,7 +38,6 @@
             sharedModules = [
               inputs.nix-index-database.homeModules.default
               inputs.nvf.homeManagerModules.default
-              inputs.walker.homeManagerModules.default
             ];
             extraSpecialArgs = { inherit inputs; };
           };
