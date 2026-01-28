@@ -21,7 +21,7 @@ in
 
         prompt = "''";
         placeholder = "Begin typing...";
-        match-count = true;
+        match-counter = true;
         icons-enabled = "no";
         keyboard-focus = "on-demand";
         
