@@ -7,4 +7,6 @@
       recursive = true;
     };
   };
+
+  home.sessionPath = [ "$HOME/.local/bin" ];
 }
