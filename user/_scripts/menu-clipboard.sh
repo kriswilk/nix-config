@@ -2,7 +2,7 @@
 set -euo pipefail
 
 list="$(cliphist list)"
-dmenu="fuzzel -d --minimal-lines"
+dmenu="fuzzel --dmenu --minimal-lines"
 
 item="$(printf "$list" | $dmenu)"
 
