@@ -17,10 +17,6 @@ case "$mode" in
     type)
         wtype "${symbol}"
         ;;
-    *)
-        echo "Usage: $0 [type|copy]"
-        exit 1
-        ;;
 esac
 
 exit
