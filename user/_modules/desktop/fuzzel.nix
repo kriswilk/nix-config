@@ -19,6 +19,8 @@ in
         placeholder = "Begin typing...";
         match-counter = true;
         icons-enabled = "no";
+        use-bold = true;
+
         keyboard-focus = "on-demand";
         cache = "/dev/null";
 
