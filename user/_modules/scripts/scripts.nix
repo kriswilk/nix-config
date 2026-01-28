@@ -4,7 +4,7 @@ let
   isScript = name: type: 
     type == "regular" && lib.strings.hasSuffix ".sh" name;
   
-  scriptFiles = lib.filterAttrs isScript builtins.readDir ./.;
+  scriptFiles = lib.filterAttrs isScript (builtins.readDir ./.);
 
   mkScript = name: _: 
     let
