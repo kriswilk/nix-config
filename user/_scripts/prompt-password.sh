@@ -2,4 +2,5 @@
 
 fuzzel --dmenu \
        --prompt-only "󰌆  " \
+       --placeholder "" \
        --password
