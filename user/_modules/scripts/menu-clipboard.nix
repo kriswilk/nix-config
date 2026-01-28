@@ -9,13 +9,14 @@ let
     # Dependencies available ONLY inside this script
     #runtimeInputs = [ pkgs.cowsay pkgs.curl ]; 
 
-    text = ''
-      set -euo pipefail
+    text = builtins.readFile ./.local/bin/menu-clipboard;
+    # text = ''
+    #   set -euo pipefail
 
-      dmenu="fuzzel --dmenu --minimal-lines"
+    #   dmenu="fuzzel --dmenu --minimal-lines"
 
-      cliphist list | $dmenu | cliphist decode | wl-copy
-    '';
+    #   cliphist list | $dmenu | cliphist decode | wl-copy
+    # '';
   };
 
   # # --- Option 2: External File Reference ---
