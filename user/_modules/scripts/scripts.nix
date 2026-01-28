@@ -12,6 +12,8 @@ let
     in
     pkgs.writeShellApplication {
       name = binName;
+      # WIP: remove once emoji picker is rewritten without data block after code
+      excludeShellChecks = [ "SC2317" ];
       text = builtins.readFile ./${name};
     };
 

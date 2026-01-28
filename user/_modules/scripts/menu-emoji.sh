@@ -5,9 +5,7 @@ dmenu="fuzzel --dmenu -w 70"
 # symbol="$(printf "$list" | $dmenu)"
 echo -e "$list" | $dmenu | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
 
-# shellcheck disable=SC2317 # don't warn about unreachable code
 exit
-# shellcheck disable=SC2317 # don't warn about unreachable code
 
 ### DATA ###
 😀 grinning face [happy, smile, joy, cheer, delight]
