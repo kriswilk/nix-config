@@ -18,9 +18,7 @@ let
     };
 
   scriptPackages = lib.mapAttrsToList mkScript scriptFiles;
-
 in
 {
-  # 4. Add the generated list to your home config
   home.packages = scriptPackages;
 }
