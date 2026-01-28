@@ -1,3 +1,5 @@
+# shellcheck disable=SC2317 # don't warn about unreachable code
+
 list="$(sed '1,/^### DATA ###$/d' "$0")"
 dmenu="fuzzel --dmenu -w 70"
 
