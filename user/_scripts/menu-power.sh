@@ -3,7 +3,7 @@
 list="   Lock\n 󰤄  Suspend\n 󰜎  Log Out\n   Reboot\n   Shutdown"
 dmenu="fuzzel --dmenu -l 5 -w 13 --line-height 45 --vertical-pad 20 --hide-prompt -f monospace:size=20"
 
-action="$(printf "$list" | $dmenu)"
+action="$(echo -e "$list" | $dmenu)"
 
 case $action in
 	*"Lock")
