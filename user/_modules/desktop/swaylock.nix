@@ -3,7 +3,7 @@
 with config.lib.stylix.colors;
 let
   black = base00;
-  medium-dark-gray = base03;
+  medium-dark-gray = base02;
 
   opaque = color: color + "ff";
   transparent = color: color + "00";
