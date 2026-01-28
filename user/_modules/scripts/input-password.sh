@@ -1,3 +1,6 @@
+#!/bin/env bash
+set -euo pipefail
+
 fuzzel --dmenu \
        --prompt-only "󰌆  " \
        --placeholder "" \

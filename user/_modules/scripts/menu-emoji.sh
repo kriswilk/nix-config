@@ -1,3 +1,6 @@
+#!/bin/env bash
+set -euo pipefail
+
 list="$(sed '1,/^### DATA ###$/d' "$0")"
 dmenu="fuzzel --dmenu -w 70"
 
