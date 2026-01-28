@@ -12,7 +12,7 @@ let
     in
     pkgs.writeShellApplication {
       name = binName;
-      text = builtins.readFile name;
+      text = builtins.readFile ./${name};
     };
 
   scriptPackages = lib.mapAttrsToList mkScript scriptFiles;
