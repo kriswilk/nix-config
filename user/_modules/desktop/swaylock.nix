@@ -3,7 +3,7 @@
 with config.lib.stylix.colors;
 let
   black = base00;
-  medium-dark-gray = base02;
+  dark-gray = base02;
 
   opaque = color: color + "ff";
   transparent = color: color + "00";
@@ -40,7 +40,7 @@ in
       text-ver-color = transparent black;
       text-wrong-color = transparent black;
 
-      ring-color = medium-dark-gray;
+      ring-color = dark-gray;
       ring-clear-color = blue;
       ring-ver-color = yellow;
       ring-wrong-color = red;

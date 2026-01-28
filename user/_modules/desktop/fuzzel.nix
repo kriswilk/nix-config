@@ -3,7 +3,7 @@
 with config.lib.stylix.colors;
 let
   black = base00;
-  medium-dark-gray = base02;
+  dark-gray = base02;
 
   opaque = color: color + "ff";
   transparent = color: color + "00";
@@ -29,9 +29,10 @@ in
         font = lib.mkForce "monospace:size=14";
       };
       colors = {
-        selection = lib.mkForce (opaque medium-dark-gray);
         border = lib.mkForce (opaque blue); # WIP: make sure niri border matches!
-        counter = lib.mkForce (opaque medium-dark-gray);
+        placeholder = lib.mkForce (opaque dark-gray);
+        counter = lib.mkForce (opaque dark-gray);
+        selection = lib.mkForce (opaque dark-gray);
       };
       border = {
         width = 4;
