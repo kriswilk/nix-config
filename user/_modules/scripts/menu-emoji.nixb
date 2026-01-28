@@ -2,7 +2,7 @@
 
 let
   script = pkgs.writeShellApplication {
-    name = lib.strings.removeSuffix ".nix" (builtins.baseNameOf ./.);
+    name = "menu-emoji";
     text = ''
       list="$(sed '1,/^### DATA ###$/d' "$0")"
       dmenu="fuzzel --dmenu -w 70"

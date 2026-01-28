@@ -2,7 +2,7 @@
 
 let
   script = pkgs.writeShellApplication {
-    name = lib.strings.removeSuffix ".nix" (builtins.baseNameOf ./.);
+    name = "manu-clipboard";
     text = ''
       dmenu="fuzzel --dmenu --minimal-lines"
       cliphist list | $dmenu | cliphist decode | wl-copy
