@@ -4,8 +4,11 @@ let
   script = pkgs.writeShellApplication {
     name = lib.strings.removeSuffix ".nix" (builtins.baseNameOf ./.);
     text = ''
-      dmenu="fuzzel --dmenu --minimal-lines"
-      cliphist list | $dmenu | cliphist decode | wl-copy
+      fuzzel --dmenu \
+            --prompt-only "Type 'yes' to confirm: " \
+            --placeholder "" \
+            --auto-select \
+            --width 30
     '';
   };
 in
