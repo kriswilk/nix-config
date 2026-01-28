@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.sessionPath = [ ./. ];
+  home.file = {
+      ".local/bin" = {
+        source = ./.;
+        recursive = true;
+      };
 }
