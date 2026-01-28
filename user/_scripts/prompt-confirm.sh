@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-echo -e "y\nn" | fuzzel --dmenu \
-                        --prompt "Confirm: " \
-                        --placeholder "y/n" \
-                        --auto-select \
-                        --width 30 \
-                        --lines 0
+fuzzel --dmenu \
+       --prompt-only "Confirm (y/n): " \
+       --placeholder "" \
+       --auto-select \
+       --width 20
