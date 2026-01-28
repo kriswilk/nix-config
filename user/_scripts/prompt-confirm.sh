@@ -4,4 +4,4 @@ echo -e "Y\nN" | fuzzel --dmenu \
                         --prompt-only "Confirm (Y/N): " \
                         --placeholder "" \
                         --auto-select \
-                        --width 20
+                        --width 30
