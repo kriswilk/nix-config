@@ -2,7 +2,7 @@
 
 let
   script = pkgs.writeShellApplication {
-    name = "prompt-confirm";
+    name = "input-confirm";
     text = ''
       fuzzel --dmenu \
             --prompt-only "Type 'yes' to confirm: " \

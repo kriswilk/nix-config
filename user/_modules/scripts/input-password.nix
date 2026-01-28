@@ -2,7 +2,7 @@
 
 let
   script = pkgs.writeShellApplication {
-    name = "prompt-password";
+    name = "input-password";
     text = ''
       fuzzel --dmenu \
             --prompt-only "󰌆  " \
