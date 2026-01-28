@@ -2,11 +2,7 @@
 
 with config.lib.stylix.colors;
 let
-  black = base00;
-  dark-gray = base02;
-
-  opaque = color: color + "ff";
-  transparent = color: color + "00";
+  transparent = "00000000";
 in
 {
   stylix.targets.swaylock = {
@@ -23,24 +19,24 @@ in
 
       disable-caps-lock-text = true;
 
-      color = black;
+      color = base00;
 
       bs-hl-color = red;
       key-hl-color = green;
 
       # transparent
-      inside-color = transparent black;
-      inside-clear-color = transparent black;
-      inside-ver-color = transparent black;
-      inside-wrong-color = transparent black;
+      inside-color = transparent;
+      inside-clear-color = transparent;
+      inside-ver-color = transparent;
+      inside-wrong-color = transparent;
 
       # transparent
-      text-color = transparent black;
-      text-clear-color = transparent black;
-      text-ver-color = transparent black;
-      text-wrong-color = transparent black;
+      text-color = transparent;
+      text-clear-color = transparent;
+      text-ver-color = transparent;
+      text-wrong-color = transparent;
 
-      ring-color = dark-gray;
+      ring-color = base02;
       ring-clear-color = blue;
       ring-ver-color = yellow;
       ring-wrong-color = red;

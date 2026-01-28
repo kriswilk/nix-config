@@ -2,11 +2,7 @@
 
 with config.lib.stylix.colors;
 let
-  black = base00;
-  dark-gray = base02;
-
   opaque = color: color + "ff";
-  transparent = color: color + "00";
 in
 {
   programs.fuzzel = {
@@ -30,9 +26,9 @@ in
       };
       colors = {
         border = lib.mkForce (opaque blue); # WIP: make sure niri border matches!
-        placeholder = lib.mkForce (opaque dark-gray);
-        counter = lib.mkForce (opaque dark-gray);
-        selection = lib.mkForce (opaque dark-gray);
+        placeholder = lib.mkForce (opaque base03);
+        counter = lib.mkForce (opaque base03);
+        selection = lib.mkForce (opaque base01);
       };
       border = {
         width = 4;
