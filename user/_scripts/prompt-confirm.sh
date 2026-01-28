@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo -e "Yes\nNo" | fuzzel --dmenu --hide-prompt --auto-select --minimal-lines --width=15
+echo -e "Yes\nNo" | fuzzel --dmenu --hide-prompt --auto-select --minimal-lines
