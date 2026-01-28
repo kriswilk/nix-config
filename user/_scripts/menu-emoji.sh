@@ -4,7 +4,7 @@ set -euo pipefail
 mode="${1:-type}"
 
 list="$(sed '1,/^### DATA ###$/d' "$0")"
-dmenu="fuzzel -dmenu -w 70"
+dmenu="fuzzel --dmenu -w 70"
 
 # WIP: once fuzzel fixes "nth-delimiter" debug output bug, change DMENU and switch to:
 # symbol="$(printf "$list" | $dmenu)"
