@@ -4,4 +4,4 @@ fuzzel --dmenu \
        --prompt-only "Type 'yes' to confirm: " \
        --placeholder "" \
        --auto-select \
-       --width 25
+       --width 30
