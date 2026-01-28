@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 fuzzel --dmenu \
-       --prompt-only "Confirm (y/n): " \
+       --prompt-only "Type 'yes' to confirm: " \
        --placeholder "" \
        --auto-select \
-       --width 20
+       --width 25
