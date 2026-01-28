@@ -2,8 +2,9 @@
 
 {
   home.file = {
-      ".local/bin" = {
-        source = ./.;
-        recursive = true;
-      };
+    ".local/bin" = {
+      source = ./.;
+      recursive = true;
+    };
+  };
 }
